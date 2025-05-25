@@ -7,8 +7,11 @@ const HEIGHT: number = 120
 class debug {
     static log_load: boolean = false;
     static log_free: boolean = false;
+    static log_add_handler: boolean = false;
+    static log_remove_handler: boolean = false;
+    static log_event: boolean = false;
     static log(data: string) {
-        console.log("[DEBUG] " + data)
+        console.log("DEBUG: " + data)
     }
 }
 
@@ -59,8 +62,59 @@ function throw_(e: Exception) {
     e.raise()
 }
 
-//  -------------------------------------------------------------------------------------------- UTILS ---
+//  ------------------------------------------------------------------------------------ EVENT HANDLER ---
+class EventHandler {
+    handler: () => void
+    constructor(handler: () => void) {
+        this.handler = handler
+    }
 
+    run() {
+        this.handler()
+    }
+}
+
+class ControllerEventHandler extends EventHandler {
+    button: controller.Button
+    eventType: ControllerButtonEvent
+    constructor(button: controller.Button, eventType: ControllerButtonEvent, handler: () => void) {
+        super(handler)
+        this.button = button
+        this.eventType = eventType
+    }
+
+    run() {
+        if ((this.eventType == ControllerButtonEvent.Pressed && this.button.isPressed()) ||
+            (this.eventType == ControllerButtonEvent.Released && !this.button.isPressed())) {
+            if (debug.log_event) { debug.log("Executed ControllerEvent of type " + (this.eventType == ControllerButtonEvent.Pressed ? "Pressed" : "Released")) }
+            super.run()
+        }
+    }
+}
+
+class EventListener {
+    handlers: EventHandler[] = []
+    constructor() {}
+
+    add_handler(handler: EventHandler): number {
+        this.handlers.push(handler)
+        if (debug.log_add_handler) { debug.log("Added handler " + typeof handler) }
+        return this.handlers.length - 1
+    }
+
+    remove_handler(handler_id: number): EventHandler {
+        if (debug.log_add_handler) { debug.log("Removed handler #" + handler_id) }
+        return this.handlers.removeAt(handler_id)
+    }
+
+    handle_events() {
+        for (let handler_id: number = 0; handler_id < this.handlers.length; handler_id++) {
+            this.handlers[handler_id].run();
+        }
+    }
+}
+
+//  -------------------------------------------------------------------------------------------- UTILS ---
 function ord(char: String): number {
     return char.charCodeAt(0)
 }
@@ -86,13 +140,29 @@ namespace imageX {
         }
     }
 
-    console.log(image.font8.data.toBase64())
+    export namespace cursor {
+        export const SYS_ARROW: Image = img`
+            3 3 . . . . .
+            3 1 3 . . . .
+            3 1 1 3 . . .
+            3 1 1 1 3 . .
+            3 1 1 1 1 3 .
+            3 1 1 1 1 1 3
+            3 1 1 1 3 3 3
+            3 1 3 1 1 3 .
+            3 3 3 1 1 3 .
+            . . . 3 3 . .
+        `
+    }
     
     export namespace font {
         // Font structure:
         // 2 Bytes (HEADER): character code in Little Endian format
         // charWidth*charHeight Bits (BODY): character data (bottom to top, left to right)
-        export const IBM_BIOS_4x8: image.Font = new imageX.Font(4, 8, Buffer.fromArray([
+        export const SYS_4x8: image.Font = new imageX.Font(4, 8, Buffer.fromArray([
+            // UNICODE 0x0000
+            // ...
+            // UNICODE 0x001F
             ord(" "), 0x00, 0b00000000, 0b00000000, 0b00000000, 0b00000000,
             ord("!"), 0x00, 0b00000000, 0b00101110, 0b00000000, 0b00000000,
             ord('"'), 0x00, 0b00000110, 0b00000000, 0b00000110, 0b00000000,
@@ -151,7 +221,44 @@ namespace imageX {
             ord("W"), 0x00, 0b00111110, 0b00111000, 0b00111110, 0b00000000,
             ord("X"), 0x00, 0b00110110, 0b00001000, 0b00110110, 0b00000000,
             ord("Y"), 0x00, 0b00000110, 0b00111000, 0b00000110, 0b00000000,
-            ord("Z"), 0x00, 0b00110010, 0b00101010, 0b00100110, 0b00000000
+            ord("Z"), 0x00, 0b00110010, 0b00101010, 0b00100110, 0b00000000,
+            ord("["), 0x00, 0b00000000, 0b01111111, 0b01000001, 0b00000000,
+            ord("\\"), 0x00, 0b00000011, 0b00011100, 0b01100000, 0b00000000,
+            ord("]"), 0x00, 0b00000000, 0b01000001, 0b01111111, 0b00000000,
+            ord("^"), 0x00, 0b00000010, 0b00000001, 0b00000010, 0b00000000,
+            ord("_"), 0x00, 0b10000000, 0b10000000, 0b10000000, 0b10000000,
+            ord("`"), 0x00, 0b00000001, 0b00000010, 0b00000100, 0b00000000,
+            ord("a"), 0x00, 0b00110100, 0b00110100, 0b00111100, 0b00000000,
+            ord("b"), 0x00, 0b00111111, 0b00100100, 0b00111100, 0b00000000,
+            ord("c"), 0x00, 0b00111100, 0b00100100, 0b00100100, 0b00000000,
+            ord("d"), 0x00, 0b00111100, 0b00100100, 0b00111111, 0b00000000,
+            ord("e"), 0x00, 0b00111100, 0b00101100, 0b00101100, 0b00000000,
+            ord("f"), 0x00, 0b00000100, 0b00111111, 0b00000101, 0b00000000,
+            ord("g"), 0x00, 0b10111100, 0b10100100, 0b11111100, 0b00000000,
+            ord("h"), 0x00, 0b00111111, 0b00000100, 0b00111100, 0b00000000,
+            ord("i"), 0x00, 0b00000000, 0b00111101, 0b00000000, 0b00000000,
+            ord("j"), 0x00, 0b10000000, 0b11111101, 0b00000000, 0b00000000,
+            ord("k"), 0x00, 0b00111111, 0b00011000, 0b00100100, 0b00000000,
+            ord("l"), 0x00, 0b00000000, 0b00111111, 0b00100000, 0b00000000,
+            ord("m"), 0x00, 0b00111100, 0b00011100, 0b00111100, 0b00000000,
+            ord("n"), 0x00, 0b00111100, 0b00000100, 0b00111100, 0b00000000,
+            ord("o"), 0x00, 0b00111100, 0b00100100, 0b00111100, 0b00000000,
+            ord("p"), 0x00, 0b11111100, 0b00100100, 0b00111100, 0b00000000,
+            ord("q"), 0x00, 0b00111100, 0b00100100, 0b11111100, 0b00000000,
+            ord("r"), 0x00, 0b00111100, 0b00000100, 0b00000100, 0b00000000,
+            ord("s"), 0x00, 0b00101100, 0b00100100, 0b00110100, 0b00000000,
+            ord("t"), 0x00, 0b00000100, 0b00111110, 0b00100100, 0b00000000,
+            ord("u"), 0x00, 0b00111100, 0b00100000, 0b00111100, 0b00000000,
+            ord("v"), 0x00, 0b00011100, 0b00100000, 0b00011100, 0b00000000,
+            ord("w"), 0x00, 0b00111100, 0b00111000, 0b00111100, 0b00000000,
+            ord("x"), 0x00, 0b00100100, 0b00011000, 0b00100100, 0b00000000,
+            ord("y"), 0x00, 0b10111100, 0b10100000, 0b11111100, 0b00000000,
+            ord("z"), 0x00, 0b00110100, 0b00100100, 0b00101100, 0b00000000,
+            ord("{"), 0x00, 0b00001000, 0b01110111, 0b01000001, 0b00000000,
+            ord("|"), 0x00, 0b00000000, 0b01111111, 0b00000000, 0b00000000,
+            ord("}"), 0x00, 0b01000001, 0b01110111, 0b00001000, 0b00000000,
+            ord("~"), 0x00, 0b00001000, 0b00011000, 0b00010000, 0b00000000,
+            // UNICODE 0x007F
         ]));
     }
 }
@@ -204,6 +311,70 @@ class Palette {
 }
 
 //  ------------------------------------------------------------------------------------------- SCREEN ---
+class Cursor {
+    x = Math.round(WIDTH / 2)
+    y = Math.round(HEIGHT / 2)
+    img: Image
+    defaultSpeed: number = 1
+    speed: number = 1
+    ignoreSpeed: boolean = false
+    controllerEventHandler_ids: number[] = []
+    constructor(img: Image) {
+        this.img = img
+    }
+
+    render(img: Image): void {
+        img.drawTransparentImage(this.img, this.x, this.y)
+    }
+
+    set_speed(speed: number): void {
+        this.speed = speed
+    }
+
+    set_default_speed(speed: number): void {
+        this.defaultSpeed = speed
+    }
+
+    set_ignore_speed(ignoreSpeed: boolean): void {
+        this.ignoreSpeed = ignoreSpeed
+    }
+
+    set_pos(x: number, y: number): void {
+        this.x = x
+        this.y = y
+        if (this.x < 0) { this.x = 0 }
+        if (this.x > WIDTH - 1) { this.x = WIDTH - 1 }
+        if (this.y < 0) { this.y = 0 }
+        if (this.y > HEIGHT - 1) { this.y = HEIGHT - 1 }
+    }
+
+    get_pos(): [number, number] {
+        return [this.x, this.y]
+    }
+
+    move(x: number, y: number): void {
+        this.set_pos(this.x + (x * (this.ignoreSpeed ? this.defaultSpeed : this.speed)), this.y + (y * (this.ignoreSpeed ? this.defaultSpeed : this.speed)))
+    }
+
+    move_h(x: number): void { this.move(x, 0) }
+    move_v(y: number): void { this.move(0, y) }
+
+    add_handlers(eventListener: EventListener) {
+        this.controllerEventHandler_ids.push(eventListener.add_handler(new ControllerEventHandler(controller.up, ControllerButtonEvent.Pressed, () => { this.move_v(-1) })))
+        this.controllerEventHandler_ids.push(eventListener.add_handler(new ControllerEventHandler(controller.down, ControllerButtonEvent.Pressed, () => { this.move_v(1) })))
+        this.controllerEventHandler_ids.push(eventListener.add_handler(new ControllerEventHandler(controller.left, ControllerButtonEvent.Pressed, () => { this.move_h(-1) })))
+        this.controllerEventHandler_ids.push(eventListener.add_handler(new ControllerEventHandler(controller.right, ControllerButtonEvent.Pressed, () => { this.move_h(1) })))
+        this.controllerEventHandler_ids.push(eventListener.add_handler(new ControllerEventHandler(controller.B, ControllerButtonEvent.Pressed, () => { this.set_ignore_speed(true) })))
+        this.controllerEventHandler_ids.push(eventListener.add_handler(new ControllerEventHandler(controller.B, ControllerButtonEvent.Released, () => { this.set_ignore_speed(false) })))
+    }
+
+    remove_handlers(eventListener: EventListener) {
+        for (let handler_id = 0; handler_id < this.controllerEventHandler_ids.length; handler_id++) {
+            eventListener.remove_handler(handler_id)
+        }
+    }
+}
+
 interface Widget {
     palette: Palette
     x: number
@@ -216,15 +387,17 @@ class WLabel implements Widget {
     x: number
     y: number
     text: string
+    font: image.Font
     constructor(palette: Palette, x: number, y: number, text: string, font?: image.Font) {
         this.palette = palette
         this.x = x
         this.y = y
         this.text = text
+        this.font = font
     }
 
     public render(img: Image, wx: number, wy: number): void {
-        img.print(this.text, wx + this.x, wy + this.y, this.palette.abs_id(2), imageX.font.IBM_BIOS_4x8)
+        img.print(this.text, wx + this.x, wy + this.y, this.palette.abs_id(2), this.font)
     }
 }
 
@@ -282,24 +455,22 @@ class Window {
 }
 
 class Screen {
-    img: Image
     windows: Window[]
     palette: Palette
     constructor(palette: Palette) {
-        this.img = image.create(160, 120)
         this.windows = []
         this.palette = palette
     }
 
-    public render() {
+    public render(img: Image) {
         // Clear screen
-        this.img.fill(this.palette.abs_id(0))
+        img.fill(this.palette.abs_id(0))
         // Render windows
         for (let window_id = 0; window_id < this.windows.length; window_id++) {
-            this.windows[window_id].render(this.img)
+            this.windows[window_id].render(img)
         }
         // Update screen
-        scene.setBackgroundImage(this.img)
+        scene.setBackgroundImage(img)
     }
 
     public add_window(window: Window): number {
@@ -313,37 +484,51 @@ class Screen {
 }
 
 //  --------------------------------------------------------------------------------------------- MAIN ---
-class system {
-    static theme: [number, number, number] = [0x210613, 0xf63090, 0xfffff5]
-    static palette: Palette = new Palette(system.theme)
-    static screen: Screen = new Screen(system.palette)
+namespace system {
+    export let theme: [number, number, number] = [0x210613, 0xf63090, 0xfffff5]
+    export let palette: Palette = new Palette(system.theme)
+    export let img: Image = image.create(160, 120)
+    export let screen: Screen = new Screen(system.palette)
+    export let controllerEventListener: EventListener = new EventListener()
+    export let cursor: Cursor = new Cursor(imageX.cursor.SYS_ARROW)
 }
 
 // Debug
 debug.log_load = true
 debug.log_free = true
+debug.log_add_handler = true
+debug.log_remove_handler = true
+debug.log_event = true
 
 // Load system resources
 system.palette.load(0)
 
-// Disable uninitialized key bindings
-controller.up.onEvent(ControllerButtonEvent.Pressed, dummy)
-controller.down.onEvent(ControllerButtonEvent.Pressed, dummy)
-controller.left.onEvent(ControllerButtonEvent.Pressed, dummy)
-controller.right.onEvent(ControllerButtonEvent.Pressed, dummy)
-controller.A.onEvent(ControllerButtonEvent.Pressed, dummy)
-controller.B.onEvent(ControllerButtonEvent.Pressed, dummy)
-controller.menu.onEvent(ControllerButtonEvent.Pressed, dummy)
+// Disable default menu
+controller.menu.onEvent(ControllerButtonEvent.Pressed, () => { dummy() })
+
+// Assign key bindings to ControllerEventListener
+controller.anyButton.onEvent(ControllerButtonEvent.Pressed, () => { system.controllerEventListener.handle_events() })
+controller.anyButton.onEvent(ControllerButtonEvent.Released, () => { system.controllerEventListener.handle_events() })
 
 // Initialize scene
 scene.setBackgroundColor(0)
 
+// Initialize cursor
+system.cursor.set_default_speed(4)
+system.cursor.set_speed(16)
+system.cursor.add_handlers(system.controllerEventListener)
+
 // Initialize screen
-let label: WLabel = new WLabel(system.palette, 0, 0, " !\"#$%&'()*+,-./0123456789")
+let label: WLabel = new WLabel(system.palette, 0, 0, "This is an example text.\nHello, World!", imageX.font.SYS_4x8)
 let window: Window = new Window(system.palette, 0, 0, 0, 0)
 let label_id = window.add_widget(label)
 let window_id: number = system.screen.add_window(window)
 
-// Render windows
-forever(() => {system.screen.render()})
+// Add event handlers
+dummy()
 
+// Render windows
+forever(() => {
+    system.screen.render(system.img)
+    system.cursor.render(system.img)
+})
