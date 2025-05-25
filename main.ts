@@ -432,6 +432,7 @@ class Window {
         let c1 = this.palette.abs_id(1)
         let c2 = this.palette.abs_id(2)
         let titlesize: number = 8
+        img.fillRect(this.x, this.y, this.w, this.h, c0)
         img.fillRect(this.x, this.y, this.w, titlesize, c1)
         img.drawLine(this.x, this.y + titlesize, this.x, this.y + this.h - 1, c1)
         img.drawLine(this.x + this.w - 1, this.y + titlesize, this.x + this.w - 1, this.y + this.h - 1, c1)
