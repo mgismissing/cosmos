@@ -299,6 +299,7 @@ class Palette {
     public free() {
         if (!this.loaded) return;
         this.loaded = false;
+        Palette.buf[this.buf_id] = null
         for (let color_id = 0; color_id < 3; color_id++) {
             color.setColor(this.abs_id(color_id), 0x000000)
         }
