@@ -25,7 +25,7 @@ To edit this repository in MakeCode.
 This project includes external resources:
 
 * System Font: [a780201's "miniwi"](https://github.com/a780201/miniwi/)
-* System Mouse Cursor: [ten's "pixel Cursors"](https://www.rw-designer.com/cursor-set/pixel/)
+* System Mouse Cursor: [astropulse's "Familiar Pixel Cursors"](https://astropulse.gumroad.com/l/FamiliarPixelCursors/)
 * System Palette: [Poltergasm's "sangria"](https://lospec.com/palette-list/sangria/)
 
 If you're the author of one of these resources and would like me to remove them, please create a new issue on my GitHub.
