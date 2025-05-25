@@ -1,6 +1,6 @@
 //  ---------------------------------------------------------------------------------------- CONSTANTS ---
-const WIDTH: number = 160
-const HEIGHT: number = 120
+const WIDTH: number = scene.screenWidth()
+const HEIGHT: number = scene.screenHeight()
 
 //  -------------------------------------------------------------------------------------------- DEBUG ---
 
@@ -38,8 +38,8 @@ class Exception {
 }
 
 class NotImplementedException extends Exception {
-    constructor(procedure: string, interface_: string) {
-        super("NotImplemented", "Procedure \"" + procedure + "\" from interface \"" + interface_ + "\" should be implemented by a subclass", 100)
+    constructor(procedure: string, class_: string) {
+        super("NotImplemented", "Procedure \"" + procedure + "\" from class \"" + class_ + "\" has not been implemented yet", 100)
     }
 
 }
@@ -55,10 +55,9 @@ class AlreadyInUseException extends Exception {
     constructor(resource: string) {
         super("AlreadyInUse", "Resource \"" + resource + "\" is already being used.", 102)
     }
-
 }
 
-function throw_(e: Exception) {
+function raise(e: Exception) {
     e.raise()
 }
 
@@ -280,11 +279,11 @@ class Palette {
     public load(buf_id: number) {
         if (this.loaded) return;
         if (!(0 <= buf_id && buf_id <= 4)) {
-            throw_(new OutOfRangeException(0, 4, buf_id))
+            raise(new OutOfRangeException(0, 4, buf_id))
         }
 
         if (Palette.buf[buf_id] !== null) {
-            throw_(new AlreadyInUseException("Palette.buf[" + buf_id + "]"))
+            raise(new AlreadyInUseException("Palette.buf[" + buf_id + "]"))
         }
 
         this.buf_id = buf_id
