@@ -3,7 +3,6 @@ const WIDTH: number = scene.screenWidth()
 const HEIGHT: number = scene.screenHeight()
 
 //  -------------------------------------------------------------------------------------------- DEBUG ---
-
 class debug {
     static log_load: boolean = false;
     static log_free: boolean = false;
@@ -16,7 +15,6 @@ class debug {
 }
 
 //  ------------------------------------------------------------------------------------------ DUMMIES ---
-
 function dummy(): void {}
 
 //  ------------------------------------------------------------------------------------------- ERRORS ---
