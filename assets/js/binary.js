@@ -1,5 +1,5 @@
-// meta={"simUrl":"https://trg-arcade.userpxt.io/v2.0.56/---simulator","cdnUrl":"https://cdn.makecode.com","version":"2.0.0","target":"arcade","targetVersion":"2.0.56","repo":"mgismissing/cosmos"}
-// total=1864527 new=32.30% cached=63.36% other=4.34%
+// meta={"simUrl":"https://trg-arcade.userpxt.io/v2.0.56/---simulator","cdnUrl":"https://cdn.makecode.com","version":"2.1.0","target":"arcade","targetVersion":"2.0.56","repo":"mgismissing/cosmos"}
+// total=1867564 new=32.41% cached=63.25% other=4.34%
 (function (ectx) {
 'use strict';
 const runtime = ectx.runtime;
@@ -483,7 +483,7 @@ const pxsim_pxtrt = pxsim.pxtrt;
 const pxsim_numops = pxsim.numops;
 
 
-function _main___P126932(s) {
+function _main___P181924(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -906,17 +906,17 @@ switch (step) {
     r0 = s.retval;
     globals.Black___4499 = (r0);
     r0 = pxsim_ImageMethods.width(globals.screen___2037);
-    globals.WIDTH___125165 = (r0);
+    globals.WIDTH___180071 = (r0);
     r0 = pxsim_ImageMethods.height(globals.screen___2037);
-    globals.HEIGHT___125168 = (r0);
-    globals.debug_log_load___125173 = (false);
-    globals.debug_log_free___125175 = (false);
-    globals.debug_log_add_handler___125177 = (false);
-    globals.debug_log_remove_handler___125179 = (false);
-    globals.debug_log_event___125181 = (false);
-    r0 = pxsim.image.ofBuffer(_hex125520);
-    globals.SYS_ARROW___125521 = (r0);
-    r0 = pxsim_pxtcore_mkClassInstance(imageX_Font__C125478_VT);
+    globals.HEIGHT___180074 = (r0);
+    globals.log_load___180077 = (false);
+    globals.log_free___180079 = (false);
+    globals.log_add_handler___180081 = (false);
+    globals.log_remove_handler___180085 = (false);
+    globals.log_event___180087 = (false);
+    r0 = pxsim.image.ofBuffer(_hex180471);
+    globals.SYS_ARROW___180472 = (r0);
+    r0 = pxsim_pxtcore_mkClassInstance(imageX_Font__C180429_VT);
     s.tmp_0 = r0;
     r0 = pxsim_Array__mk();
     s.tmp_1 = r0;
@@ -1680,7 +1680,7 @@ switch (step) {
     r0 = pxsim_Array__push(s.tmp_1, 24);
     r0 = pxsim_Array__push(s.tmp_1, 16);
     r0 = pxsim_Array__push(s.tmp_1, 0);
-    s.tmp_97 = imageX_Font_constructor__P125480_mk(s);
+    s.tmp_97 = imageX_Font_constructor__P180431_mk(s);
     s.tmp_97.arg0 = s.tmp_0;
     s.tmp_97.arg1 = 4;
     s.tmp_97.arg2 = 8;
@@ -1693,7 +1693,7 @@ switch (step) {
     s.callLocIdx = 177; s.pc = 41; return s.tmp_97;
   case 41:
     r0 = s.retval;
-    globals.SYS_4x8___125524 = (s.tmp_0);
+    globals.SYS_4x8___180475 = (s.tmp_0);
     r0 = pxsim_Array__mk();
     s.tmp_0 = r0;
     r0 = pxsim_Array__push(s.tmp_0, null);
@@ -1701,8 +1701,8 @@ switch (step) {
     r0 = pxsim_Array__push(s.tmp_0, null);
     r0 = pxsim_Array__push(s.tmp_0, null);
     r0 = pxsim_Array__push(s.tmp_0, null);
-    globals.Palette_buf___125635 = (s.tmp_0);
-    globals.Palette_disabled___125638 = (false);
+    globals.Palette_buf___180586 = (s.tmp_0);
+    globals.Palette_disabled___180589 = (false);
     s.tmp_0 = color_setPalette__P4447_mk(s);
     s.tmp_0.arg0 = globals.Black___4499;
     s.tmp_0.arg1 = 0;
@@ -1716,161 +1716,195 @@ switch (step) {
     r0 = pxsim_Array__push(s.tmp_0, 2164243);
     r0 = pxsim_Array__push(s.tmp_0, 16134288);
     r0 = pxsim_Array__push(s.tmp_0, 16777205);
-    globals.theme___126335 = (s.tmp_0);
-    r0 = pxsim_pxtcore_mkClassInstance(Palette__C125623_VT);
+    globals.theme___181286 = (s.tmp_0);
+    r0 = pxsim_pxtcore_mkClassInstance(Palette__C180574_VT);
     s.tmp_0 = r0;
-    s.tmp_1 = Palette_constructor__P125641_mk(s);
+    s.tmp_1 = Palette_constructor__P180592_mk(s);
     s.tmp_1.arg0 = s.tmp_0;
-    s.tmp_1.arg1 = globals.theme___126335;
+    s.tmp_1.arg1 = globals.theme___181286;
     s.callLocIdx = 224; s.pc = 44; return s.tmp_1;
   case 44:
     r0 = s.retval;
-    globals.palette___126338 = (s.tmp_0);
+    globals.palette___181289 = (s.tmp_0);
     r0 = pxsim.image.create(160, 120);
-    globals.img___126342 = (r0);
-    r0 = pxsim_pxtcore_mkClassInstance(Screen__C126273_VT);
+    globals.img___181293 = (r0);
+    r0 = pxsim_pxtcore_mkClassInstance(Screen__C181224_VT);
     s.tmp_0 = r0;
-    s.tmp_1 = Screen_constructor__P126277_mk(s);
+    s.tmp_1 = Screen_constructor__P181228_mk(s);
     s.tmp_1.arg0 = s.tmp_0;
-    s.tmp_1.arg1 = globals.palette___126338;
+    s.tmp_1.arg1 = globals.palette___181289;
     s.callLocIdx = 225; s.pc = 45; return s.tmp_1;
   case 45:
     r0 = s.retval;
-    globals.screen___126345 = (s.tmp_0);
-    r0 = pxsim_pxtcore_mkClassInstance(EventListener__C125377_VT);
+    globals.screen___181296 = (s.tmp_0);
+    r0 = pxsim_pxtcore_mkClassInstance(EventListener__C180284_VT);
     s.tmp_0 = r0;
-    s.tmp_1 = EventListener_constructor__P125381_mk(s);
+    s.tmp_1 = EventListener_constructor__P180290_mk(s);
     s.tmp_1.arg0 = s.tmp_0;
     s.callLocIdx = 226; s.pc = 46; return s.tmp_1;
   case 46:
     r0 = s.retval;
-    globals.controllerEventListener___126349 = (s.tmp_0);
-    r0 = pxsim_pxtcore_mkClassInstance(Cursor__C125766_VT);
+    globals.controllerEventListener___181300 = (s.tmp_0);
+    r0 = pxsim_pxtcore_mkClassInstance(EventListener__C180284_VT);
     s.tmp_0 = r0;
-    s.tmp_1 = Cursor_constructor__P125778_mk(s);
+    s.tmp_1 = EventListener_constructor__P180290_mk(s);
     s.tmp_1.arg0 = s.tmp_0;
-    s.tmp_1.arg1 = globals.SYS_ARROW___125521;
     s.callLocIdx = 227; s.pc = 47; return s.tmp_1;
   case 47:
     r0 = s.retval;
-    globals.cursor___126352 = (s.tmp_0);
-    globals.debug_log_load___125173 = (true);
-    globals.debug_log_free___125175 = (true);
-    globals.debug_log_add_handler___125177 = (true);
-    globals.debug_log_remove_handler___125179 = (true);
-    globals.debug_log_event___125181 = (true);
-    s.tmp_0 = Palette_load__P125626_mk(s);
-    s.tmp_0.arg0 = globals.palette___126338;
-    s.tmp_0.arg1 = 0;
-    s.callLocIdx = 228; s.pc = 48; return s.tmp_0;
+    globals.foreverEventListener___181303 = (s.tmp_0);
+    r0 = pxsim_pxtcore_mkClassInstance(Cursor__C180717_VT);
+    s.tmp_0 = r0;
+    s.tmp_1 = Cursor_constructor__P180729_mk(s);
+    s.tmp_1.arg0 = s.tmp_0;
+    s.tmp_1.arg1 = globals.SYS_ARROW___180472;
+    s.callLocIdx = 228; s.pc = 48; return s.tmp_1;
   case 48:
+    r0 = s.retval;
+    globals.cursor___181306 = (s.tmp_0);
+    r0 = pxsim_pxtcore_mkClassInstance(EventHandler__C180222_VT);
+    s.tmp_0 = r0;
+    s.tmp_1 = EventHandler_constructor__P180224_mk(s);
+    s.tmp_1.arg0 = s.tmp_0;
+    s.tmp_1.arg1 = screenRenderer_id_inline__P181315;
+    s.callLocIdx = 230; s.pc = 49; return s.tmp_1;
+  case 49:
+    r0 = s.retval;
+    s.tmp_2 = EventListener_add_handler__P180285_mk(s);
+    s.tmp_2.arg0 = globals.foreverEventListener___181303;
+    s.tmp_2.arg1 = s.tmp_0;
+    s.callLocIdx = 231; s.pc = 50; return s.tmp_2;
+  case 50:
+    r0 = s.retval;
+    globals.screenRenderer_id___181311 = (r0);
+    r0 = pxsim_pxtcore_mkClassInstance(EventHandler__C180222_VT);
+    s.tmp_0 = r0;
+    s.tmp_1 = EventHandler_constructor__P180224_mk(s);
+    s.tmp_1.arg0 = s.tmp_0;
+    s.tmp_1.arg1 = cursorRenderer_id_inline__P181325;
+    s.callLocIdx = 233; s.pc = 51; return s.tmp_1;
+  case 51:
+    r0 = s.retval;
+    s.tmp_2 = EventListener_add_handler__P180285_mk(s);
+    s.tmp_2.arg0 = globals.foreverEventListener___181303;
+    s.tmp_2.arg1 = s.tmp_0;
+    s.callLocIdx = 234; s.pc = 52; return s.tmp_2;
+  case 52:
+    r0 = s.retval;
+    globals.cursorRenderer_id___181321 = (r0);
+    globals.log_load___180077 = (true);
+    globals.log_free___180079 = (true);
+    globals.log_add_handler___180081 = (true);
+    globals.log_remove_handler___180085 = (true);
+    globals.log_event___180087 = (true);
+    s.tmp_0 = Palette_load__P180577_mk(s);
+    s.tmp_0.arg0 = globals.palette___181289;
+    s.tmp_0.arg1 = 0;
+    s.callLocIdx = 235; s.pc = 53; return s.tmp_0;
+  case 53:
     r0 = s.retval;
     s.tmp_0 = controller_Button_onEvent__P2210_mk(s);
     s.tmp_0.arg0 = globals.menu___2133;
     s.tmp_0.arg1 = 2049;
-    s.tmp_0.arg2 = inline__P126365;
-    s.callLocIdx = 230; s.pc = 49; return s.tmp_0;
-  case 49:
+    s.tmp_0.arg2 = inline__P181339;
+    s.callLocIdx = 237; s.pc = 54; return s.tmp_0;
+  case 54:
     r0 = s.retval;
     s.tmp_0 = controller_Button_onEvent__P2210_mk(s);
     s.tmp_0.arg0 = globals.anyButton___2184;
     s.tmp_0.arg1 = 2049;
-    s.tmp_0.arg2 = inline__P126370;
-    s.callLocIdx = 232; s.pc = 50; return s.tmp_0;
-  case 50:
+    s.tmp_0.arg2 = inline__P181344;
+    s.callLocIdx = 239; s.pc = 55; return s.tmp_0;
+  case 55:
     r0 = s.retval;
     s.tmp_0 = controller_Button_onEvent__P2210_mk(s);
     s.tmp_0.arg0 = globals.anyButton___2184;
     s.tmp_0.arg1 = 2048;
-    s.tmp_0.arg2 = inline__P126376;
-    s.callLocIdx = 234; s.pc = 51; return s.tmp_0;
-  case 51:
+    s.tmp_0.arg2 = inline__P181350;
+    s.callLocIdx = 241; s.pc = 56; return s.tmp_0;
+  case 56:
+    r0 = s.retval;
+    s.tmp_0 = forever__P2097_mk(s);
+    s.tmp_0.arg0 = inline__P181354;
+    s.callLocIdx = 243; s.pc = 57; return s.tmp_0;
+  case 57:
     r0 = s.retval;
     s.tmp_0 = scene_setBackgroundColor__P2900_mk(s);
     s.tmp_0.arg0 = 0;
-    s.callLocIdx = 235; s.pc = 52; return s.tmp_0;
-  case 52:
+    s.callLocIdx = 244; s.pc = 58; return s.tmp_0;
+  case 58:
     r0 = s.retval;
-    s.tmp_0 = Cursor_set_default_speed__P125769_mk(s);
-    s.tmp_0.arg0 = globals.cursor___126352;
+    s.tmp_0 = Cursor_set_default_speed__P180720_mk(s);
+    s.tmp_0.arg0 = globals.cursor___181306;
     s.tmp_0.arg1 = 4;
-    s.callLocIdx = 236; s.pc = 53; return s.tmp_0;
-  case 53:
+    s.callLocIdx = 245; s.pc = 59; return s.tmp_0;
+  case 59:
     r0 = s.retval;
-    s.tmp_0 = Cursor_set_speed__P125768_mk(s);
-    s.tmp_0.arg0 = globals.cursor___126352;
+    s.tmp_0 = Cursor_set_speed__P180719_mk(s);
+    s.tmp_0.arg0 = globals.cursor___181306;
     s.tmp_0.arg1 = 16;
-    s.callLocIdx = 237; s.pc = 54; return s.tmp_0;
-  case 54:
+    s.callLocIdx = 246; s.pc = 60; return s.tmp_0;
+  case 60:
     r0 = s.retval;
-    s.tmp_0 = Cursor_add_handlers__P125776_mk(s);
-    s.tmp_0.arg0 = globals.cursor___126352;
-    s.tmp_0.arg1 = globals.controllerEventListener___126349;
-    s.callLocIdx = 238; s.pc = 55; return s.tmp_0;
-  case 55:
+    s.tmp_0 = Cursor_add_handlers__P180727_mk(s);
+    s.tmp_0.arg0 = globals.cursor___181306;
+    s.tmp_0.arg1 = globals.controllerEventListener___181300;
+    s.callLocIdx = 247; s.pc = 61; return s.tmp_0;
+  case 61:
     r0 = s.retval;
-    r0 = pxsim_pxtcore_mkClassInstance(WLabel__C125998_VT);
+    r0 = pxsim_pxtcore_mkClassInstance(WLabel__C180949_VT);
     s.tmp_0 = r0;
-    s.tmp_1 = WLabel_constructor__P126000_mk(s);
+    s.tmp_1 = WLabel_constructor__P180951_mk(s);
     s.tmp_1.arg0 = s.tmp_0;
-    s.tmp_1.arg1 = globals.palette___126338;
+    s.tmp_1.arg1 = globals.palette___181289;
     s.tmp_1.arg2 = 0;
     s.tmp_1.arg3 = 0;
     s.tmp_1.arg4 = "This is an example text.\nHello, World!";
-    s.tmp_1.arg5 = globals.SYS_4x8___125524;
-    s.callLocIdx = 239; s.pc = 56; return s.tmp_1;
-  case 56:
+    s.tmp_1.arg5 = globals.SYS_4x8___180475;
+    s.callLocIdx = 248; s.pc = 62; return s.tmp_1;
+  case 62:
     r0 = s.retval;
-    globals.label___126388 = (s.tmp_0);
-    r0 = pxsim_pxtcore_mkClassInstance(Window__C126049_VT);
+    globals.label___181366 = (s.tmp_0);
+    r0 = pxsim_pxtcore_mkClassInstance(Window__C181000_VT);
     s.tmp_0 = r0;
-    s.tmp_1 = Window_constructor__P126053_mk(s);
+    s.tmp_1 = Window_constructor__P181004_mk(s);
     s.tmp_1.arg0 = s.tmp_0;
-    s.tmp_1.arg1 = globals.palette___126338;
+    s.tmp_1.arg1 = globals.palette___181289;
     s.tmp_1.arg2 = 0;
     s.tmp_1.arg3 = 0;
     s.tmp_1.arg4 = 0;
     s.tmp_1.arg5 = 0;
     s.tmp_1.arg6 = "Example window";
-    s.tmp_1.arg7 = globals.SYS_4x8___125524;
-    s.callLocIdx = 240; s.pc = 57; return s.tmp_1;
-  case 57:
+    s.tmp_1.arg7 = globals.SYS_4x8___180475;
+    s.callLocIdx = 249; s.pc = 63; return s.tmp_1;
+  case 63:
     r0 = s.retval;
-    globals.window___126393 = (s.tmp_0);
-    s.tmp_0 = Window_add_widget__P126051_mk(s);
-    s.tmp_0.arg0 = globals.window___126393;
-    s.tmp_0.arg1 = globals.label___126388;
-    s.callLocIdx = 241; s.pc = 58; return s.tmp_0;
-  case 58:
+    globals.window___181371 = (s.tmp_0);
+    s.tmp_0 = Window_add_widget__P181002_mk(s);
+    s.tmp_0.arg0 = globals.window___181371;
+    s.tmp_0.arg1 = globals.label___181366;
+    s.callLocIdx = 250; s.pc = 64; return s.tmp_0;
+  case 64:
     r0 = s.retval;
-    globals.label_id___126399 = (r0);
-    s.tmp_0 = Screen_add_window__P126275_mk(s);
-    s.tmp_0.arg0 = globals.screen___126345;
-    s.tmp_0.arg1 = globals.window___126393;
-    s.callLocIdx = 242; s.pc = 59; return s.tmp_0;
-  case 59:
+    globals.label_id___181377 = (r0);
+    s.tmp_0 = Screen_add_window__P181226_mk(s);
+    s.tmp_0.arg0 = globals.screen___181296;
+    s.tmp_0.arg1 = globals.window___181371;
+    s.callLocIdx = 251; s.pc = 65; return s.tmp_0;
+  case 65:
     r0 = s.retval;
-    globals.window_id___126404 = (r0);
-    s.tmp_0 = dummy__P125189_mk(s);
-    s.callLocIdx = 243; s.pc = 60; return s.tmp_0;
-  case 60:
-    r0 = s.retval;
-    s.tmp_0 = forever__P2097_mk(s);
-    s.tmp_0.arg0 = inline__P126409;
-    s.callLocIdx = 246; s.pc = 61; return s.tmp_0;
-  case 61:
-    r0 = s.retval;
+    globals.window_id___181382 = (r0);
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-_main___P126932.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"main.ts","functionName":"<main>","argumentNames":[]}
-_main___P126932.continuations = [  ]
+_main___P181924.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"main.ts","functionName":"<main>","argumentNames":[]}
+_main___P181924.continuations = [  ]
 
-function _main___P126932_mk(s) {
+function _main___P181924_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: _main___P126932, depth: s.depth + 1,
+        parent: s, fn: _main___P181924, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -1993,7 +2027,7 @@ const _hex5391 = pxsim.BufferMethods.createBufferFromHex("8704200020000000000000
 const _hex5393 = pxsim.BufferMethods.createBufferFromHex("870420002000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000bbbb00000000000000000000000000b055bb00bbbbbb000000000000000000b0b5bdbcbbbbddcb0000000000000000b0dbcb5b5555bbdd0c00000000000000b0cbdcbdbb5b55dbcd0000000000000000c0dddb11d15bb5bd0c00000000000000bbbd111111b155bb0c00000000000000db1b111111115bb5cb00000000000000db1bb11d1199b9d5cb00000000000000db1b11bb9199b955cb000000000000005b1b11b19b99995bcb000000000000005b1d1111bb99995ccb00000000000000b0b511bbbb99995ccb00000000000000b0d51d919999d95b0b00000000000000005bdb919999c9d50b0000000000000000b0d51b99d9bcb5000000000000000000005bd5bbbc550b00000000000000000000b05b5555bd000000000000000000000000b0bbbb00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000")
 const _hex7210 = pxsim.BufferMethods.createBufferFromHex("000000ffffffff2121ff93c4ff8135fff609249ca378dc52003fad87f2ff8e2ec4a4839f5c406ce5cdc491463d000000")
 const _hex7232 = pxsim.BufferMethods.createBufferFromHex("000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000")
-const _hex125520 = pxsim.BufferMethods.createBufferFromHex("870407000a0000003333333303000000131111110300000030111131030000000013111131000000003011133100000000001333030000000000300300000000")
+const _hex180471 = pxsim.BufferMethods.createBufferFromHex("870407000a0000003333333303000000131111110300000030111131030000000013111131000000003011133100000000001333030000000000300300000000")
 
 
 
@@ -2630,7 +2664,7 @@ function color_inline__P7176_mk(s) {
 
 
 
-function inline__P126365(s) {
+function screenRenderer_id_inline__P181315(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -2640,7 +2674,9 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.tmp_0 = dummy__P125189_mk(s);
+    s.tmp_0 = Screen_render__P181225_mk(s);
+    s.tmp_0.arg0 = globals.screen___181296;
+    s.tmp_0.arg1 = globals.img___181293;
     s.callLocIdx = 229; s.pc = 1; return s.tmp_0;
   case 1:
     r0 = s.retval;
@@ -2648,12 +2684,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-inline__P126365.info = {"start":21544,"length":17,"line":535,"column":55,"endLine":535,"endColumn":72,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
+screenRenderer_id_inline__P181315.info = {"start":22038,"length":42,"line":538,"column":100,"endLine":538,"endColumn":142,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
 
-function inline__P126365_mk(s) {
+function screenRenderer_id_inline__P181315_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: inline__P126365, depth: s.depth + 1,
+        parent: s, fn: screenRenderer_id_inline__P181315, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
 } }
@@ -2662,7 +2698,7 @@ function inline__P126365_mk(s) {
 
 
 
-function inline__P126370(s) {
+function cursorRenderer_id_inline__P181325(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -2672,21 +2708,22 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.tmp_0 = EventListener_handle_events__P125380_mk(s);
-    s.tmp_0.arg0 = globals.controllerEventListener___126349;
-    s.callLocIdx = 231; s.pc = 1; return s.tmp_0;
+    s.tmp_0 = Cursor_render__P180718_mk(s);
+    s.tmp_0.arg0 = globals.cursor___181306;
+    s.tmp_0.arg1 = globals.img___181293;
+    s.callLocIdx = 232; s.pc = 1; return s.tmp_0;
   case 1:
     r0 = s.retval;
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-inline__P126370.info = {"start":21674,"length":56,"line":538,"column":60,"endLine":538,"endColumn":116,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
+cursorRenderer_id_inline__P181325.info = {"start":22183,"length":42,"line":539,"column":100,"endLine":539,"endColumn":142,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
 
-function inline__P126370_mk(s) {
+function cursorRenderer_id_inline__P181325_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: inline__P126370, depth: s.depth + 1,
+        parent: s, fn: cursorRenderer_id_inline__P181325, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
 } }
@@ -2695,7 +2732,7 @@ function inline__P126370_mk(s) {
 
 
 
-function inline__P126376(s) {
+function inline__P181339(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -2705,21 +2742,20 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.tmp_0 = EventListener_handle_events__P125380_mk(s);
-    s.tmp_0.arg0 = globals.controllerEventListener___126349;
-    s.callLocIdx = 233; s.pc = 1; return s.tmp_0;
+    s.tmp_0 = dummy__P180096_mk(s);
+    s.callLocIdx = 236; s.pc = 1; return s.tmp_0;
   case 1:
     r0 = s.retval;
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-inline__P126376.info = {"start":21793,"length":56,"line":539,"column":61,"endLine":539,"endColumn":117,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
+inline__P181339.info = {"start":22497,"length":17,"line":553,"column":55,"endLine":553,"endColumn":72,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
 
-function inline__P126376_mk(s) {
+function inline__P181339_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: inline__P126376, depth: s.depth + 1,
+        parent: s, fn: inline__P181339, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
 } }
@@ -2728,7 +2764,7 @@ function inline__P126376_mk(s) {
 
 
 
-function inline__P126409(s) {
+function inline__P181344(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -2738,28 +2774,21 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.tmp_0 = Screen_render__P126274_mk(s);
-    s.tmp_0.arg0 = globals.screen___126345;
-    s.tmp_0.arg1 = globals.img___126342;
-    s.callLocIdx = 244; s.pc = 1; return s.tmp_0;
+    s.tmp_0 = EventListener_handle_events__P180289_mk(s);
+    s.tmp_0.arg0 = globals.controllerEventListener___181300;
+    s.callLocIdx = 238; s.pc = 1; return s.tmp_0;
   case 1:
-    r0 = s.retval;
-    s.tmp_0 = Cursor_render__P125767_mk(s);
-    s.tmp_0.arg0 = globals.cursor___126352;
-    s.tmp_0.arg1 = globals.img___126342;
-    s.callLocIdx = 245; s.pc = 2; return s.tmp_0;
-  case 2:
     r0 = s.retval;
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-inline__P126409.info = {"start":22437,"length":83,"line":559,"column":8,"endLine":562,"endColumn":1,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
+inline__P181344.info = {"start":22612,"length":56,"line":556,"column":60,"endLine":556,"endColumn":116,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
 
-function inline__P126409_mk(s) {
+function inline__P181344_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: inline__P126409, depth: s.depth + 1,
+        parent: s, fn: inline__P181344, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
 } }
@@ -2768,7 +2797,73 @@ function inline__P126409_mk(s) {
 
 
 
-function Cursor_render__P125767(s) {
+function inline__P181350(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    s.tmp_0 = EventListener_handle_events__P180289_mk(s);
+    s.tmp_0.arg0 = globals.controllerEventListener___181300;
+    s.callLocIdx = 240; s.pc = 1; return s.tmp_0;
+  case 1:
+    r0 = s.retval;
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+inline__P181350.info = {"start":22731,"length":56,"line":557,"column":61,"endLine":557,"endColumn":117,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
+
+function inline__P181350_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: inline__P181350, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+} }
+
+
+
+
+
+function inline__P181354(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    s.tmp_0 = EventListener_handle_events__P180289_mk(s);
+    s.tmp_0.arg0 = globals.foreverEventListener___181303;
+    s.callLocIdx = 242; s.pc = 1; return s.tmp_0;
+  case 1:
+    r0 = s.retval;
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+inline__P181354.info = {"start":22797,"length":53,"line":558,"column":8,"endLine":558,"endColumn":61,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
+
+function inline__P181354_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: inline__P181354, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+} }
+
+
+
+
+
+function Screen_add_window__P181226(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -2784,28 +2879,27 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, Cursor__C125766_VT)) failedCast(r0);
-    r0 = s.arg0.fields["img"];
+    if (!checkSubtype(r0, Screen__C181224_VT)) failedCast(r0);
+    r0 = s.arg0.fields["windows"];
     s.tmp_0 = r0;
-    r0 = s.arg0.fields["x"];
+    r0 = pxsim_Array__push(s.tmp_0, s.arg1);
+    r0 = s.arg0.fields["windows"];
     s.tmp_1 = r0;
-    r0 = s.arg0.fields["y"];
-    s.tmp_2 = r0;
-    r0 = pxsim_ImageMethods.drawTransparentImage(s.arg1, s.tmp_0, s.tmp_1, s.tmp_2);
-    r0 = undefined;
+    r0 = pxsim_Array__length(s.tmp_1);
+    s.tmp_0 = r0;
+    r0 = (s.tmp_0 - 1);
     return leave(s, r0)
   default: oops()
 } } }
-Cursor_render__P125767.info = {"start":14968,"length":91,"line":344,"column":4,"endLine":346,"endColumn":5,"fileName":"main.ts","functionName":"render","argumentNames":["this","img"]}
+Screen_add_window__P181226.info = {"start":21030,"length":122,"line":515,"column":4,"endLine":518,"endColumn":5,"fileName":"main.ts","functionName":"add_window","argumentNames":["this","window"]}
 
-function Cursor_render__P125767_mk(s) {
+function Screen_add_window__P181226_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: Cursor_render__P125767, depth: s.depth + 1,
+        parent: s, fn: Screen_add_window__P181226, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
-  tmp_2: undefined,
   arg0: undefined,
   arg1: undefined,
 } }
@@ -2814,7 +2908,7 @@ function Cursor_render__P125767_mk(s) {
 
 
 
-function Screen_render__P126274(s) {
+function Window_add_widget__P181002(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -2824,73 +2918,33 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.window_id___126296 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.arg1 = (s.lambdaArgs[1]);
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, Screen__C126273_VT)) failedCast(r0);
-    s.tmp_0 = r0 = s.arg1;
-    r0 = s.arg0.fields["palette"];
-    s.tmp_2 = r0;
-    r0 = s.tmp_2.fields["buf_id"];
-    s.tmp_5 = r0;
-    r0 = (s.tmp_5 * 3);
-    s.tmp_4 = r0;
-    r0 = (s.tmp_4 + 0);
-    s.tmp_3 = r0;
-    r0 = (s.tmp_3 + 1);
-    s.tmp_1 = r0;
-    r0 = pxsim_ImageMethods.fill(s.tmp_0, s.tmp_1);
-    s.window_id___126296 = (0);
-  case 1:
-    s.tmp_1 = r0 = s.window_id___126296;
-    r0 = s.arg0.fields["windows"];
-    s.tmp_3 = r0;
-    r0 = pxsim_Array__length(s.tmp_3);
-    s.tmp_2 = r0;
-    r0 = (s.tmp_1 < s.tmp_2);
+    if (!checkSubtype(r0, Window__C181000_VT)) failedCast(r0);
+    r0 = s.arg0.fields["widgets"];
     s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 2; continue; }
-    s.tmp_4 = Window_render__P126050_mk(s);
-    r0 = s.arg0.fields["windows"];
-    s.tmp_5 = r0;
-    r0 = pxsim_Array__getAt(s.tmp_5, s.window_id___126296);
-    s.tmp_4.arg0 = r0;
-    s.tmp_4.arg1 = s.arg1;
-    s.callLocIdx = 221; s.pc = 3; return s.tmp_4;
-  case 3:
-    r0 = s.retval;
-    r0 = (s.window_id___126296 + 1);
-    s.window_id___126296 = (r0);
-    { step = 1; continue; }
-  case 2:
-    s.tmp_0 = scene_setBackgroundImage__P2902_mk(s);
-    s.tmp_0.arg0 = s.arg1;
-    s.callLocIdx = 222; s.pc = 4; return s.tmp_0;
-  case 4:
-    r0 = s.retval;
-    r0 = undefined;
+    r0 = pxsim_Array__push(s.tmp_0, s.arg1);
+    r0 = s.arg0.fields["widgets"];
+    s.tmp_1 = r0;
+    r0 = pxsim_Array__length(s.tmp_1);
+    s.tmp_0 = r0;
+    r0 = (s.tmp_0 - 1);
     return leave(s, r0)
   default: oops()
 } } }
-Screen_render__P126274.info = {"start":20109,"length":325,"line":489,"column":4,"endLine":498,"endColumn":5,"fileName":"main.ts","functionName":"render","argumentNames":["this","img"]}
+Window_add_widget__P181002.info = {"start":20302,"length":122,"line":486,"column":4,"endLine":489,"endColumn":5,"fileName":"main.ts","functionName":"add_widget","argumentNames":["this","widget"]}
 
-function Screen_render__P126274_mk(s) {
+function Window_add_widget__P181002_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: Screen_render__P126274, depth: s.depth + 1,
+        parent: s, fn: Window_add_widget__P181002, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
-  tmp_2: undefined,
-  tmp_3: undefined,
-  tmp_4: undefined,
-  tmp_5: undefined,
-  window_id___126296: undefined,
   arg0: undefined,
   arg1: undefined,
 } }
@@ -2899,54 +2953,7 @@ function Screen_render__P126274_mk(s) {
 
 
 
-function scene_setBackgroundImage__P2902(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    s.scene___8573 = undefined;
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.lambdaArgs = null;
-    }
-    s.tmp_0 = game_currentScene__P3033_mk(s);
-    s.callLocIdx = 925; s.pc = 1; return s.tmp_0;
-  case 1:
-    r0 = s.retval;
-    s.scene___8573 = (r0);
-    s.tmp_0 = scene_Background_image__P2692_mk(s);
-    r0 = s.scene___8573.fields["background"];
-    s.tmp_0.arg0 = r0;
-    s.tmp_0.arg1 = s.arg0;
-    s.callLocIdx = 926; s.pc = 2; return s.tmp_0;
-  case 2:
-    r0 = s.retval;
-    r0 = undefined;
-    return leave(s, r0)
-  default: oops()
-} } }
-scene_setBackgroundImage__P2902.info = {"start":1962,"length":135,"line":78,"column":4,"endLine":81,"endColumn":5,"fileName":"pxt_modules/game/scenes.ts","functionName":"setBackgroundImage","argumentNames":["img"]}
-
-function scene_setBackgroundImage__P2902_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: scene_setBackgroundImage__P2902, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  scene___8573: undefined,
-  arg0: undefined,
-} }
-
-
-
-
-
-function scene_Background_image__P2692(s) {
+function Window_constructor__P181004(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -2959,91 +2966,75 @@ switch (step) {
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.arg1 = (s.lambdaArgs[1]);
+      s.arg2 = (s.lambdaArgs[2]);
+      s.arg3 = (s.lambdaArgs[3]);
+      s.arg4 = (s.lambdaArgs[4]);
+      s.arg5 = (s.lambdaArgs[5]);
+      s.arg6 = (s.lambdaArgs[6]);
+      s.arg7 = (s.lambdaArgs[7]);
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, scene_Background__C2685_VT)) failedCast(r0);
-    r0 = (s.arg0).fields["_image"] = (s.arg1);
-    r0 = undefined;
-    return leave(s, r0)
-  default: oops()
-} } }
-scene_Background_image__P2692.info = {"start":1003,"length":68,"line":40,"column":8,"endLine":42,"endColumn":9,"fileName":"pxt_modules/game/background.ts","functionName":"image","argumentNames":["this","image"]}
-
-function scene_Background_image__P2692_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: scene_Background_image__P2692, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  arg0: undefined,
-  arg1: undefined,
-} }
-
-
-
-
-
-function scene_Background_image__P2691(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.lambdaArgs = null;
-    }
-    r0 = s.arg0;
-    if (!checkSubtype(r0, scene_Background__C2685_VT)) failedCast(r0);
-    r0 = s.arg0.fields["_image"];
-    s.tmp_2 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_2);
+    if (!checkSubtype(r0, Window__C181000_VT)) failedCast(r0);
+    r0 = (s.arg0).fields["palette"] = (s.arg1);
+    r0 = (s.arg0).fields["title"] = (s.arg6);
+    r0 = (s.arg0).fields["font"] = (s.arg7);
+    r0 = (s.arg0).fields["x"] = (s.arg2);
+    r0 = (s.arg0).fields["y"] = (s.arg3);
+    r0 = (s.arg0).fields["w"] = (s.arg4);
+    r0 = (s.arg0).fields["h"] = (s.arg5);
+    r0 = s.arg0.fields["w"];
     s.tmp_1 = r0;
-    r0 = pxsim_Boolean__bang(s.tmp_1);
+    r0 = (s.tmp_1 == 0);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 1; continue; }
-    s.tmp_3 = r0 = s.arg0;
-    r0 = pxsim_ImageMethods.width(globals.screen___2037);
-    s.tmp_5 = r0;
-    r0 = pxsim_ImageMethods.height(globals.screen___2037);
-    s.tmp_6 = r0;
-    r0 = pxsim.image.create(s.tmp_5, s.tmp_6);
-    s.tmp_4 = r0;
-    r0 = (s.tmp_3).fields["_image"] = (s.tmp_4);
+    r0 = (s.arg0).fields["x"] = (0);
+    r0 = (s.arg0).fields["w"] = (globals.WIDTH___180071);
   case 1:
   case 2:
-    r0 = s.arg0.fields["_image"];
-    return leaveAccessor(s, r0)
+    r0 = s.arg0.fields["h"];
+    s.tmp_1 = r0;
+    r0 = (s.tmp_1 == 0);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 3; continue; }
+    r0 = (s.arg0).fields["y"] = (0);
+    r0 = (s.arg0).fields["h"] = (globals.HEIGHT___180074);
+  case 3:
+  case 4:
+    s.tmp_0 = r0 = s.arg0;
+    r0 = pxsim_Array__mk();
+    s.tmp_1 = r0;
+    r0 = (s.tmp_0).fields["widgets"] = (s.tmp_1);
+    r0 = undefined;
+    return leave(s, r0)
   default: oops()
 } } }
-scene_Background_image__P2691.info = {"start":811,"length":174,"line":33,"column":8,"endLine":38,"endColumn":9,"fileName":"pxt_modules/game/background.ts","functionName":"image","argumentNames":["this"]}
-scene_Background_image__P2691.isGetter = true;
+Window_constructor__P181004.info = {"start":18684,"length":476,"line":446,"column":4,"endLine":463,"endColumn":5,"fileName":"main.ts","functionName":"inline","argumentNames":["this","palette","x","y","w","h","title","font"]}
 
-function scene_Background_image__P2691_mk(s) {
+function Window_constructor__P181004_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: scene_Background_image__P2691, depth: s.depth + 1,
+        parent: s, fn: Window_constructor__P181004, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
-  tmp_2: undefined,
-  tmp_3: undefined,
-  tmp_4: undefined,
-  tmp_5: undefined,
-  tmp_6: undefined,
   arg0: undefined,
+  arg1: undefined,
+  arg2: undefined,
+  arg3: undefined,
+  arg4: undefined,
+  arg5: undefined,
+  arg6: undefined,
+  arg7: undefined,
 } }
 
 
 
 
 
-function Window_render__P126050(s) {
+function WLabel_constructor__P180951(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -3053,248 +3044,577 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.c0___126112 = undefined;
-    s.c1___126116 = undefined;
-    s.c2___126120 = undefined;
-    s.titlesize___126124 = undefined;
-    s.widget_id___126230 = undefined;
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.arg1 = (s.lambdaArgs[1]);
+      s.arg2 = (s.lambdaArgs[2]);
+      s.arg3 = (s.lambdaArgs[3]);
+      s.arg4 = (s.lambdaArgs[4]);
+      s.arg5 = (s.lambdaArgs[5]);
+      s.lambdaArgs = null;
+    }
+    r0 = s.arg0;
+    if (!checkSubtype(r0, WLabel__C180949_VT)) failedCast(r0);
+    r0 = (s.arg0).fields["palette"] = (s.arg1);
+    r0 = (s.arg0).fields["x"] = (s.arg2);
+    r0 = (s.arg0).fields["y"] = (s.arg3);
+    r0 = (s.arg0).fields["text"] = (s.arg4);
+    r0 = (s.arg0).fields["font"] = (s.arg5);
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+WLabel_constructor__P180951.info = {"start":18153,"length":211,"line":424,"column":4,"endLine":430,"endColumn":5,"fileName":"main.ts","functionName":"inline","argumentNames":["this","palette","x","y","text","font"]}
+
+function WLabel_constructor__P180951_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: WLabel_constructor__P180951, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  arg0: undefined,
+  arg1: undefined,
+  arg2: undefined,
+  arg3: undefined,
+  arg4: undefined,
+  arg5: undefined,
+} }
+
+
+
+
+
+function Cursor_add_handlers__P180727(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.arg1 = (s.lambdaArgs[1]);
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, Window__C126049_VT)) failedCast(r0);
-    r0 = s.arg0.fields["palette"];
+    if (!checkSubtype(r0, Cursor__C180717_VT)) failedCast(r0);
+    r0 = pxsim_pxtcore_mkClassInstance(ControllerEventHandler__C180233_VT);
     s.tmp_0 = r0;
-    r0 = s.tmp_0.fields["buf_id"];
-    s.tmp_3 = r0;
-    r0 = (s.tmp_3 * 3);
-    s.tmp_2 = r0;
-    r0 = (s.tmp_2 + 0);
+    r0 = pxsim_pxtcore_mkAction(1, Cursor_add_handlers_inline__P180868);
     s.tmp_1 = r0;
-    r0 = (s.tmp_1 + 1);
-    s.c0___126112 = (r0);
-    r0 = s.arg0.fields["palette"];
+    r0 = pxsim_pxtrt_stclo(s.tmp_1, 0, s.arg0);
+    s.tmp_2 = ControllerEventHandler_constructor__P180236_mk(s);
+    s.tmp_2.arg0 = s.tmp_0;
+    s.tmp_2.arg1 = globals.up___2130;
+    s.tmp_2.arg2 = 2049;
+    s.tmp_2.arg3 = s.tmp_1;
+    s.callLocIdx = 190; s.pc = 1; return s.tmp_2;
+  case 1:
+    r0 = s.retval;
+    r0 = s.arg0.fields["controllerEventHandler_ids"];
+    s.tmp_3 = r0;
+    s.tmp_5 = EventListener_add_handler__P180285_mk(s);
+    s.tmp_5.arg0 = s.arg1;
+    s.tmp_5.arg1 = s.tmp_0;
+    s.callLocIdx = 191; s.pc = 2; return s.tmp_5;
+  case 2:
+    r0 = s.retval;
+    s.tmp_4 = r0;
+    r0 = pxsim_Array__push(s.tmp_3, s.tmp_4);
+    r0 = pxsim_pxtcore_mkClassInstance(ControllerEventHandler__C180233_VT);
     s.tmp_0 = r0;
-    r0 = s.tmp_0.fields["buf_id"];
-    s.tmp_3 = r0;
-    r0 = (s.tmp_3 * 3);
-    s.tmp_2 = r0;
-    r0 = (s.tmp_2 + 1);
+    r0 = pxsim_pxtcore_mkAction(1, Cursor_add_handlers_inline__P180882);
     s.tmp_1 = r0;
-    r0 = (s.tmp_1 + 1);
-    s.c1___126116 = (r0);
-    r0 = s.arg0.fields["palette"];
-    s.tmp_0 = r0;
-    r0 = s.tmp_0.fields["buf_id"];
-    s.tmp_3 = r0;
-    r0 = (s.tmp_3 * 3);
-    s.tmp_2 = r0;
-    r0 = (s.tmp_2 + 2);
-    s.tmp_1 = r0;
-    r0 = (s.tmp_1 + 1);
-    s.c2___126120 = (r0);
-    s.tmp_0 = if_charHeight_1_mk(s);
-    r0 = s.arg0.fields["font"];
-    s.tmp_0.arg0 = r0;
-    if (!s.tmp_0.arg0.vtable.iface) {
-      s.retval = pxsim_pxtrt.mapGetByString(s.tmp_0.arg0, "charHeight");
-    } else {
-      s.tmp_0.fn = s.tmp_0.arg0.vtable.iface["charHeight"];
-      if (s.tmp_0.fn == null) { s.retval = s.tmp_0.arg0.fields["charHeight"]; }
-      else if (!s.tmp_0.fn.isGetter) { s.retval = bind(s.tmp_0); }
-     else { s.callLocIdx = 212; s.pc = 3; return s.tmp_0; }
-    }
+    r0 = pxsim_pxtrt_stclo(s.tmp_1, 0, s.arg0);
+    s.tmp_2 = ControllerEventHandler_constructor__P180236_mk(s);
+    s.tmp_2.arg0 = s.tmp_0;
+    s.tmp_2.arg1 = globals.down___2132;
+    s.tmp_2.arg2 = 2049;
+    s.tmp_2.arg3 = s.tmp_1;
+    s.callLocIdx = 193; s.pc = 3; return s.tmp_2;
   case 3:
     r0 = s.retval;
-    s.titlesize___126124 = (r0);
-    s.tmp_0 = helpers_imageFillRect__P1961_mk(s);
-    s.tmp_0.arg0 = s.arg1;
-    r0 = s.arg0.fields["x"];
-    s.tmp_0.arg1 = r0;
-    r0 = s.arg0.fields["y"];
-    s.tmp_0.arg2 = r0;
-    r0 = s.arg0.fields["w"];
-    s.tmp_0.arg3 = r0;
-    r0 = s.arg0.fields["h"];
-    s.tmp_0.arg4 = r0;
-    s.tmp_0.arg5 = s.c0___126112;
-    s.callLocIdx = 213; s.pc = 4; return s.tmp_0;
+    r0 = s.arg0.fields["controllerEventHandler_ids"];
+    s.tmp_3 = r0;
+    s.tmp_5 = EventListener_add_handler__P180285_mk(s);
+    s.tmp_5.arg0 = s.arg1;
+    s.tmp_5.arg1 = s.tmp_0;
+    s.callLocIdx = 194; s.pc = 4; return s.tmp_5;
   case 4:
     r0 = s.retval;
-    s.tmp_0 = helpers_imageFillRect__P1961_mk(s);
-    s.tmp_0.arg0 = s.arg1;
-    r0 = s.arg0.fields["x"];
-    s.tmp_0.arg1 = r0;
-    r0 = s.arg0.fields["y"];
-    s.tmp_0.arg2 = r0;
-    r0 = s.arg0.fields["w"];
-    s.tmp_0.arg3 = r0;
-    s.tmp_0.arg4 = s.titlesize___126124;
-    s.tmp_0.arg5 = s.c1___126116;
-    s.callLocIdx = 214; s.pc = 5; return s.tmp_0;
+    s.tmp_4 = r0;
+    r0 = pxsim_Array__push(s.tmp_3, s.tmp_4);
+    r0 = pxsim_pxtcore_mkClassInstance(ControllerEventHandler__C180233_VT);
+    s.tmp_0 = r0;
+    r0 = pxsim_pxtcore_mkAction(1, Cursor_add_handlers_inline__P180894);
+    s.tmp_1 = r0;
+    r0 = pxsim_pxtrt_stclo(s.tmp_1, 0, s.arg0);
+    s.tmp_2 = ControllerEventHandler_constructor__P180236_mk(s);
+    s.tmp_2.arg0 = s.tmp_0;
+    s.tmp_2.arg1 = globals.left___2129;
+    s.tmp_2.arg2 = 2049;
+    s.tmp_2.arg3 = s.tmp_1;
+    s.callLocIdx = 196; s.pc = 5; return s.tmp_2;
   case 5:
     r0 = s.retval;
-    s.tmp_0 = helpers_imageDrawLine__P1963_mk(s);
-    s.tmp_0.arg0 = s.arg1;
-    r0 = s.arg0.fields["x"];
-    s.tmp_0.arg1 = r0;
-    r0 = s.arg0.fields["y"];
-    s.tmp_1 = r0;
-    r0 = (s.tmp_1 + s.titlesize___126124);
-    s.tmp_0.arg2 = r0;
-    r0 = s.arg0.fields["x"];
-    s.tmp_0.arg3 = r0;
-    r0 = s.arg0.fields["y"];
+    r0 = s.arg0.fields["controllerEventHandler_ids"];
     s.tmp_3 = r0;
-    r0 = s.arg0.fields["h"];
-    s.tmp_4 = r0;
-    r0 = (s.tmp_3 + s.tmp_4);
-    s.tmp_2 = r0;
-    r0 = (s.tmp_2 - 1);
-    s.tmp_0.arg4 = r0;
-    s.tmp_0.arg5 = s.c1___126116;
-    s.callLocIdx = 215; s.pc = 6; return s.tmp_0;
+    s.tmp_5 = EventListener_add_handler__P180285_mk(s);
+    s.tmp_5.arg0 = s.arg1;
+    s.tmp_5.arg1 = s.tmp_0;
+    s.callLocIdx = 197; s.pc = 6; return s.tmp_5;
   case 6:
     r0 = s.retval;
-    s.tmp_0 = helpers_imageDrawLine__P1963_mk(s);
-    s.tmp_0.arg0 = s.arg1;
-    r0 = s.arg0.fields["x"];
-    s.tmp_2 = r0;
-    r0 = s.arg0.fields["w"];
-    s.tmp_3 = r0;
-    r0 = (s.tmp_2 + s.tmp_3);
-    s.tmp_1 = r0;
-    r0 = (s.tmp_1 - 1);
-    s.tmp_0.arg1 = r0;
-    r0 = s.arg0.fields["y"];
     s.tmp_4 = r0;
-    r0 = (s.tmp_4 + s.titlesize___126124);
-    s.tmp_0.arg2 = r0;
-    r0 = s.arg0.fields["x"];
-    s.tmp_6 = r0;
-    r0 = s.arg0.fields["w"];
-    s.tmp_7 = r0;
-    r0 = (s.tmp_6 + s.tmp_7);
-    s.tmp_5 = r0;
-    r0 = (s.tmp_5 - 1);
-    s.tmp_0.arg3 = r0;
-    r0 = s.arg0.fields["y"];
-    s.tmp_9 = r0;
-    r0 = s.arg0.fields["h"];
-    s.tmp_10 = r0;
-    r0 = (s.tmp_9 + s.tmp_10);
-    s.tmp_8 = r0;
-    r0 = (s.tmp_8 - 1);
-    s.tmp_0.arg4 = r0;
-    s.tmp_0.arg5 = s.c1___126116;
-    s.callLocIdx = 216; s.pc = 7; return s.tmp_0;
+    r0 = pxsim_Array__push(s.tmp_3, s.tmp_4);
+    r0 = pxsim_pxtcore_mkClassInstance(ControllerEventHandler__C180233_VT);
+    s.tmp_0 = r0;
+    r0 = pxsim_pxtcore_mkAction(1, Cursor_add_handlers_inline__P180908);
+    s.tmp_1 = r0;
+    r0 = pxsim_pxtrt_stclo(s.tmp_1, 0, s.arg0);
+    s.tmp_2 = ControllerEventHandler_constructor__P180236_mk(s);
+    s.tmp_2.arg0 = s.tmp_0;
+    s.tmp_2.arg1 = globals.right___2131;
+    s.tmp_2.arg2 = 2049;
+    s.tmp_2.arg3 = s.tmp_1;
+    s.callLocIdx = 199; s.pc = 7; return s.tmp_2;
   case 7:
     r0 = s.retval;
-    s.tmp_0 = helpers_imageDrawLine__P1963_mk(s);
-    s.tmp_0.arg0 = s.arg1;
-    r0 = s.arg0.fields["x"];
-    s.tmp_1 = r0;
-    r0 = (s.tmp_1 + 1);
-    s.tmp_0.arg1 = r0;
-    r0 = s.arg0.fields["y"];
+    r0 = s.arg0.fields["controllerEventHandler_ids"];
     s.tmp_3 = r0;
-    r0 = s.arg0.fields["h"];
-    s.tmp_4 = r0;
-    r0 = (s.tmp_3 + s.tmp_4);
-    s.tmp_2 = r0;
-    r0 = (s.tmp_2 - 1);
-    s.tmp_0.arg2 = r0;
-    r0 = s.arg0.fields["x"];
-    s.tmp_6 = r0;
-    r0 = s.arg0.fields["w"];
-    s.tmp_7 = r0;
-    r0 = (s.tmp_6 + s.tmp_7);
-    s.tmp_5 = r0;
-    r0 = (s.tmp_5 - 2);
-    s.tmp_0.arg3 = r0;
-    r0 = s.arg0.fields["y"];
-    s.tmp_9 = r0;
-    r0 = s.arg0.fields["h"];
-    s.tmp_10 = r0;
-    r0 = (s.tmp_9 + s.tmp_10);
-    s.tmp_8 = r0;
-    r0 = (s.tmp_8 - 1);
-    s.tmp_0.arg4 = r0;
-    s.tmp_0.arg5 = s.c1___126116;
-    s.callLocIdx = 217; s.pc = 8; return s.tmp_0;
+    s.tmp_5 = EventListener_add_handler__P180285_mk(s);
+    s.tmp_5.arg0 = s.arg1;
+    s.tmp_5.arg1 = s.tmp_0;
+    s.callLocIdx = 200; s.pc = 8; return s.tmp_5;
   case 8:
     r0 = s.retval;
-    s.tmp_0 = helpers_imagePrint__P1995_mk(s);
-    s.tmp_0.arg0 = s.arg1;
-    r0 = s.arg0.fields["title"];
-    s.tmp_0.arg1 = r0;
-    r0 = s.arg0.fields["x"];
+    s.tmp_4 = r0;
+    r0 = pxsim_Array__push(s.tmp_3, s.tmp_4);
+    r0 = pxsim_pxtcore_mkClassInstance(ControllerEventHandler__C180233_VT);
+    s.tmp_0 = r0;
+    r0 = pxsim_pxtcore_mkAction(1, Cursor_add_handlers_inline__P180920);
     s.tmp_1 = r0;
-    r0 = (s.tmp_1 + 1);
-    s.tmp_0.arg2 = r0;
-    r0 = s.arg0.fields["y"];
-    s.tmp_0.arg3 = r0;
-    s.tmp_0.arg4 = s.c0___126112;
-    r0 = s.arg0.fields["font"];
-    s.tmp_0.arg5 = r0;
-    s.tmp_0.arg6 = undefined;
-    s.callLocIdx = 218; s.pc = 9; return s.tmp_0;
+    r0 = pxsim_pxtrt_stclo(s.tmp_1, 0, s.arg0);
+    s.tmp_2 = ControllerEventHandler_constructor__P180236_mk(s);
+    s.tmp_2.arg0 = s.tmp_0;
+    s.tmp_2.arg1 = globals.B___2128;
+    s.tmp_2.arg2 = 2049;
+    s.tmp_2.arg3 = s.tmp_1;
+    s.callLocIdx = 202; s.pc = 9; return s.tmp_2;
   case 9:
     r0 = s.retval;
-    s.widget_id___126230 = (0);
-  case 1:
-    s.tmp_1 = r0 = s.widget_id___126230;
-    r0 = s.arg0.fields["widgets"];
+    r0 = s.arg0.fields["controllerEventHandler_ids"];
     s.tmp_3 = r0;
-    r0 = pxsim_Array__length(s.tmp_3);
-    s.tmp_2 = r0;
-    r0 = (s.tmp_1 < s.tmp_2);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 2; continue; }
-    s.tmp_4 = if_render_4_mk(s);
-    r0 = s.arg0.fields["widgets"];
-    s.tmp_5 = r0;
-    r0 = pxsim_Array__getAt(s.tmp_5, s.widget_id___126230);
-    s.tmp_4.arg0 = r0;
-    s.tmp_4.arg1 = s.arg1;
-    r0 = s.arg0.fields["x"];
-    s.tmp_6 = r0;
-    r0 = (s.tmp_6 + 2);
-    s.tmp_4.arg2 = r0;
-    r0 = s.arg0.fields["y"];
-    s.tmp_8 = r0;
-    r0 = (s.tmp_8 + s.titlesize___126124);
-    s.tmp_7 = r0;
-    r0 = (s.tmp_7 + 1);
-    s.tmp_4.arg3 = r0;
-    if (!s.tmp_4.arg0.vtable.iface) {
-      setupLambda(s.tmp_4, pxsim_pxtrt.mapGetByString(s.tmp_4.arg0, "render"), 4);
-      s.callLocIdx = 219; s.pc = 10; return s.tmp_4;
-    } else {
-      s.tmp_4.fn = s.tmp_4.arg0.vtable.iface["render"];
-      if (s.tmp_4.fn == null) { setupLambda(s.tmp_4, s.tmp_4.arg0.fields["render"], 4); s.callLocIdx = 219; s.pc = 10; return s.tmp_4; }
-      else if (s.tmp_4.fn.isGetter) { s.tmp_4.stage2Call = true; s.callLocIdx = 219; s.pc = 10; return s.tmp_4;; }
-     else { s.callLocIdx = 219; s.pc = 10; return s.tmp_4; }
-    }
+    s.tmp_5 = EventListener_add_handler__P180285_mk(s);
+    s.tmp_5.arg0 = s.arg1;
+    s.tmp_5.arg1 = s.tmp_0;
+    s.callLocIdx = 203; s.pc = 10; return s.tmp_5;
   case 10:
     r0 = s.retval;
-    r0 = (s.widget_id___126230 + 1);
-    s.widget_id___126230 = (r0);
-    { step = 1; continue; }
-  case 2:
+    s.tmp_4 = r0;
+    r0 = pxsim_Array__push(s.tmp_3, s.tmp_4);
+    r0 = pxsim_pxtcore_mkClassInstance(ControllerEventHandler__C180233_VT);
+    s.tmp_0 = r0;
+    r0 = pxsim_pxtcore_mkAction(1, Cursor_add_handlers_inline__P180932);
+    s.tmp_1 = r0;
+    r0 = pxsim_pxtrt_stclo(s.tmp_1, 0, s.arg0);
+    s.tmp_2 = ControllerEventHandler_constructor__P180236_mk(s);
+    s.tmp_2.arg0 = s.tmp_0;
+    s.tmp_2.arg1 = globals.B___2128;
+    s.tmp_2.arg2 = 2048;
+    s.tmp_2.arg3 = s.tmp_1;
+    s.callLocIdx = 205; s.pc = 11; return s.tmp_2;
+  case 11:
+    r0 = s.retval;
+    r0 = s.arg0.fields["controllerEventHandler_ids"];
+    s.tmp_3 = r0;
+    s.tmp_5 = EventListener_add_handler__P180285_mk(s);
+    s.tmp_5.arg0 = s.arg1;
+    s.tmp_5.arg1 = s.tmp_0;
+    s.callLocIdx = 206; s.pc = 12; return s.tmp_5;
+  case 12:
+    r0 = s.retval;
+    s.tmp_4 = r0;
+    r0 = pxsim_Array__push(s.tmp_3, s.tmp_4);
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-Window_render__P126050.info = {"start":18576,"length":1130,"line":450,"column":4,"endLine":469,"endColumn":5,"fileName":"main.ts","functionName":"render","argumentNames":["this","img"]}
+Cursor_add_handlers__P180727.info = {"start":16559,"length":1117,"line":395,"column":4,"endLine":402,"endColumn":5,"fileName":"main.ts","functionName":"add_handlers","argumentNames":["this","eventListener"]}
 
-function Window_render__P126050_mk(s) {
+function Cursor_add_handlers__P180727_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: Window_render__P126050, depth: s.depth + 1,
+        parent: s, fn: Cursor_add_handlers__P180727, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  tmp_1: undefined,
+  tmp_2: undefined,
+  tmp_3: undefined,
+  tmp_4: undefined,
+  tmp_5: undefined,
+  arg0: undefined,
+  arg1: undefined,
+} }
+
+
+
+
+
+function Cursor_add_handlers_inline__P180868(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    s.tmp_0 = Cursor_move_v__P180726_mk(s);
+    s.tmp_0.arg0 = s.caps[0];
+    s.tmp_0.arg1 = -1;
+    s.callLocIdx = 189; s.pc = 1; return s.tmp_0;
+  case 1:
+    r0 = s.retval;
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+Cursor_add_handlers_inline__P180868.info = {"start":16748,"length":25,"line":396,"column":144,"endLine":396,"endColumn":169,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
+
+function Cursor_add_handlers_inline__P180868_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: Cursor_add_handlers_inline__P180868, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+} }
+
+
+
+
+
+function Cursor_add_handlers_inline__P180882(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    s.tmp_0 = Cursor_move_v__P180726_mk(s);
+    s.tmp_0.arg0 = s.caps[0];
+    s.tmp_0.arg1 = 1;
+    s.callLocIdx = 192; s.pc = 1; return s.tmp_0;
+  case 1:
+    r0 = s.retval;
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+Cursor_add_handlers_inline__P180882.info = {"start":16923,"length":24,"line":397,"column":146,"endLine":397,"endColumn":170,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
+
+function Cursor_add_handlers_inline__P180882_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: Cursor_add_handlers_inline__P180882, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+} }
+
+
+
+
+
+function Cursor_add_handlers_inline__P180894(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    s.tmp_0 = Cursor_move_h__P180725_mk(s);
+    s.tmp_0.arg0 = s.caps[0];
+    s.tmp_0.arg1 = -1;
+    s.callLocIdx = 195; s.pc = 1; return s.tmp_0;
+  case 1:
+    r0 = s.retval;
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+Cursor_add_handlers_inline__P180894.info = {"start":17097,"length":25,"line":398,"column":146,"endLine":398,"endColumn":171,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
+
+function Cursor_add_handlers_inline__P180894_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: Cursor_add_handlers_inline__P180894, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+} }
+
+
+
+
+
+function Cursor_add_handlers_inline__P180908(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    s.tmp_0 = Cursor_move_h__P180725_mk(s);
+    s.tmp_0.arg0 = s.caps[0];
+    s.tmp_0.arg1 = 1;
+    s.callLocIdx = 198; s.pc = 1; return s.tmp_0;
+  case 1:
+    r0 = s.retval;
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+Cursor_add_handlers_inline__P180908.info = {"start":17273,"length":24,"line":399,"column":147,"endLine":399,"endColumn":171,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
+
+function Cursor_add_handlers_inline__P180908_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: Cursor_add_handlers_inline__P180908, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+} }
+
+
+
+
+
+function Cursor_add_handlers_inline__P180920(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    s.tmp_0 = Cursor_set_ignore_speed__P180721_mk(s);
+    s.tmp_0.arg0 = s.caps[0];
+    s.tmp_0.arg1 = true;
+    s.callLocIdx = 201; s.pc = 1; return s.tmp_0;
+  case 1:
+    r0 = s.retval;
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+Cursor_add_handlers_inline__P180920.info = {"start":17444,"length":37,"line":400,"column":143,"endLine":400,"endColumn":180,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
+
+function Cursor_add_handlers_inline__P180920_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: Cursor_add_handlers_inline__P180920, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+} }
+
+
+
+
+
+function Cursor_add_handlers_inline__P180932(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    s.tmp_0 = Cursor_set_ignore_speed__P180721_mk(s);
+    s.tmp_0.arg0 = s.caps[0];
+    s.tmp_0.arg1 = false;
+    s.callLocIdx = 204; s.pc = 1; return s.tmp_0;
+  case 1:
+    r0 = s.retval;
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+Cursor_add_handlers_inline__P180932.info = {"start":17629,"length":38,"line":401,"column":144,"endLine":401,"endColumn":182,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
+
+function Cursor_add_handlers_inline__P180932_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: Cursor_add_handlers_inline__P180932, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+} }
+
+
+
+
+
+function Cursor_set_ignore_speed__P180721(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.arg1 = (s.lambdaArgs[1]);
+      s.lambdaArgs = null;
+    }
+    r0 = s.arg0;
+    if (!checkSubtype(r0, Cursor__C180717_VT)) failedCast(r0);
+    r0 = (s.arg0).fields["ignoreSpeed"] = (s.arg1);
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+Cursor_set_ignore_speed__P180721.info = {"start":15812,"length":91,"line":371,"column":4,"endLine":373,"endColumn":5,"fileName":"main.ts","functionName":"set_ignore_speed","argumentNames":["this","ignoreSpeed"]}
+
+function Cursor_set_ignore_speed__P180721_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: Cursor_set_ignore_speed__P180721, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  arg0: undefined,
+  arg1: undefined,
+} }
+
+
+
+
+
+function Cursor_move_h__P180725(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.arg1 = (s.lambdaArgs[1]);
+      s.lambdaArgs = null;
+    }
+    r0 = s.arg0;
+    if (!checkSubtype(r0, Cursor__C180717_VT)) failedCast(r0);
+    s.tmp_0 = Cursor_move__P180724_mk(s);
+    s.tmp_0.arg0 = s.arg0;
+    s.tmp_0.arg1 = s.arg1;
+    s.tmp_0.arg2 = 0;
+    s.callLocIdx = 187; s.pc = 1; return s.tmp_0;
+  case 1:
+    r0 = s.retval;
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+Cursor_move_h__P180725.info = {"start":16462,"length":43,"line":392,"column":4,"endLine":392,"endColumn":47,"fileName":"main.ts","functionName":"move_h","argumentNames":["this","x"]}
+
+function Cursor_move_h__P180725_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: Cursor_move_h__P180725, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  arg0: undefined,
+  arg1: undefined,
+} }
+
+
+
+
+
+function Cursor_move__P180724(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.arg1 = (s.lambdaArgs[1]);
+      s.arg2 = (s.lambdaArgs[2]);
+      s.lambdaArgs = null;
+    }
+    r0 = s.arg0;
+    if (!checkSubtype(r0, Cursor__C180717_VT)) failedCast(r0);
+    r0 = s.arg0.fields["ignoreSpeed"];
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 1; continue; }
+    r0 = s.arg0.fields["defaultSpeed"];
+    { step = 2; continue; }
+  case 1:
+    r0 = s.arg0.fields["speed"];
+  case 2:
+    // jmp value (already in r0)
+    s.tmp_1 = r0;
+    r0 = s.arg0.fields["ignoreSpeed"];
+    s.tmp_2 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_2);
+    if (!r0) { step = 3; continue; }
+    r0 = s.arg0.fields["defaultSpeed"];
+    { step = 4; continue; }
+  case 3:
+    r0 = s.arg0.fields["speed"];
+  case 4:
+    // jmp value (already in r0)
+    s.tmp_3 = r0;
+    s.tmp_4 = Cursor_set_pos__P180722_mk(s);
+    s.tmp_4.arg0 = s.arg0;
+    r0 = s.arg0.fields["x"];
+    s.tmp_5 = r0;
+    r0 = (s.arg1 * s.tmp_1);
+    s.tmp_6 = r0;
+    r0 = (s.tmp_5 + s.tmp_6);
+    s.tmp_4.arg1 = r0;
+    r0 = s.arg0.fields["y"];
+    s.tmp_7 = r0;
+    r0 = (s.arg2 * s.tmp_3);
+    s.tmp_8 = r0;
+    r0 = (s.tmp_7 + s.tmp_8);
+    s.tmp_4.arg2 = r0;
+    s.callLocIdx = 186; s.pc = 5; return s.tmp_4;
+  case 5:
+    r0 = s.retval;
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+Cursor_move__P180724.info = {"start":16259,"length":197,"line":388,"column":4,"endLine":390,"endColumn":5,"fileName":"main.ts","functionName":"move","argumentNames":["this","x","y"]}
+
+function Cursor_move__P180724_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: Cursor_move__P180724, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -3305,22 +3625,16 @@ function Window_render__P126050_mk(s) {
   tmp_6: undefined,
   tmp_7: undefined,
   tmp_8: undefined,
-  tmp_9: undefined,
-  tmp_10: undefined,
-  c0___126112: undefined,
-  c1___126116: undefined,
-  c2___126120: undefined,
-  titlesize___126124: undefined,
-  widget_id___126230: undefined,
   arg0: undefined,
   arg1: undefined,
+  arg2: undefined,
 } }
 
 
 
 
 
-function helpers_imagePrint__P1995(s) {
+function Cursor_set_pos__P180722(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -3330,948 +3644,181 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.x0___8692 = undefined;
-    s.cp___8694 = undefined;
-    s.mult___8695 = undefined;
-    s.dataW___8700 = undefined;
-    s.dataH___8706 = undefined;
-    s.byteHeight___8712 = undefined;
-    s.charSize___8718 = undefined;
-    s.dataSize___8722 = undefined;
-    s.fontdata___8726 = undefined;
-    s.lastchar___8729 = undefined;
-    s.imgBuf___8736 = undefined;
-    s.xOffset___8760 = undefined;
-    s.yOffset___8761 = undefined;
-    s.ch___8776 = undefined;
-    s.l___8795 = undefined;
-    s.r___8796 = undefined;
-    s.off___8798 = undefined;
-    s.guess___8799 = undefined;
-    s.m___8818 = undefined;
-    s.v___8827 = undefined;
-    s.i___8883 = undefined;
-    s.j___8888 = undefined;
-    s.mask___8889 = undefined;
-    s.c___8890 = undefined;
-    s.n___8907 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.arg1 = (s.lambdaArgs[1]);
       s.arg2 = (s.lambdaArgs[2]);
-      s.arg3 = (s.lambdaArgs[3]);
-      s.arg4 = (s.lambdaArgs[4]);
-      s.arg5 = (s.lambdaArgs[5]);
-      s.arg6 = (s.lambdaArgs[6]);
       s.lambdaArgs = null;
     }
-    r0 = (s.arg2 | 0);
-    s.arg2 = (r0);
-    r0 = (s.arg3 | 0);
-    s.arg3 = (r0);
-    r0 = pxsim_numops_toBoolDecr(s.arg5);
+    r0 = s.arg0;
+    if (!checkSubtype(r0, Cursor__C180717_VT)) failedCast(r0);
+    r0 = (s.arg0).fields["x"] = (s.arg1);
+    r0 = (s.arg0).fields["y"] = (s.arg2);
+    r0 = s.arg0.fields["x"];
     s.tmp_1 = r0;
-    r0 = pxsim_Boolean__bang(s.tmp_1);
+    r0 = (s.tmp_1 < 0);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 1; continue; }
-    s.tmp_2 = image_getFontForText__P1982_mk(s);
-    s.tmp_2.arg0 = s.arg1;
-    s.callLocIdx = 97; s.pc = 39; return s.tmp_2;
-  case 39:
-    r0 = s.retval;
-    s.arg5 = (r0);
+    r0 = (s.arg0).fields["x"] = (0);
   case 1:
   case 2:
-    r0 = pxsim_numops_toBoolDecr(s.arg4);
+    r0 = s.arg0.fields["x"];
     s.tmp_1 = r0;
-    r0 = pxsim_Boolean__bang(s.tmp_1);
+    r0 = (globals.WIDTH___180071 - 1);
+    s.tmp_2 = r0;
+    r0 = (s.tmp_1 > s.tmp_2);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 3; continue; }
-    s.arg4 = (1);
+    s.tmp_3 = r0 = s.arg0;
+    r0 = (globals.WIDTH___180071 - 1);
+    s.tmp_4 = r0;
+    r0 = (s.tmp_3).fields["x"] = (s.tmp_4);
   case 3:
   case 4:
-    s.x0___8692 = (s.arg2);
-    s.cp___8694 = (0);
-    s.tmp_1 = if_multiplier_1_mk(s);
-    s.tmp_1.arg0 = s.arg5;
-    if (!s.tmp_1.arg0.vtable.iface) {
-      s.retval = pxsim_pxtrt.mapGetByString(s.tmp_1.arg0, "multiplier");
-    } else {
-      s.tmp_1.fn = s.tmp_1.arg0.vtable.iface["multiplier"];
-      if (s.tmp_1.fn == null) { s.retval = s.tmp_1.arg0.fields["multiplier"]; }
-      else if (!s.tmp_1.fn.isGetter) { s.retval = bind(s.tmp_1); }
-     else { s.callLocIdx = 98; s.pc = 40; return s.tmp_1; }
-    }
-  case 40:
-    r0 = s.retval;
+    r0 = s.arg0.fields["y"];
+    s.tmp_1 = r0;
+    r0 = (s.tmp_1 < 0);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 5; continue; }
-    s.tmp_2 = if_multiplier_1_mk(s);
-    s.tmp_2.arg0 = s.arg5;
-    if (!s.tmp_2.arg0.vtable.iface) {
-      s.retval = pxsim_pxtrt.mapGetByString(s.tmp_2.arg0, "multiplier");
-    } else {
-      s.tmp_2.fn = s.tmp_2.arg0.vtable.iface["multiplier"];
-      if (s.tmp_2.fn == null) { s.retval = s.tmp_2.arg0.fields["multiplier"]; }
-      else if (!s.tmp_2.fn.isGetter) { s.retval = bind(s.tmp_2); }
-     else { s.callLocIdx = 99; s.pc = 41; return s.tmp_2; }
-    }
-  case 41:
-    r0 = s.retval;
-    { step = 6; continue; }
+    r0 = (s.arg0).fields["y"] = (0);
   case 5:
-    r0 = 1;
   case 6:
-    // jmp value (already in r0)
-    s.tmp_3 = r0;
-    s.mult___8695 = (s.tmp_3);
-    s.tmp_1 = if_charWidth_1_mk(s);
-    s.tmp_1.arg0 = s.arg5;
-    if (!s.tmp_1.arg0.vtable.iface) {
-      s.retval = pxsim_pxtrt.mapGetByString(s.tmp_1.arg0, "charWidth");
-    } else {
-      s.tmp_1.fn = s.tmp_1.arg0.vtable.iface["charWidth"];
-      if (s.tmp_1.fn == null) { s.retval = s.tmp_1.arg0.fields["charWidth"]; }
-      else if (!s.tmp_1.fn.isGetter) { s.retval = bind(s.tmp_1); }
-     else { s.callLocIdx = 100; s.pc = 42; return s.tmp_1; }
-    }
-  case 42:
-    r0 = s.retval;
-    s.tmp_0 = r0;
-    r0 = pxsim.Math_.idiv(s.tmp_0, s.mult___8695);
-    s.dataW___8700 = (r0);
-    s.tmp_1 = if_charHeight_1_mk(s);
-    s.tmp_1.arg0 = s.arg5;
-    if (!s.tmp_1.arg0.vtable.iface) {
-      s.retval = pxsim_pxtrt.mapGetByString(s.tmp_1.arg0, "charHeight");
-    } else {
-      s.tmp_1.fn = s.tmp_1.arg0.vtable.iface["charHeight"];
-      if (s.tmp_1.fn == null) { s.retval = s.tmp_1.arg0.fields["charHeight"]; }
-      else if (!s.tmp_1.fn.isGetter) { s.retval = bind(s.tmp_1); }
-     else { s.callLocIdx = 101; s.pc = 43; return s.tmp_1; }
-    }
-  case 43:
-    r0 = s.retval;
-    s.tmp_0 = r0;
-    r0 = pxsim.Math_.idiv(s.tmp_0, s.mult___8695);
-    s.dataH___8706 = (r0);
-    r0 = (s.dataH___8706 + 7);
-    s.tmp_0 = r0;
-    r0 = (s.tmp_0 >> 3);
-    s.byteHeight___8712 = (r0);
-    r0 = (s.byteHeight___8712 * s.dataW___8700);
-    s.charSize___8718 = (r0);
-    r0 = (2 + s.charSize___8718);
-    s.dataSize___8722 = (r0);
-    s.tmp_0 = if_data_1_mk(s);
-    s.tmp_0.arg0 = s.arg5;
-    if (!s.tmp_0.arg0.vtable.iface) {
-      s.retval = pxsim_pxtrt.mapGetByString(s.tmp_0.arg0, "data");
-    } else {
-      s.tmp_0.fn = s.tmp_0.arg0.vtable.iface["data"];
-      if (s.tmp_0.fn == null) { s.retval = s.tmp_0.arg0.fields["data"]; }
-      else if (!s.tmp_0.fn.isGetter) { s.retval = bind(s.tmp_0); }
-     else { s.callLocIdx = 102; s.pc = 44; return s.tmp_0; }
-    }
-  case 44:
-    r0 = s.retval;
-    s.fontdata___8726 = (r0);
-    r0 = pxsim.BufferMethods.length(s.fontdata___8726);
+    r0 = s.arg0.fields["y"];
     s.tmp_1 = r0;
-    r0 = pxsim.Math_.idiv(s.tmp_1, s.dataSize___8722);
-    s.tmp_0 = r0;
-    r0 = (s.tmp_0 - 1);
-    s.lastchar___8729 = (r0);
-    r0 = (s.mult___8695 == 1);
+    r0 = (globals.HEIGHT___180074 - 1);
+    s.tmp_2 = r0;
+    r0 = (s.tmp_1 > s.tmp_2);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 7; continue; }
-    r0 = (8 + s.charSize___8718);
-    s.tmp_1 = r0;
-    r0 = pxsim.control.createBuffer(s.tmp_1);
-    s.imgBuf___8736 = (r0);
-    r0 = pxsim.BufferMethods.setByte(s.imgBuf___8736, 0, 135);
-    r0 = pxsim.BufferMethods.setByte(s.imgBuf___8736, 1, 1);
-    r0 = pxsim.BufferMethods.setByte(s.imgBuf___8736, 2, s.dataW___8700);
-    r0 = pxsim.BufferMethods.setByte(s.imgBuf___8736, 4, s.dataH___8706);
+    s.tmp_3 = r0 = s.arg0;
+    r0 = (globals.HEIGHT___180074 - 1);
+    s.tmp_4 = r0;
+    r0 = (s.tmp_3).fields["y"] = (s.tmp_4);
   case 7:
   case 8:
-  case 9:
-    s.tmp_1 = r0 = s.cp___8694;
-    r0 = pxsim_String_.length(s.arg1);
-    s.tmp_2 = r0;
-    r0 = (s.tmp_1 < s.tmp_2);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 38; continue; }
-    s.xOffset___8760 = (0);
-    s.yOffset___8761 = (0);
-    s.tmp_0 = r0 = s.arg6;
-    r0 = pxsim_numops_toBool(s.tmp_0);
-    if (r0) { step = 10; continue; }
-    r0 = s.tmp_0;
-    { step = 11; continue; }
-  case 10:
-    s.tmp_1 = r0 = s.cp___8694;
-    r0 = pxsim_Array__length(s.arg6);
-    s.tmp_2 = r0;
-    r0 = (s.tmp_1 < s.tmp_2);
-  case 11:
-    // jmp value (already in r0)
-    s.tmp_3 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_3);
-    if (!r0) { step = 12; continue; }
-    s.tmp_4 = if_xOffset_1_mk(s);
-    r0 = pxsim_Array__getAt(s.arg6, s.cp___8694);
-    s.tmp_4.arg0 = r0;
-    if (!s.tmp_4.arg0.vtable.iface) {
-      s.retval = pxsim_pxtrt.mapGetByString(s.tmp_4.arg0, "xOffset");
-    } else {
-      s.tmp_4.fn = s.tmp_4.arg0.vtable.iface["xOffset"];
-      if (s.tmp_4.fn == null) { s.retval = s.tmp_4.arg0.fields["xOffset"]; }
-      else if (!s.tmp_4.fn.isGetter) { s.retval = bind(s.tmp_4); }
-     else { s.callLocIdx = 103; s.pc = 45; return s.tmp_4; }
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+Cursor_set_pos__P180722.info = {"start":15909,"length":271,"line":375,"column":4,"endLine":382,"endColumn":5,"fileName":"main.ts","functionName":"set_pos","argumentNames":["this","x","y"]}
+
+function Cursor_set_pos__P180722_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: Cursor_set_pos__P180722, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  tmp_1: undefined,
+  tmp_2: undefined,
+  tmp_3: undefined,
+  tmp_4: undefined,
+  arg0: undefined,
+  arg1: undefined,
+  arg2: undefined,
+} }
+
+
+
+
+
+function Cursor_move_v__P180726(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.arg1 = (s.lambdaArgs[1]);
+      s.lambdaArgs = null;
     }
-  case 45:
-    r0 = s.retval;
-    s.xOffset___8760 = (r0);
-    s.tmp_0 = if_yOffset_1_mk(s);
-    r0 = pxsim_Array__getAt(s.arg6, s.cp___8694);
-    s.tmp_0.arg0 = r0;
-    if (!s.tmp_0.arg0.vtable.iface) {
-      s.retval = pxsim_pxtrt.mapGetByString(s.tmp_0.arg0, "yOffset");
-    } else {
-      s.tmp_0.fn = s.tmp_0.arg0.vtable.iface["yOffset"];
-      if (s.tmp_0.fn == null) { s.retval = s.tmp_0.arg0.fields["yOffset"]; }
-      else if (!s.tmp_0.fn.isGetter) { s.retval = bind(s.tmp_0); }
-     else { s.callLocIdx = 104; s.pc = 46; return s.tmp_0; }
-    }
-  case 46:
-    r0 = s.retval;
-    s.yOffset___8761 = (r0);
-  case 12:
-  case 13:
-    s.tmp_0 = r0 = s.cp___8694;
-    r0 = (s.tmp_0 + 1);
-    s.cp___8694 = (r0);
-    r0 = pxsim_String_.charCodeAt(s.arg1, s.tmp_0);
-    s.ch___8776 = (r0);
-    r0 = (s.ch___8776 == 10);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 14; continue; }
-    s.tmp_1 = r0 = s.arg3;
-    s.tmp_4 = if_charHeight_1_mk(s);
-    s.tmp_4.arg0 = s.arg5;
-    if (!s.tmp_4.arg0.vtable.iface) {
-      s.retval = pxsim_pxtrt.mapGetByString(s.tmp_4.arg0, "charHeight");
-    } else {
-      s.tmp_4.fn = s.tmp_4.arg0.vtable.iface["charHeight"];
-      if (s.tmp_4.fn == null) { s.retval = s.tmp_4.arg0.fields["charHeight"]; }
-      else if (!s.tmp_4.fn.isGetter) { s.retval = bind(s.tmp_4); }
-     else { s.callLocIdx = 105; s.pc = 47; return s.tmp_4; }
-    }
-  case 47:
-    r0 = s.retval;
-    s.tmp_3 = r0;
-    r0 = (s.tmp_3 + 2);
-    s.tmp_2 = r0;
-    r0 = (s.tmp_1 + s.tmp_2);
-    s.arg3 = (r0);
-    s.arg2 = (s.x0___8692);
-  case 14:
-  case 15:
-    r0 = (s.ch___8776 < 32);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 16; continue; }
-    { step = 9; continue; }
-  case 16:
-  case 17:
-    s.l___8795 = (0);
-    s.r___8796 = (s.lastchar___8729);
-    s.off___8798 = (0);
-    r0 = (s.ch___8776 - 32);
-    s.tmp_0 = r0;
-    r0 = (s.tmp_0 * s.dataSize___8722);
-    s.guess___8799 = (r0);
-    r0 = pxsim.BufferMethods.getNumber(s.fontdata___8726, 4, s.guess___8799);
-    s.tmp_1 = r0;
-    r0 = (s.tmp_1 == s.ch___8776);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 18; continue; }
-    s.off___8798 = (s.guess___8799);
-    { step = 25; continue; }
-  case 18:
-  case 19:
-    r0 = (s.l___8795 <= s.r___8796);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 24; continue; }
-    s.tmp_1 = r0 = s.l___8795;
-    r0 = (s.r___8796 - s.l___8795);
-    s.tmp_3 = r0;
-    r0 = (s.tmp_3 >> 1);
-    s.tmp_2 = r0;
-    r0 = (s.tmp_1 + s.tmp_2);
-    s.m___8818 = (r0);
-    s.tmp_0 = r0 = s.fontdata___8726;
-    r0 = (s.m___8818 * s.dataSize___8722);
-    s.tmp_1 = r0;
-    r0 = pxsim.BufferMethods.getNumber(s.tmp_0, 4, s.tmp_1);
-    s.v___8827 = (r0);
-    r0 = (s.v___8827 == s.ch___8776);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 20; continue; }
-    r0 = (s.m___8818 * s.dataSize___8722);
-    s.off___8798 = (r0);
-    { step = 24; continue; }
-  case 20:
-  case 21:
-    r0 = (s.v___8827 < s.ch___8776);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 22; continue; }
-    r0 = (s.m___8818 + 1);
-    s.l___8795 = (r0);
-    { step = 23; continue; }
-  case 22:
-    r0 = (s.m___8818 - 1);
-    s.r___8796 = (r0);
-  case 23:
-    { step = 19; continue; }
-  case 24:
-  case 25:
-    r0 = (s.mult___8695 == 1);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 26; continue; }
-    s.tmp_1 = r0 = s.imgBuf___8736;
-    s.tmp_3 = r0 = s.fontdata___8726;
-    r0 = (s.off___8798 + 2);
-    s.tmp_4 = r0;
-    r0 = pxsim.BufferMethods.slice(s.tmp_3, s.tmp_4, s.charSize___8718);
-    s.tmp_2 = r0;
-    r0 = pxsim.BufferMethods.write(s.tmp_1, 8, s.tmp_2);
-    s.tmp_0 = helpers_imageDrawIcon__P1960_mk(s);
+    r0 = s.arg0;
+    if (!checkSubtype(r0, Cursor__C180717_VT)) failedCast(r0);
+    s.tmp_0 = Cursor_move__P180724_mk(s);
     s.tmp_0.arg0 = s.arg0;
-    s.tmp_0.arg1 = s.imgBuf___8736;
-    r0 = (s.arg2 + s.xOffset___8760);
-    s.tmp_0.arg2 = r0;
-    r0 = (s.arg3 + s.yOffset___8761);
-    s.tmp_0.arg3 = r0;
-    s.tmp_0.arg4 = s.arg4;
-    s.callLocIdx = 106; s.pc = 48; return s.tmp_0;
-  case 48:
+    s.tmp_0.arg1 = 0;
+    s.tmp_0.arg2 = s.arg1;
+    s.callLocIdx = 188; s.pc = 1; return s.tmp_0;
+  case 1:
     r0 = s.retval;
-    s.tmp_0 = r0 = s.arg2;
-    s.tmp_2 = if_charWidth_1_mk(s);
-    s.tmp_2.arg0 = s.arg5;
-    if (!s.tmp_2.arg0.vtable.iface) {
-      s.retval = pxsim_pxtrt.mapGetByString(s.tmp_2.arg0, "charWidth");
-    } else {
-      s.tmp_2.fn = s.tmp_2.arg0.vtable.iface["charWidth"];
-      if (s.tmp_2.fn == null) { s.retval = s.tmp_2.arg0.fields["charWidth"]; }
-      else if (!s.tmp_2.fn.isGetter) { s.retval = bind(s.tmp_2); }
-     else { s.callLocIdx = 107; s.pc = 49; return s.tmp_2; }
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+Cursor_move_v__P180726.info = {"start":16510,"length":43,"line":393,"column":4,"endLine":393,"endColumn":47,"fileName":"main.ts","functionName":"move_v","argumentNames":["this","y"]}
+
+function Cursor_move_v__P180726_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: Cursor_move_v__P180726, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  arg0: undefined,
+  arg1: undefined,
+} }
+
+
+
+
+
+function ControllerEventHandler_constructor__P180236(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.arg1 = (s.lambdaArgs[1]);
+      s.arg2 = (s.lambdaArgs[2]);
+      s.arg3 = (s.lambdaArgs[3]);
+      s.lambdaArgs = null;
     }
-  case 49:
-    r0 = s.retval;
-    s.tmp_1 = r0;
-    r0 = (s.tmp_0 + s.tmp_1);
-    s.arg2 = (r0);
-    { step = 37; continue; }
-  case 26:
-    r0 = (s.off___8798 + 2);
-    s.off___8798 = (r0);
-    s.i___8883 = (0);
-  case 27:
-    r0 = (s.i___8883 < s.dataW___8700);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 36; continue; }
-    s.j___8888 = (0);
-    s.mask___8889 = (1);
-    s.tmp_0 = r0 = s.off___8798;
-    r0 = (s.tmp_0 + 1);
-    s.off___8798 = (r0);
-    r0 = pxsim.BufferMethods.getByte(s.fontdata___8726, s.tmp_0);
-    s.c___8890 = (r0);
-  case 28:
-    r0 = (s.j___8888 < s.dataH___8706);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 35; continue; }
-    r0 = (s.mask___8889 == 256);
-    s.tmp_1 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_1);
-    if (!r0) { step = 29; continue; }
-    s.tmp_2 = r0 = s.off___8798;
-    r0 = (s.tmp_2 + 1);
-    s.off___8798 = (r0);
-    r0 = pxsim.BufferMethods.getByte(s.fontdata___8726, s.tmp_2);
-    s.c___8890 = (r0);
-    s.mask___8889 = (1);
-  case 29:
-  case 30:
-    s.n___8907 = (0);
-  case 31:
-    r0 = (s.c___8890 & s.mask___8889);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 32; continue; }
-    r0 = (s.n___8907 + 1);
-    s.n___8907 = (r0);
-    r0 = (s.mask___8889 << 1);
-    s.mask___8889 = (r0);
-    { step = 31; continue; }
-  case 32:
-    r0 = pxsim_numops_toBoolDecr(s.n___8907);
-    if (!r0) { step = 33; continue; }
-    s.tmp_0 = helpers_imageFillRect__P1961_mk(s);
+    r0 = s.arg0;
+    if (!checkSubtype(r0, ControllerEventHandler__C180233_VT)) failedCast(r0);
+    s.tmp_0 = EventHandler_constructor__P180224_mk(s);
     s.tmp_0.arg0 = s.arg0;
-    s.tmp_1 = r0 = s.arg2;
-    r0 = (s.xOffset___8760 * s.mult___8695);
-    s.tmp_2 = r0;
-    r0 = (s.tmp_1 + s.tmp_2);
-    s.tmp_0.arg1 = r0;
-    s.tmp_3 = r0 = s.arg3;
-    r0 = (s.j___8888 + s.yOffset___8761);
-    s.tmp_5 = r0;
-    r0 = (s.tmp_5 * s.mult___8695);
-    s.tmp_4 = r0;
-    r0 = (s.tmp_3 + s.tmp_4);
-    s.tmp_0.arg2 = r0;
-    s.tmp_0.arg3 = s.mult___8695;
-    r0 = (s.mult___8695 * s.n___8907);
-    s.tmp_0.arg4 = r0;
-    s.tmp_0.arg5 = s.arg4;
-    s.callLocIdx = 108; s.pc = 50; return s.tmp_0;
-  case 50:
+    s.tmp_0.arg1 = s.arg3;
+    s.callLocIdx = 77; s.pc = 1; return s.tmp_0;
+  case 1:
     r0 = s.retval;
-    r0 = (s.j___8888 + s.n___8907);
-    s.j___8888 = (r0);
-    { step = 34; continue; }
-  case 33:
-    r0 = (s.mask___8889 << 1);
-    s.mask___8889 = (r0);
-    r0 = (s.j___8888 + 1);
-    s.j___8888 = (r0);
-  case 34:
-    { step = 28; continue; }
-  case 35:
-    r0 = (s.arg2 + s.mult___8695);
-    s.arg2 = (r0);
-    r0 = (s.i___8883 + 1);
-    s.i___8883 = (r0);
-    { step = 27; continue; }
-  case 36:
-  case 37:
-    { step = 9; continue; }
-  case 38:
+    r0 = (s.arg0).fields["button"] = (s.arg1);
+    r0 = (s.arg0).fields["eventType"] = (s.arg2);
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-helpers_imagePrint__P1995.info = {"start":15326,"length":3300,"line":213,"column":4,"endLine":306,"endColumn":5,"fileName":"pxt_modules/screen/text.ts","functionName":"imagePrint","argumentNames":["img","text","x","y","color","font","offsets"]}
+ControllerEventHandler_constructor__P180236.info = {"start":2396,"length":188,"line":77,"column":4,"endLine":81,"endColumn":5,"fileName":"main.ts","functionName":"inline","argumentNames":["this","button","eventType","handler"]}
 
-function helpers_imagePrint__P1995_mk(s) {
+function ControllerEventHandler_constructor__P180236_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: helpers_imagePrint__P1995, depth: s.depth + 1,
+        parent: s, fn: ControllerEventHandler_constructor__P180236, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
-  tmp_1: undefined,
-  tmp_2: undefined,
-  tmp_3: undefined,
-  tmp_4: undefined,
-  tmp_5: undefined,
-  x0___8692: undefined,
-  cp___8694: undefined,
-  mult___8695: undefined,
-  dataW___8700: undefined,
-  dataH___8706: undefined,
-  byteHeight___8712: undefined,
-  charSize___8718: undefined,
-  dataSize___8722: undefined,
-  fontdata___8726: undefined,
-  lastchar___8729: undefined,
-  imgBuf___8736: undefined,
-  xOffset___8760: undefined,
-  yOffset___8761: undefined,
-  ch___8776: undefined,
-  l___8795: undefined,
-  r___8796: undefined,
-  off___8798: undefined,
-  guess___8799: undefined,
-  m___8818: undefined,
-  v___8827: undefined,
-  i___8883: undefined,
-  j___8888: undefined,
-  mask___8889: undefined,
-  c___8890: undefined,
-  n___8907: undefined,
   arg0: undefined,
   arg1: undefined,
   arg2: undefined,
   arg3: undefined,
-  arg4: undefined,
-  arg5: undefined,
-  arg6: undefined,
 } }
 
 
 
 
 
-function image_getFontForText__P1982(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    s.i___8968 = undefined;
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.lambdaArgs = null;
-    }
-    s.i___8968 = (0);
-  case 1:
-    s.tmp_1 = r0 = s.i___8968;
-    r0 = pxsim_String_.length(s.arg0);
-    s.tmp_2 = r0;
-    r0 = (s.tmp_1 < s.tmp_2);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 4; continue; }
-    r0 = pxsim_String_.charCodeAt(s.arg0, s.i___8968);
-    s.tmp_4 = r0;
-    r0 = (s.tmp_4 > 8192);
-    s.tmp_3 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_3);
-    if (!r0) { step = 2; continue; }
-    r0 = globals.font12___1981;
-    { step = 5; continue; }
-  case 2:
-  case 3:
-    r0 = (s.i___8968 + 1);
-    s.i___8968 = (r0);
-    { step = 1; continue; }
-  case 4:
-    r0 = globals.font8___1980;
-  case 5:
-    return leave(s, r0)
-  default: oops()
-} } }
-image_getFontForText__P1982.info = {"start":11713,"length":259,"line":136,"column":4,"endLine":143,"endColumn":5,"fileName":"pxt_modules/screen/text.ts","functionName":"getFontForText","argumentNames":["text"]}
-
-function image_getFontForText__P1982_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: image_getFontForText__P1982, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  tmp_1: undefined,
-  tmp_2: undefined,
-  tmp_3: undefined,
-  tmp_4: undefined,
-  i___8968: undefined,
-  arg0: undefined,
-} }
-
-
-
-
-
-function helpers_imageDrawIcon__P1960(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.arg1 = (s.lambdaArgs[1]);
-      s.arg2 = (s.lambdaArgs[2]);
-      s.arg3 = (s.lambdaArgs[3]);
-      s.arg4 = (s.lambdaArgs[4]);
-      s.lambdaArgs = null;
-    }
-    s.tmp_0 = r0 = s.arg0;
-    s.tmp_1 = r0 = s.arg1;
-    s.tmp_3 = helpers_pack__P4852_mk(s);
-    s.tmp_3.arg0 = s.arg2;
-    s.tmp_3.arg1 = s.arg3;
-    s.callLocIdx = 78; s.pc = 1; return s.tmp_3;
-  case 1:
-    r0 = s.retval;
-    s.tmp_2 = r0;
-    r0 = pxsim_ImageMethods._drawIcon(s.tmp_0, s.tmp_1, s.tmp_2, s.arg4);
-    r0 = undefined;
-    return leave(s, r0)
-  default: oops()
-} } }
-helpers_imageDrawIcon__P1960.info = {"start":6002,"length":145,"line":198,"column":4,"endLine":200,"endColumn":5,"fileName":"pxt_modules/screen/image.ts","functionName":"imageDrawIcon","argumentNames":["img","icon","x","y","c"]}
-
-function helpers_imageDrawIcon__P1960_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: helpers_imageDrawIcon__P1960, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  tmp_1: undefined,
-  tmp_2: undefined,
-  tmp_3: undefined,
-  arg0: undefined,
-  arg1: undefined,
-  arg2: undefined,
-  arg3: undefined,
-  arg4: undefined,
-} }
-
-
-
-
-
-function helpers_pack__P4852(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.arg1 = (s.lambdaArgs[1]);
-      s.lambdaArgs = null;
-    }
-    s.tmp_2 = Math_clamp__P127_mk(s);
-    s.tmp_2.arg0 = -30000;
-    s.tmp_2.arg1 = 30000;
-    r0 = (s.arg0 | 0);
-    s.tmp_2.arg2 = r0;
-    s.callLocIdx = 76; s.pc = 1; return s.tmp_2;
-  case 1:
-    r0 = s.retval;
-    s.tmp_1 = r0;
-    r0 = (s.tmp_1 & 65535);
-    s.tmp_0 = r0;
-    s.tmp_5 = Math_clamp__P127_mk(s);
-    s.tmp_5.arg0 = -30000;
-    s.tmp_5.arg1 = 30000;
-    r0 = (s.arg1 | 0);
-    s.tmp_5.arg2 = r0;
-    s.callLocIdx = 77; s.pc = 2; return s.tmp_5;
-  case 2:
-    r0 = s.retval;
-    s.tmp_4 = r0;
-    r0 = (s.tmp_4 << 16);
-    s.tmp_3 = r0;
-    r0 = (s.tmp_0 | s.tmp_3);
-    return leave(s, r0)
-  default: oops()
-} } }
-helpers_pack__P4852.info = {"start":4976,"length":145,"line":173,"column":4,"endLine":175,"endColumn":5,"fileName":"pxt_modules/screen/image.ts","functionName":"pack","argumentNames":["x","y"]}
-
-function helpers_pack__P4852_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: helpers_pack__P4852, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  tmp_1: undefined,
-  tmp_2: undefined,
-  tmp_3: undefined,
-  tmp_4: undefined,
-  tmp_5: undefined,
-  arg0: undefined,
-  arg1: undefined,
-} }
-
-
-
-
-
-function Math_clamp__P127(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.arg1 = (s.lambdaArgs[1]);
-      s.arg2 = (s.lambdaArgs[2]);
-      s.lambdaArgs = null;
-    }
-    s.tmp_0 = Math_min__P131_mk(s);
-    s.tmp_0.arg0 = s.arg1;
-    s.tmp_1 = Math_max__P130_mk(s);
-    s.tmp_1.arg0 = s.arg0;
-    s.tmp_1.arg1 = s.arg2;
-    s.callLocIdx = 14; s.pc = 2; return s.tmp_1;
-  case 2:
-    r0 = s.retval;
-    s.tmp_0.arg1 = r0;
-    s.callLocIdx = 15; s.pc = 1; return s.tmp_0;
-  case 1:
-    r0 = s.retval;
-    return leave(s, r0)
-  default: oops()
-} } }
-Math_clamp__P127.info = {"start":15643,"length":130,"line":528,"column":4,"endLine":530,"endColumn":5,"fileName":"pxt_modules/base/pxt-helpers.ts","functionName":"clamp","argumentNames":["min","max","value"]}
-
-function Math_clamp__P127_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: Math_clamp__P127, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  tmp_1: undefined,
-  arg0: undefined,
-  arg1: undefined,
-  arg2: undefined,
-} }
-
-
-
-
-
-function Math_min__P131(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.arg1 = (s.lambdaArgs[1]);
-      s.lambdaArgs = null;
-    }
-    r0 = (s.arg0 <= s.arg1);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 1; continue; }
-    r0 = s.arg0;
-    { step = 3; continue; }
-  case 1:
-  case 2:
-    r0 = s.arg1;
-  case 3:
-    return leave(s, r0)
-  default: oops()
-} } }
-Math_min__P131.info = {"start":16854,"length":105,"line":568,"column":4,"endLine":571,"endColumn":5,"fileName":"pxt_modules/base/pxt-helpers.ts","functionName":"min","argumentNames":["a","b"]}
-
-function Math_min__P131_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: Math_min__P131, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  arg0: undefined,
-  arg1: undefined,
-} }
-
-
-
-
-
-function Math_max__P130(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.arg1 = (s.lambdaArgs[1]);
-      s.lambdaArgs = null;
-    }
-    r0 = (s.arg0 >= s.arg1);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 1; continue; }
-    r0 = s.arg0;
-    { step = 3; continue; }
-  case 1:
-  case 2:
-    r0 = s.arg1;
-  case 3:
-    return leave(s, r0)
-  default: oops()
-} } }
-Math_max__P130.info = {"start":16614,"length":105,"line":558,"column":4,"endLine":561,"endColumn":5,"fileName":"pxt_modules/base/pxt-helpers.ts","functionName":"max","argumentNames":["a","b"]}
-
-function Math_max__P130_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: Math_max__P130, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  arg0: undefined,
-  arg1: undefined,
-} }
-
-
-
-
-
-function helpers_imageDrawLine__P1963(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.arg1 = (s.lambdaArgs[1]);
-      s.arg2 = (s.lambdaArgs[2]);
-      s.arg3 = (s.lambdaArgs[3]);
-      s.arg4 = (s.lambdaArgs[4]);
-      s.arg5 = (s.lambdaArgs[5]);
-      s.lambdaArgs = null;
-    }
-    s.tmp_0 = r0 = s.arg0;
-    s.tmp_2 = helpers_pack__P4852_mk(s);
-    s.tmp_2.arg0 = s.arg1;
-    s.tmp_2.arg1 = s.arg2;
-    s.callLocIdx = 81; s.pc = 1; return s.tmp_2;
-  case 1:
-    r0 = s.retval;
-    s.tmp_1 = r0;
-    s.tmp_4 = helpers_pack__P4852_mk(s);
-    s.tmp_4.arg0 = s.arg3;
-    s.tmp_4.arg1 = s.arg4;
-    s.callLocIdx = 82; s.pc = 2; return s.tmp_4;
-  case 2:
-    r0 = s.retval;
-    s.tmp_3 = r0;
-    r0 = pxsim_ImageMethods._drawLine(s.tmp_0, s.tmp_1, s.tmp_3, s.arg5);
-    r0 = undefined;
-    return leave(s, r0)
-  default: oops()
-} } }
-helpers_imageDrawLine__P1963.info = {"start":6479,"length":159,"line":207,"column":4,"endLine":209,"endColumn":5,"fileName":"pxt_modules/screen/image.ts","functionName":"imageDrawLine","argumentNames":["img","x","y","w","h","c"]}
-
-function helpers_imageDrawLine__P1963_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: helpers_imageDrawLine__P1963, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  tmp_1: undefined,
-  tmp_2: undefined,
-  tmp_3: undefined,
-  tmp_4: undefined,
-  arg0: undefined,
-  arg1: undefined,
-  arg2: undefined,
-  arg3: undefined,
-  arg4: undefined,
-  arg5: undefined,
-} }
-
-
-
-
-
-function helpers_imageFillRect__P1961(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.arg1 = (s.lambdaArgs[1]);
-      s.arg2 = (s.lambdaArgs[2]);
-      s.arg3 = (s.lambdaArgs[3]);
-      s.arg4 = (s.lambdaArgs[4]);
-      s.arg5 = (s.lambdaArgs[5]);
-      s.lambdaArgs = null;
-    }
-    s.tmp_0 = r0 = s.arg0;
-    s.tmp_2 = helpers_pack__P4852_mk(s);
-    s.tmp_2.arg0 = s.arg1;
-    s.tmp_2.arg1 = s.arg2;
-    s.callLocIdx = 79; s.pc = 1; return s.tmp_2;
-  case 1:
-    r0 = s.retval;
-    s.tmp_1 = r0;
-    s.tmp_4 = helpers_pack__P4852_mk(s);
-    s.tmp_4.arg0 = s.arg3;
-    s.tmp_4.arg1 = s.arg4;
-    s.callLocIdx = 80; s.pc = 2; return s.tmp_4;
-  case 2:
-    r0 = s.retval;
-    s.tmp_3 = r0;
-    r0 = pxsim_ImageMethods._fillRect(s.tmp_0, s.tmp_1, s.tmp_3, s.arg5);
-    r0 = undefined;
-    return leave(s, r0)
-  default: oops()
-} } }
-helpers_imageFillRect__P1961.info = {"start":6152,"length":159,"line":201,"column":4,"endLine":203,"endColumn":5,"fileName":"pxt_modules/screen/image.ts","functionName":"imageFillRect","argumentNames":["img","x","y","w","h","c"]}
-
-function helpers_imageFillRect__P1961_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: helpers_imageFillRect__P1961, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  tmp_1: undefined,
-  tmp_2: undefined,
-  tmp_3: undefined,
-  tmp_4: undefined,
-  arg0: undefined,
-  arg1: undefined,
-  arg2: undefined,
-  arg3: undefined,
-  arg4: undefined,
-  arg5: undefined,
-} }
-
-
-
-
-
-function Palette_abs_id__P125629(s) {
+function Cursor_set_speed__P180719(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -4287,29 +3834,101 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, Palette__C125623_VT)) failedCast(r0);
-    r0 = s.arg0.fields["buf_id"];
-    s.tmp_2 = r0;
-    r0 = (s.tmp_2 * 3);
-    s.tmp_1 = r0;
-    r0 = (s.tmp_1 + s.arg1);
-    s.tmp_0 = r0;
-    r0 = (s.tmp_0 + 1);
+    if (!checkSubtype(r0, Cursor__C180717_VT)) failedCast(r0);
+    r0 = (s.arg0).fields["speed"] = (s.arg1);
+    r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-Palette_abs_id__P125629.info = {"start":14479,"length":93,"line":326,"column":4,"endLine":328,"endColumn":5,"fileName":"main.ts","functionName":"abs_id","argumentNames":["this","color_id"]}
+Cursor_set_speed__P180719.info = {"start":15655,"length":65,"line":363,"column":4,"endLine":365,"endColumn":5,"fileName":"main.ts","functionName":"set_speed","argumentNames":["this","speed"]}
 
-function Palette_abs_id__P125629_mk(s) {
+function Cursor_set_speed__P180719_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: Palette_abs_id__P125629, depth: s.depth + 1,
+        parent: s, fn: Cursor_set_speed__P180719, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  tmp_1: undefined,
-  tmp_2: undefined,
   arg0: undefined,
   arg1: undefined,
+} }
+
+
+
+
+
+function Cursor_set_default_speed__P180720(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.arg1 = (s.lambdaArgs[1]);
+      s.lambdaArgs = null;
+    }
+    r0 = s.arg0;
+    if (!checkSubtype(r0, Cursor__C180717_VT)) failedCast(r0);
+    r0 = (s.arg0).fields["defaultSpeed"] = (s.arg1);
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+Cursor_set_default_speed__P180720.info = {"start":15726,"length":80,"line":367,"column":4,"endLine":369,"endColumn":5,"fileName":"main.ts","functionName":"set_default_speed","argumentNames":["this","speed"]}
+
+function Cursor_set_default_speed__P180720_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: Cursor_set_default_speed__P180720, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  arg0: undefined,
+  arg1: undefined,
+} }
+
+
+
+
+
+function scene_setBackgroundColor__P2900(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    s.scene___8374 = undefined;
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.lambdaArgs = null;
+    }
+    s.tmp_0 = game_currentScene__P3033_mk(s);
+    s.callLocIdx = 924; s.pc = 1; return s.tmp_0;
+  case 1:
+    r0 = s.retval;
+    s.scene___8374 = (r0);
+    r0 = s.scene___8374.fields["background"];
+    s.tmp_0 = r0;
+    r0 = (s.tmp_0).fields["color"] = (s.arg0);
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+scene_setBackgroundColor__P2900.info = {"start":1231,"length":140,"line":53,"column":4,"endLine":56,"endColumn":5,"fileName":"pxt_modules/game/scenes.ts","functionName":"setBackgroundColor","argumentNames":["color"]}
+
+function scene_setBackgroundColor__P2900_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: scene_setBackgroundColor__P2900, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  scene___8374: undefined,
+  arg0: undefined,
 } }
 
 
@@ -4657,7 +4276,7 @@ function helpers_arrayForEach__P109_mk(s) {
 
 
 
-function Screen_add_window__P126275(s) {
+function EventListener_handle_events__P180289(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -4667,2071 +4286,16 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.arg1 = (s.lambdaArgs[1]);
-      s.lambdaArgs = null;
-    }
-    r0 = s.arg0;
-    if (!checkSubtype(r0, Screen__C126273_VT)) failedCast(r0);
-    r0 = s.arg0.fields["windows"];
-    s.tmp_0 = r0;
-    r0 = pxsim_Array__push(s.tmp_0, s.arg1);
-    r0 = s.arg0.fields["windows"];
-    s.tmp_1 = r0;
-    r0 = pxsim_Array__length(s.tmp_1);
-    s.tmp_0 = r0;
-    r0 = (s.tmp_0 - 1);
-    return leave(s, r0)
-  default: oops()
-} } }
-Screen_add_window__P126275.info = {"start":20440,"length":122,"line":500,"column":4,"endLine":503,"endColumn":5,"fileName":"main.ts","functionName":"add_window","argumentNames":["this","window"]}
-
-function Screen_add_window__P126275_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: Screen_add_window__P126275, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  tmp_1: undefined,
-  arg0: undefined,
-  arg1: undefined,
-} }
-
-
-
-
-
-function Window_add_widget__P126051(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.arg1 = (s.lambdaArgs[1]);
-      s.lambdaArgs = null;
-    }
-    r0 = s.arg0;
-    if (!checkSubtype(r0, Window__C126049_VT)) failedCast(r0);
-    r0 = s.arg0.fields["widgets"];
-    s.tmp_0 = r0;
-    r0 = pxsim_Array__push(s.tmp_0, s.arg1);
-    r0 = s.arg0.fields["widgets"];
-    s.tmp_1 = r0;
-    r0 = pxsim_Array__length(s.tmp_1);
-    s.tmp_0 = r0;
-    r0 = (s.tmp_0 - 1);
-    return leave(s, r0)
-  default: oops()
-} } }
-Window_add_widget__P126051.info = {"start":19712,"length":122,"line":471,"column":4,"endLine":474,"endColumn":5,"fileName":"main.ts","functionName":"add_widget","argumentNames":["this","widget"]}
-
-function Window_add_widget__P126051_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: Window_add_widget__P126051, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  tmp_1: undefined,
-  arg0: undefined,
-  arg1: undefined,
-} }
-
-
-
-
-
-function Window_constructor__P126053(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.arg1 = (s.lambdaArgs[1]);
-      s.arg2 = (s.lambdaArgs[2]);
-      s.arg3 = (s.lambdaArgs[3]);
-      s.arg4 = (s.lambdaArgs[4]);
-      s.arg5 = (s.lambdaArgs[5]);
-      s.arg6 = (s.lambdaArgs[6]);
-      s.arg7 = (s.lambdaArgs[7]);
-      s.lambdaArgs = null;
-    }
-    r0 = s.arg0;
-    if (!checkSubtype(r0, Window__C126049_VT)) failedCast(r0);
-    r0 = (s.arg0).fields["palette"] = (s.arg1);
-    r0 = (s.arg0).fields["title"] = (s.arg6);
-    r0 = (s.arg0).fields["font"] = (s.arg7);
-    r0 = (s.arg0).fields["x"] = (s.arg2);
-    r0 = (s.arg0).fields["y"] = (s.arg3);
-    r0 = (s.arg0).fields["w"] = (s.arg4);
-    r0 = (s.arg0).fields["h"] = (s.arg5);
-    r0 = s.arg0.fields["w"];
-    s.tmp_1 = r0;
-    r0 = (s.tmp_1 == 0);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 1; continue; }
-    r0 = (s.arg0).fields["x"] = (0);
-    r0 = (s.arg0).fields["w"] = (globals.WIDTH___125165);
-  case 1:
-  case 2:
-    r0 = s.arg0.fields["h"];
-    s.tmp_1 = r0;
-    r0 = (s.tmp_1 == 0);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 3; continue; }
-    r0 = (s.arg0).fields["y"] = (0);
-    r0 = (s.arg0).fields["h"] = (globals.HEIGHT___125168);
-  case 3:
-  case 4:
-    s.tmp_0 = r0 = s.arg0;
-    r0 = pxsim_Array__mk();
-    s.tmp_1 = r0;
-    r0 = (s.tmp_0).fields["widgets"] = (s.tmp_1);
-    r0 = undefined;
-    return leave(s, r0)
-  default: oops()
-} } }
-Window_constructor__P126053.info = {"start":18094,"length":476,"line":431,"column":4,"endLine":448,"endColumn":5,"fileName":"main.ts","functionName":"inline","argumentNames":["this","palette","x","y","w","h","title","font"]}
-
-function Window_constructor__P126053_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: Window_constructor__P126053, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  tmp_1: undefined,
-  arg0: undefined,
-  arg1: undefined,
-  arg2: undefined,
-  arg3: undefined,
-  arg4: undefined,
-  arg5: undefined,
-  arg6: undefined,
-  arg7: undefined,
-} }
-
-
-
-
-
-function WLabel_constructor__P126000(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.arg1 = (s.lambdaArgs[1]);
-      s.arg2 = (s.lambdaArgs[2]);
-      s.arg3 = (s.lambdaArgs[3]);
-      s.arg4 = (s.lambdaArgs[4]);
-      s.arg5 = (s.lambdaArgs[5]);
-      s.lambdaArgs = null;
-    }
-    r0 = s.arg0;
-    if (!checkSubtype(r0, WLabel__C125998_VT)) failedCast(r0);
-    r0 = (s.arg0).fields["palette"] = (s.arg1);
-    r0 = (s.arg0).fields["x"] = (s.arg2);
-    r0 = (s.arg0).fields["y"] = (s.arg3);
-    r0 = (s.arg0).fields["text"] = (s.arg4);
-    r0 = (s.arg0).fields["font"] = (s.arg5);
-    r0 = undefined;
-    return leave(s, r0)
-  default: oops()
-} } }
-WLabel_constructor__P126000.info = {"start":17563,"length":211,"line":409,"column":4,"endLine":415,"endColumn":5,"fileName":"main.ts","functionName":"inline","argumentNames":["this","palette","x","y","text","font"]}
-
-function WLabel_constructor__P126000_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: WLabel_constructor__P126000, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  arg0: undefined,
-  arg1: undefined,
-  arg2: undefined,
-  arg3: undefined,
-  arg4: undefined,
-  arg5: undefined,
-} }
-
-
-
-
-
-function Cursor_add_handlers__P125776(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.arg1 = (s.lambdaArgs[1]);
-      s.lambdaArgs = null;
-    }
-    r0 = s.arg0;
-    if (!checkSubtype(r0, Cursor__C125766_VT)) failedCast(r0);
-    r0 = pxsim_pxtcore_mkClassInstance(ControllerEventHandler__C125326_VT);
-    s.tmp_0 = r0;
-    r0 = pxsim_pxtcore_mkAction(1, Cursor_add_handlers_inline__P125917);
-    s.tmp_1 = r0;
-    r0 = pxsim_pxtrt_stclo(s.tmp_1, 0, s.arg0);
-    s.tmp_2 = ControllerEventHandler_constructor__P125329_mk(s);
-    s.tmp_2.arg0 = s.tmp_0;
-    s.tmp_2.arg1 = globals.up___2130;
-    s.tmp_2.arg2 = 2049;
-    s.tmp_2.arg3 = s.tmp_1;
-    s.callLocIdx = 190; s.pc = 1; return s.tmp_2;
-  case 1:
-    r0 = s.retval;
-    r0 = s.arg0.fields["controllerEventHandler_ids"];
-    s.tmp_3 = r0;
-    s.tmp_5 = EventListener_add_handler__P125378_mk(s);
-    s.tmp_5.arg0 = s.arg1;
-    s.tmp_5.arg1 = s.tmp_0;
-    s.callLocIdx = 191; s.pc = 2; return s.tmp_5;
-  case 2:
-    r0 = s.retval;
-    s.tmp_4 = r0;
-    r0 = pxsim_Array__push(s.tmp_3, s.tmp_4);
-    r0 = pxsim_pxtcore_mkClassInstance(ControllerEventHandler__C125326_VT);
-    s.tmp_0 = r0;
-    r0 = pxsim_pxtcore_mkAction(1, Cursor_add_handlers_inline__P125931);
-    s.tmp_1 = r0;
-    r0 = pxsim_pxtrt_stclo(s.tmp_1, 0, s.arg0);
-    s.tmp_2 = ControllerEventHandler_constructor__P125329_mk(s);
-    s.tmp_2.arg0 = s.tmp_0;
-    s.tmp_2.arg1 = globals.down___2132;
-    s.tmp_2.arg2 = 2049;
-    s.tmp_2.arg3 = s.tmp_1;
-    s.callLocIdx = 193; s.pc = 3; return s.tmp_2;
-  case 3:
-    r0 = s.retval;
-    r0 = s.arg0.fields["controllerEventHandler_ids"];
-    s.tmp_3 = r0;
-    s.tmp_5 = EventListener_add_handler__P125378_mk(s);
-    s.tmp_5.arg0 = s.arg1;
-    s.tmp_5.arg1 = s.tmp_0;
-    s.callLocIdx = 194; s.pc = 4; return s.tmp_5;
-  case 4:
-    r0 = s.retval;
-    s.tmp_4 = r0;
-    r0 = pxsim_Array__push(s.tmp_3, s.tmp_4);
-    r0 = pxsim_pxtcore_mkClassInstance(ControllerEventHandler__C125326_VT);
-    s.tmp_0 = r0;
-    r0 = pxsim_pxtcore_mkAction(1, Cursor_add_handlers_inline__P125943);
-    s.tmp_1 = r0;
-    r0 = pxsim_pxtrt_stclo(s.tmp_1, 0, s.arg0);
-    s.tmp_2 = ControllerEventHandler_constructor__P125329_mk(s);
-    s.tmp_2.arg0 = s.tmp_0;
-    s.tmp_2.arg1 = globals.left___2129;
-    s.tmp_2.arg2 = 2049;
-    s.tmp_2.arg3 = s.tmp_1;
-    s.callLocIdx = 196; s.pc = 5; return s.tmp_2;
-  case 5:
-    r0 = s.retval;
-    r0 = s.arg0.fields["controllerEventHandler_ids"];
-    s.tmp_3 = r0;
-    s.tmp_5 = EventListener_add_handler__P125378_mk(s);
-    s.tmp_5.arg0 = s.arg1;
-    s.tmp_5.arg1 = s.tmp_0;
-    s.callLocIdx = 197; s.pc = 6; return s.tmp_5;
-  case 6:
-    r0 = s.retval;
-    s.tmp_4 = r0;
-    r0 = pxsim_Array__push(s.tmp_3, s.tmp_4);
-    r0 = pxsim_pxtcore_mkClassInstance(ControllerEventHandler__C125326_VT);
-    s.tmp_0 = r0;
-    r0 = pxsim_pxtcore_mkAction(1, Cursor_add_handlers_inline__P125957);
-    s.tmp_1 = r0;
-    r0 = pxsim_pxtrt_stclo(s.tmp_1, 0, s.arg0);
-    s.tmp_2 = ControllerEventHandler_constructor__P125329_mk(s);
-    s.tmp_2.arg0 = s.tmp_0;
-    s.tmp_2.arg1 = globals.right___2131;
-    s.tmp_2.arg2 = 2049;
-    s.tmp_2.arg3 = s.tmp_1;
-    s.callLocIdx = 199; s.pc = 7; return s.tmp_2;
-  case 7:
-    r0 = s.retval;
-    r0 = s.arg0.fields["controllerEventHandler_ids"];
-    s.tmp_3 = r0;
-    s.tmp_5 = EventListener_add_handler__P125378_mk(s);
-    s.tmp_5.arg0 = s.arg1;
-    s.tmp_5.arg1 = s.tmp_0;
-    s.callLocIdx = 200; s.pc = 8; return s.tmp_5;
-  case 8:
-    r0 = s.retval;
-    s.tmp_4 = r0;
-    r0 = pxsim_Array__push(s.tmp_3, s.tmp_4);
-    r0 = pxsim_pxtcore_mkClassInstance(ControllerEventHandler__C125326_VT);
-    s.tmp_0 = r0;
-    r0 = pxsim_pxtcore_mkAction(1, Cursor_add_handlers_inline__P125969);
-    s.tmp_1 = r0;
-    r0 = pxsim_pxtrt_stclo(s.tmp_1, 0, s.arg0);
-    s.tmp_2 = ControllerEventHandler_constructor__P125329_mk(s);
-    s.tmp_2.arg0 = s.tmp_0;
-    s.tmp_2.arg1 = globals.B___2128;
-    s.tmp_2.arg2 = 2049;
-    s.tmp_2.arg3 = s.tmp_1;
-    s.callLocIdx = 202; s.pc = 9; return s.tmp_2;
-  case 9:
-    r0 = s.retval;
-    r0 = s.arg0.fields["controllerEventHandler_ids"];
-    s.tmp_3 = r0;
-    s.tmp_5 = EventListener_add_handler__P125378_mk(s);
-    s.tmp_5.arg0 = s.arg1;
-    s.tmp_5.arg1 = s.tmp_0;
-    s.callLocIdx = 203; s.pc = 10; return s.tmp_5;
-  case 10:
-    r0 = s.retval;
-    s.tmp_4 = r0;
-    r0 = pxsim_Array__push(s.tmp_3, s.tmp_4);
-    r0 = pxsim_pxtcore_mkClassInstance(ControllerEventHandler__C125326_VT);
-    s.tmp_0 = r0;
-    r0 = pxsim_pxtcore_mkAction(1, Cursor_add_handlers_inline__P125981);
-    s.tmp_1 = r0;
-    r0 = pxsim_pxtrt_stclo(s.tmp_1, 0, s.arg0);
-    s.tmp_2 = ControllerEventHandler_constructor__P125329_mk(s);
-    s.tmp_2.arg0 = s.tmp_0;
-    s.tmp_2.arg1 = globals.B___2128;
-    s.tmp_2.arg2 = 2048;
-    s.tmp_2.arg3 = s.tmp_1;
-    s.callLocIdx = 205; s.pc = 11; return s.tmp_2;
-  case 11:
-    r0 = s.retval;
-    r0 = s.arg0.fields["controllerEventHandler_ids"];
-    s.tmp_3 = r0;
-    s.tmp_5 = EventListener_add_handler__P125378_mk(s);
-    s.tmp_5.arg0 = s.arg1;
-    s.tmp_5.arg1 = s.tmp_0;
-    s.callLocIdx = 206; s.pc = 12; return s.tmp_5;
-  case 12:
-    r0 = s.retval;
-    s.tmp_4 = r0;
-    r0 = pxsim_Array__push(s.tmp_3, s.tmp_4);
-    r0 = undefined;
-    return leave(s, r0)
-  default: oops()
-} } }
-Cursor_add_handlers__P125776.info = {"start":15969,"length":1117,"line":380,"column":4,"endLine":387,"endColumn":5,"fileName":"main.ts","functionName":"add_handlers","argumentNames":["this","eventListener"]}
-
-function Cursor_add_handlers__P125776_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: Cursor_add_handlers__P125776, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  tmp_1: undefined,
-  tmp_2: undefined,
-  tmp_3: undefined,
-  tmp_4: undefined,
-  tmp_5: undefined,
-  arg0: undefined,
-  arg1: undefined,
-} }
-
-
-
-
-
-function Cursor_add_handlers_inline__P125917(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    s.tmp_0 = Cursor_move_v__P125775_mk(s);
-    s.tmp_0.arg0 = s.caps[0];
-    s.tmp_0.arg1 = -1;
-    s.callLocIdx = 189; s.pc = 1; return s.tmp_0;
-  case 1:
-    r0 = s.retval;
-    r0 = undefined;
-    return leave(s, r0)
-  default: oops()
-} } }
-Cursor_add_handlers_inline__P125917.info = {"start":16158,"length":25,"line":381,"column":144,"endLine":381,"endColumn":169,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
-
-function Cursor_add_handlers_inline__P125917_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: Cursor_add_handlers_inline__P125917, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-} }
-
-
-
-
-
-function Cursor_add_handlers_inline__P125931(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    s.tmp_0 = Cursor_move_v__P125775_mk(s);
-    s.tmp_0.arg0 = s.caps[0];
-    s.tmp_0.arg1 = 1;
-    s.callLocIdx = 192; s.pc = 1; return s.tmp_0;
-  case 1:
-    r0 = s.retval;
-    r0 = undefined;
-    return leave(s, r0)
-  default: oops()
-} } }
-Cursor_add_handlers_inline__P125931.info = {"start":16333,"length":24,"line":382,"column":146,"endLine":382,"endColumn":170,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
-
-function Cursor_add_handlers_inline__P125931_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: Cursor_add_handlers_inline__P125931, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-} }
-
-
-
-
-
-function Cursor_add_handlers_inline__P125943(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    s.tmp_0 = Cursor_move_h__P125774_mk(s);
-    s.tmp_0.arg0 = s.caps[0];
-    s.tmp_0.arg1 = -1;
-    s.callLocIdx = 195; s.pc = 1; return s.tmp_0;
-  case 1:
-    r0 = s.retval;
-    r0 = undefined;
-    return leave(s, r0)
-  default: oops()
-} } }
-Cursor_add_handlers_inline__P125943.info = {"start":16507,"length":25,"line":383,"column":146,"endLine":383,"endColumn":171,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
-
-function Cursor_add_handlers_inline__P125943_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: Cursor_add_handlers_inline__P125943, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-} }
-
-
-
-
-
-function Cursor_add_handlers_inline__P125957(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    s.tmp_0 = Cursor_move_h__P125774_mk(s);
-    s.tmp_0.arg0 = s.caps[0];
-    s.tmp_0.arg1 = 1;
-    s.callLocIdx = 198; s.pc = 1; return s.tmp_0;
-  case 1:
-    r0 = s.retval;
-    r0 = undefined;
-    return leave(s, r0)
-  default: oops()
-} } }
-Cursor_add_handlers_inline__P125957.info = {"start":16683,"length":24,"line":384,"column":147,"endLine":384,"endColumn":171,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
-
-function Cursor_add_handlers_inline__P125957_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: Cursor_add_handlers_inline__P125957, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-} }
-
-
-
-
-
-function Cursor_add_handlers_inline__P125969(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    s.tmp_0 = Cursor_set_ignore_speed__P125770_mk(s);
-    s.tmp_0.arg0 = s.caps[0];
-    s.tmp_0.arg1 = true;
-    s.callLocIdx = 201; s.pc = 1; return s.tmp_0;
-  case 1:
-    r0 = s.retval;
-    r0 = undefined;
-    return leave(s, r0)
-  default: oops()
-} } }
-Cursor_add_handlers_inline__P125969.info = {"start":16854,"length":37,"line":385,"column":143,"endLine":385,"endColumn":180,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
-
-function Cursor_add_handlers_inline__P125969_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: Cursor_add_handlers_inline__P125969, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-} }
-
-
-
-
-
-function Cursor_add_handlers_inline__P125981(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    s.tmp_0 = Cursor_set_ignore_speed__P125770_mk(s);
-    s.tmp_0.arg0 = s.caps[0];
-    s.tmp_0.arg1 = false;
-    s.callLocIdx = 204; s.pc = 1; return s.tmp_0;
-  case 1:
-    r0 = s.retval;
-    r0 = undefined;
-    return leave(s, r0)
-  default: oops()
-} } }
-Cursor_add_handlers_inline__P125981.info = {"start":17039,"length":38,"line":386,"column":144,"endLine":386,"endColumn":182,"fileName":"main.ts","functionName":"inline","argumentNames":[]}
-
-function Cursor_add_handlers_inline__P125981_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: Cursor_add_handlers_inline__P125981, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-} }
-
-
-
-
-
-function Cursor_set_ignore_speed__P125770(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.arg1 = (s.lambdaArgs[1]);
-      s.lambdaArgs = null;
-    }
-    r0 = s.arg0;
-    if (!checkSubtype(r0, Cursor__C125766_VT)) failedCast(r0);
-    r0 = (s.arg0).fields["ignoreSpeed"] = (s.arg1);
-    r0 = undefined;
-    return leave(s, r0)
-  default: oops()
-} } }
-Cursor_set_ignore_speed__P125770.info = {"start":15222,"length":91,"line":356,"column":4,"endLine":358,"endColumn":5,"fileName":"main.ts","functionName":"set_ignore_speed","argumentNames":["this","ignoreSpeed"]}
-
-function Cursor_set_ignore_speed__P125770_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: Cursor_set_ignore_speed__P125770, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  arg0: undefined,
-  arg1: undefined,
-} }
-
-
-
-
-
-function Cursor_move_h__P125774(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.arg1 = (s.lambdaArgs[1]);
-      s.lambdaArgs = null;
-    }
-    r0 = s.arg0;
-    if (!checkSubtype(r0, Cursor__C125766_VT)) failedCast(r0);
-    s.tmp_0 = Cursor_move__P125773_mk(s);
-    s.tmp_0.arg0 = s.arg0;
-    s.tmp_0.arg1 = s.arg1;
-    s.tmp_0.arg2 = 0;
-    s.callLocIdx = 187; s.pc = 1; return s.tmp_0;
-  case 1:
-    r0 = s.retval;
-    r0 = undefined;
-    return leave(s, r0)
-  default: oops()
-} } }
-Cursor_move_h__P125774.info = {"start":15872,"length":43,"line":377,"column":4,"endLine":377,"endColumn":47,"fileName":"main.ts","functionName":"move_h","argumentNames":["this","x"]}
-
-function Cursor_move_h__P125774_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: Cursor_move_h__P125774, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  arg0: undefined,
-  arg1: undefined,
-} }
-
-
-
-
-
-function Cursor_move__P125773(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.arg1 = (s.lambdaArgs[1]);
-      s.arg2 = (s.lambdaArgs[2]);
-      s.lambdaArgs = null;
-    }
-    r0 = s.arg0;
-    if (!checkSubtype(r0, Cursor__C125766_VT)) failedCast(r0);
-    r0 = s.arg0.fields["ignoreSpeed"];
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 1; continue; }
-    r0 = s.arg0.fields["defaultSpeed"];
-    { step = 2; continue; }
-  case 1:
-    r0 = s.arg0.fields["speed"];
-  case 2:
-    // jmp value (already in r0)
-    s.tmp_1 = r0;
-    r0 = s.arg0.fields["ignoreSpeed"];
-    s.tmp_2 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_2);
-    if (!r0) { step = 3; continue; }
-    r0 = s.arg0.fields["defaultSpeed"];
-    { step = 4; continue; }
-  case 3:
-    r0 = s.arg0.fields["speed"];
-  case 4:
-    // jmp value (already in r0)
-    s.tmp_3 = r0;
-    s.tmp_4 = Cursor_set_pos__P125771_mk(s);
-    s.tmp_4.arg0 = s.arg0;
-    r0 = s.arg0.fields["x"];
-    s.tmp_5 = r0;
-    r0 = (s.arg1 * s.tmp_1);
-    s.tmp_6 = r0;
-    r0 = (s.tmp_5 + s.tmp_6);
-    s.tmp_4.arg1 = r0;
-    r0 = s.arg0.fields["y"];
-    s.tmp_7 = r0;
-    r0 = (s.arg2 * s.tmp_3);
-    s.tmp_8 = r0;
-    r0 = (s.tmp_7 + s.tmp_8);
-    s.tmp_4.arg2 = r0;
-    s.callLocIdx = 186; s.pc = 5; return s.tmp_4;
-  case 5:
-    r0 = s.retval;
-    r0 = undefined;
-    return leave(s, r0)
-  default: oops()
-} } }
-Cursor_move__P125773.info = {"start":15669,"length":197,"line":373,"column":4,"endLine":375,"endColumn":5,"fileName":"main.ts","functionName":"move","argumentNames":["this","x","y"]}
-
-function Cursor_move__P125773_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: Cursor_move__P125773, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  tmp_1: undefined,
-  tmp_2: undefined,
-  tmp_3: undefined,
-  tmp_4: undefined,
-  tmp_5: undefined,
-  tmp_6: undefined,
-  tmp_7: undefined,
-  tmp_8: undefined,
-  arg0: undefined,
-  arg1: undefined,
-  arg2: undefined,
-} }
-
-
-
-
-
-function Cursor_set_pos__P125771(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.arg1 = (s.lambdaArgs[1]);
-      s.arg2 = (s.lambdaArgs[2]);
-      s.lambdaArgs = null;
-    }
-    r0 = s.arg0;
-    if (!checkSubtype(r0, Cursor__C125766_VT)) failedCast(r0);
-    r0 = (s.arg0).fields["x"] = (s.arg1);
-    r0 = (s.arg0).fields["y"] = (s.arg2);
-    r0 = s.arg0.fields["x"];
-    s.tmp_1 = r0;
-    r0 = (s.tmp_1 < 0);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 1; continue; }
-    r0 = (s.arg0).fields["x"] = (0);
-  case 1:
-  case 2:
-    r0 = s.arg0.fields["x"];
-    s.tmp_1 = r0;
-    r0 = (globals.WIDTH___125165 - 1);
-    s.tmp_2 = r0;
-    r0 = (s.tmp_1 > s.tmp_2);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 3; continue; }
-    s.tmp_3 = r0 = s.arg0;
-    r0 = (globals.WIDTH___125165 - 1);
-    s.tmp_4 = r0;
-    r0 = (s.tmp_3).fields["x"] = (s.tmp_4);
-  case 3:
-  case 4:
-    r0 = s.arg0.fields["y"];
-    s.tmp_1 = r0;
-    r0 = (s.tmp_1 < 0);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 5; continue; }
-    r0 = (s.arg0).fields["y"] = (0);
-  case 5:
-  case 6:
-    r0 = s.arg0.fields["y"];
-    s.tmp_1 = r0;
-    r0 = (globals.HEIGHT___125168 - 1);
-    s.tmp_2 = r0;
-    r0 = (s.tmp_1 > s.tmp_2);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 7; continue; }
-    s.tmp_3 = r0 = s.arg0;
-    r0 = (globals.HEIGHT___125168 - 1);
-    s.tmp_4 = r0;
-    r0 = (s.tmp_3).fields["y"] = (s.tmp_4);
-  case 7:
-  case 8:
-    r0 = undefined;
-    return leave(s, r0)
-  default: oops()
-} } }
-Cursor_set_pos__P125771.info = {"start":15319,"length":271,"line":360,"column":4,"endLine":367,"endColumn":5,"fileName":"main.ts","functionName":"set_pos","argumentNames":["this","x","y"]}
-
-function Cursor_set_pos__P125771_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: Cursor_set_pos__P125771, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  tmp_1: undefined,
-  tmp_2: undefined,
-  tmp_3: undefined,
-  tmp_4: undefined,
-  arg0: undefined,
-  arg1: undefined,
-  arg2: undefined,
-} }
-
-
-
-
-
-function Cursor_move_v__P125775(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.arg1 = (s.lambdaArgs[1]);
-      s.lambdaArgs = null;
-    }
-    r0 = s.arg0;
-    if (!checkSubtype(r0, Cursor__C125766_VT)) failedCast(r0);
-    s.tmp_0 = Cursor_move__P125773_mk(s);
-    s.tmp_0.arg0 = s.arg0;
-    s.tmp_0.arg1 = 0;
-    s.tmp_0.arg2 = s.arg1;
-    s.callLocIdx = 188; s.pc = 1; return s.tmp_0;
-  case 1:
-    r0 = s.retval;
-    r0 = undefined;
-    return leave(s, r0)
-  default: oops()
-} } }
-Cursor_move_v__P125775.info = {"start":15920,"length":43,"line":378,"column":4,"endLine":378,"endColumn":47,"fileName":"main.ts","functionName":"move_v","argumentNames":["this","y"]}
-
-function Cursor_move_v__P125775_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: Cursor_move_v__P125775, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  arg0: undefined,
-  arg1: undefined,
-} }
-
-
-
-
-
-function ControllerEventHandler_constructor__P125329(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.arg1 = (s.lambdaArgs[1]);
-      s.arg2 = (s.lambdaArgs[2]);
-      s.arg3 = (s.lambdaArgs[3]);
-      s.lambdaArgs = null;
-    }
-    r0 = s.arg0;
-    if (!checkSubtype(r0, ControllerEventHandler__C125326_VT)) failedCast(r0);
-    s.tmp_0 = EventHandler_constructor__P125317_mk(s);
-    s.tmp_0.arg0 = s.arg0;
-    s.tmp_0.arg1 = s.arg3;
-    s.callLocIdx = 77; s.pc = 1; return s.tmp_0;
-  case 1:
-    r0 = s.retval;
-    r0 = (s.arg0).fields["button"] = (s.arg1);
-    r0 = (s.arg0).fields["eventType"] = (s.arg2);
-    r0 = undefined;
-    return leave(s, r0)
-  default: oops()
-} } }
-ControllerEventHandler_constructor__P125329.info = {"start":2314,"length":188,"line":76,"column":4,"endLine":80,"endColumn":5,"fileName":"main.ts","functionName":"inline","argumentNames":["this","button","eventType","handler"]}
-
-function ControllerEventHandler_constructor__P125329_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: ControllerEventHandler_constructor__P125329, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  arg0: undefined,
-  arg1: undefined,
-  arg2: undefined,
-  arg3: undefined,
-} }
-
-
-
-
-
-function EventHandler_constructor__P125317(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.arg1 = (s.lambdaArgs[1]);
-      s.lambdaArgs = null;
-    }
-    r0 = s.arg0;
-    if (!checkSubtype(r0, EventHandler__C125315_VT)) failedCast(r0);
-    r0 = (s.arg0).fields["handler"] = (s.arg1);
-    r0 = undefined;
-    return leave(s, r0)
-  default: oops()
-} } }
-EventHandler_constructor__P125317.info = {"start":2074,"length":71,"line":64,"column":4,"endLine":66,"endColumn":5,"fileName":"main.ts","functionName":"inline","argumentNames":["this","handler"]}
-
-function EventHandler_constructor__P125317_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: EventHandler_constructor__P125317, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  arg0: undefined,
-  arg1: undefined,
-} }
-
-
-
-
-
-function EventListener_add_handler__P125378(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.arg1 = (s.lambdaArgs[1]);
-      s.lambdaArgs = null;
-    }
-    r0 = s.arg0;
-    if (!checkSubtype(r0, EventListener__C125377_VT)) failedCast(r0);
-    r0 = s.arg0.fields["handlers"];
-    s.tmp_0 = r0;
-    r0 = pxsim_Array__push(s.tmp_0, s.arg1);
-    r0 = pxsim_numops_toBoolDecr(globals.debug_log_add_handler___125177);
-    if (!r0) { step = 1; continue; }
-    s.tmp_0 = debug_log__P125171_mk(s);
-    r0 = pxsim_pxtcore.typeOf(s.arg1);
-    s.tmp_2 = r0;
-    if ((s.tmp_2) && (s.tmp_2).vtable) {
-    setupResume(s, 4);
-    pxsim_String__stringConv(s.tmp_2);
-    checkResumeConsumed();
-    return;
-    } else { s.retval = (s.tmp_2) + ""; }
-  case 4:
-    r0 = s.retval;
-    s.tmp_1 = r0;
-    r0 = pxsim_String__concat("Added handler ", s.tmp_1);
-    s.tmp_0.arg0 = r0;
-    s.callLocIdx = 80; s.pc = 3; return s.tmp_0;
-  case 3:
-    r0 = s.retval;
-  case 1:
-  case 2:
-    r0 = s.arg0.fields["handlers"];
-    s.tmp_1 = r0;
-    r0 = pxsim_Array__length(s.tmp_1);
-    s.tmp_0 = r0;
-    r0 = (s.tmp_0 - 1);
-    return leave(s, r0)
-  default: oops()
-} } }
-EventListener_add_handler__P125378.info = {"start":2988,"length":210,"line":95,"column":4,"endLine":99,"endColumn":5,"fileName":"main.ts","functionName":"add_handler","argumentNames":["this","handler"]}
-
-function EventListener_add_handler__P125378_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: EventListener_add_handler__P125378, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  tmp_1: undefined,
-  tmp_2: undefined,
-  arg0: undefined,
-  arg1: undefined,
-} }
-
-
-
-
-
-function debug_log__P125171(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.lambdaArgs = null;
-    }
-    s.tmp_0 = console_log__P380_mk(s);
-    if ((s.arg0) && (s.arg0).vtable) {
-    setupResume(s, 2);
-    pxsim_String__stringConv(s.arg0);
-    checkResumeConsumed();
-    return;
-    } else { s.retval = (s.arg0) + ""; }
-  case 2:
-    r0 = s.retval;
-    s.tmp_1 = r0;
-    r0 = pxsim_String__concat("DEBUG: ", s.tmp_1);
-    s.tmp_0.arg0 = r0;
-    s.callLocIdx = 71; s.pc = 1; return s.tmp_0;
-  case 1:
-    r0 = s.retval;
-    r0 = undefined;
-    return leave(s, r0)
-  default: oops()
-} } }
-debug_log__P125171.info = {"start":527,"length":70,"line":11,"column":4,"endLine":13,"endColumn":5,"fileName":"main.ts","functionName":"log","argumentNames":["data"]}
-
-function debug_log__P125171_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: debug_log__P125171, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  tmp_1: undefined,
-  arg0: undefined,
-} }
-
-
-
-
-
-function console_log__P380(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.lambdaArgs = null;
-    }
-    s.tmp_0 = console_add__P376_mk(s);
-    s.tmp_0.arg0 = 1;
-    s.tmp_0.arg1 = s.arg0;
-    s.callLocIdx = 33; s.pc = 1; return s.tmp_0;
-  case 1:
-    r0 = s.retval;
-    r0 = undefined;
-    return leave(s, r0)
-  default: oops()
-} } }
-console_log__P380.info = {"start":1450,"length":86,"line":58,"column":4,"endLine":60,"endColumn":5,"fileName":"pxt_modules/base/console.ts","functionName":"log","argumentNames":["value"]}
-
-function console_log__P380_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: console_log__P380, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  arg0: undefined,
-} }
-
-
-
-
-
-function console_add__P376(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    s.text___9662 = undefined;
-    s.i___9671 = undefined;
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.arg1 = (s.lambdaArgs[1]);
-      s.lambdaArgs = null;
-    }
-    r0 = (s.arg0 < globals.minPriority___375);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 1; continue; }
-    { step = 5; continue; }
-  case 1:
-  case 2:
-    s.tmp_1 = console_inspect__P382_mk(s);
-    s.tmp_1.arg0 = s.arg1;
-    s.tmp_1.arg1 = 20;
-    s.callLocIdx = 31; s.pc = 6; return s.tmp_1;
-  case 6:
-    r0 = s.retval;
-    s.text___9662 = (r0);
-    if ((s.text___9662) && (s.text___9662).vtable) {
-    setupResume(s, 7);
-    pxsim_String__stringConv(s.text___9662);
-    checkResumeConsumed();
-    return;
-    } else { s.retval = (s.text___9662) + ""; }
-  case 7:
-    r0 = s.retval;
-    s.tmp_0 = r0;
-    r0 = pxsim_String__concat(s.tmp_0, "\n");
-    s.text___9662 = (r0);
-    s.i___9671 = (0);
-  case 3:
-    s.tmp_1 = r0 = s.i___9671;
-    r0 = pxsim_Array__length(globals.listeners___4693);
-    s.tmp_2 = r0;
-    r0 = (s.tmp_1 < s.tmp_2);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 4; continue; }
-    s.tmp_3 = lambda_3_mk(s);
-    r0 = pxsim_Array__getAt(globals.listeners___4693, s.i___9671);
-    s.tmp_3.argL = r0;
-    s.tmp_3.arg0 = s.arg0;
-    s.tmp_3.arg1 = s.text___9662;
-    setupLambda(s.tmp_3, s.tmp_3.argL);
-    s.callLocIdx = 32; s.pc = 8; return s.tmp_3;
-  case 8:
-    r0 = s.retval;
-    r0 = (s.i___9671 + 1);
-    s.i___9671 = (r0);
-    { step = 3; continue; }
-  case 4:
-  case 5:
-    r0 = undefined;
-    return leave(s, r0)
-  default: oops()
-} } }
-console_add__P376.info = {"start":632,"length":317,"line":28,"column":4,"endLine":36,"endColumn":5,"fileName":"pxt_modules/base/console.ts","functionName":"add","argumentNames":["priority","message"]}
-
-function console_add__P376_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: console_add__P376, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  tmp_1: undefined,
-  tmp_2: undefined,
-  tmp_3: undefined,
-  text___9662: undefined,
-  i___9671: undefined,
-  arg0: undefined,
-  arg1: undefined,
-} }
-
-
-
-
-
-function listeners_inline__P4692(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.arg1 = (s.lambdaArgs[1]);
-      s.lambdaArgs = null;
-    }
-    r0 = pxsim.control.__log(s.arg0, s.arg1);
-    r0 = undefined;
-    return leave(s, r0)
-  default: oops()
-} } }
-listeners_inline__P4692.info = {"start":534,"length":85,"line":25,"column":8,"endLine":25,"endColumn":93,"fileName":"pxt_modules/base/console.ts","functionName":"inline","argumentNames":["priority","text"]}
-
-function listeners_inline__P4692_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: listeners_inline__P4692, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  arg0: undefined,
-  arg1: undefined,
-} }
-
-
-
-
-
-function console_inspect__P382(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    s.asArr___9709 = undefined;
-    s.asString___9727 = undefined;
-    s.keys___9739 = undefined;
-    s.snipped___9743 = undefined;
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.arg1 = (s.lambdaArgs[1]);
-      s.lambdaArgs = null;
-    }
-    r0 = pxsim_pxtcore.typeOf(s.arg0);
-    s.tmp_1 = r0;
-    r0 = (s.tmp_1 == "string");
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 1; continue; }
-    r0 = s.arg0;
-    { step = 17; continue; }
-    { step = 16; continue; }
-  case 1:
-    r0 = pxsim_pxtcore.typeOf(s.arg0);
-    s.tmp_3 = r0;
-    r0 = (s.tmp_3 == "number");
-    s.tmp_2 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_2);
-    if (!r0) { step = 2; continue; }
-    r0 = pxsim_String_.mkEmpty();
-    s.tmp_4 = r0;
-    if ((s.arg0) && (s.arg0).vtable) {
-    setupResume(s, 18);
-    pxsim_String__stringConv(s.arg0);
-    checkResumeConsumed();
-    return;
-    } else { s.retval = (s.arg0) + ""; }
-  case 18:
-    r0 = s.retval;
-    s.tmp_5 = r0;
-    r0 = pxsim_String__concat(s.tmp_4, s.tmp_5);
-    { step = 17; continue; }
-    { step = 15; continue; }
-  case 2:
-    r0 = pxsim_Array_.isArray(s.arg0);
-    s.tmp_6 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_6);
-    if (!r0) { step = 5; continue; }
-    s.asArr___9709 = (s.arg0);
-    r0 = pxsim_Array__length(s.asArr___9709);
-    s.tmp_1 = r0;
-    r0 = (s.tmp_1 <= s.arg1);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 3; continue; }
-    s.tmp_2 = helpers_arrayJoin__P103_mk(s);
-    s.tmp_2.arg0 = s.asArr___9709;
-    s.tmp_2.arg1 = ",";
-    s.callLocIdx = 34; s.pc = 19; return s.tmp_2;
-  case 19:
-    r0 = s.retval;
-    { step = 17; continue; }
-    { step = 4; continue; }
-  case 3:
-    r0 = pxsim_String_.mkEmpty();
-    s.tmp_4 = r0;
-    s.tmp_7 = helpers_arrayJoin__P103_mk(s);
-    s.tmp_8 = helpers_arraySlice__P115_mk(s);
-    s.tmp_8.arg0 = s.asArr___9709;
-    s.tmp_8.arg1 = 0;
-    s.tmp_8.arg2 = s.arg1;
-    s.callLocIdx = 35; s.pc = 21; return s.tmp_8;
-  case 21:
-    r0 = s.retval;
-    s.tmp_7.arg0 = r0;
-    s.tmp_7.arg1 = ",";
-    s.callLocIdx = 36; s.pc = 20; return s.tmp_7;
-  case 20:
-    r0 = s.retval;
-    s.tmp_6 = r0;
-    if ((s.tmp_6) && (s.tmp_6).vtable) {
-    setupResume(s, 22);
-    pxsim_String__stringConv(s.tmp_6);
-    checkResumeConsumed();
-    return;
-    } else { s.retval = (s.tmp_6) + ""; }
-  case 22:
-    r0 = s.retval;
-    s.tmp_5 = r0;
-    r0 = pxsim_String__concat(s.tmp_4, s.tmp_5);
-    s.tmp_3 = r0;
-    r0 = pxsim_String__concat(s.tmp_3, "...");
-    { step = 17; continue; }
-  case 4:
-    { step = 14; continue; }
-  case 5:
-    if ((s.arg0) && (s.arg0).vtable) {
-    setupResume(s, 23);
-    pxsim_String__stringConv(s.arg0);
-    checkResumeConsumed();
-    return;
-    } else { s.retval = (s.arg0) + ""; }
-  case 23:
-    r0 = s.retval;
-    s.tmp_9 = r0;
-    r0 = pxsim_String_.mkEmpty();
-    s.tmp_10 = r0;
-    r0 = pxsim_String__concat(s.tmp_9, s.tmp_10);
-    s.asString___9727 = (r0);
-    r0 = (s.asString___9727 != "[object Object]");
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBool(s.tmp_0);
-    if (r0) { step = 6; continue; }
-    r0 = s.tmp_0;
-    { step = 7; continue; }
-  case 6:
-    r0 = (s.asString___9727 != "[Object]");
-  case 7:
-    // jmp value (already in r0)
-    s.tmp_1 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_1);
-    if (!r0) { step = 8; continue; }
-    r0 = s.asString___9727;
-    { step = 17; continue; }
-  case 8:
-  case 9:
-    r0 = pxsim_pxtrt.keysOf(s.arg0);
-    s.keys___9739 = (r0);
-    r0 = pxsim_Array__length(s.keys___9739);
-    s.tmp_0 = r0;
-    r0 = (s.tmp_0 > s.arg1);
-    s.snipped___9743 = (r0);
-    r0 = pxsim_numops_toBoolDecr(s.snipped___9743);
-    if (!r0) { step = 10; continue; }
-    s.tmp_0 = helpers_arraySlice__P115_mk(s);
-    s.tmp_0.arg0 = s.keys___9739;
-    s.tmp_0.arg1 = 0;
-    s.tmp_0.arg2 = s.arg1;
-    s.callLocIdx = 37; s.pc = 24; return s.tmp_0;
-  case 24:
-    r0 = s.retval;
-    s.keys___9739 = (r0);
-  case 10:
-  case 11:
-    r0 = pxsim_pxtcore_mkAction(1, console_inspect_inline__P9760);
-    s.tmp_0 = r0;
-    r0 = pxsim_pxtrt_stclo(s.tmp_0, 0, s.arg0);
-    r0 = pxsim_numops_toBoolDecr(s.snipped___9743);
-    if (!r0) { step = 12; continue; }
-    r0 = "\n    ...";
-    { step = 13; continue; }
-  case 12:
-    r0 = pxsim_String_.mkEmpty();
-  case 13:
-    // jmp value (already in r0)
-    s.tmp_1 = r0;
-    s.tmp_7 = helpers_arrayReduce__P112_mk(s);
-    s.tmp_7.arg0 = s.keys___9739;
-    s.tmp_7.arg1 = s.tmp_0;
-    r0 = pxsim_String_.mkEmpty();
-    s.tmp_7.arg2 = r0;
-    s.callLocIdx = 38; s.pc = 25; return s.tmp_7;
-  case 25:
-    r0 = s.retval;
-    s.tmp_6 = r0;
-    if ((s.tmp_6) && (s.tmp_6).vtable) {
-    setupResume(s, 26);
-    pxsim_String__stringConv(s.tmp_6);
-    checkResumeConsumed();
-    return;
-    } else { s.retval = (s.tmp_6) + ""; }
-  case 26:
-    r0 = s.retval;
-    s.tmp_5 = r0;
-    if ((s.tmp_1) && (s.tmp_1).vtable) {
-    setupResume(s, 27);
-    pxsim_String__stringConv(s.tmp_1);
-    checkResumeConsumed();
-    return;
-    } else { s.retval = (s.tmp_1) + ""; }
-  case 27:
-    r0 = s.retval;
-    s.tmp_8 = r0;
-    r0 = pxsim_String__concat(s.tmp_5, s.tmp_8);
-    s.tmp_4 = r0;
-    if ((s.tmp_4) && (s.tmp_4).vtable) {
-    setupResume(s, 28);
-    pxsim_String__stringConv(s.tmp_4);
-    checkResumeConsumed();
-    return;
-    } else { s.retval = (s.tmp_4) + ""; }
-  case 28:
-    r0 = s.retval;
-    s.tmp_3 = r0;
-    r0 = pxsim_String__concat("{", s.tmp_3);
-    s.tmp_2 = r0;
-    r0 = pxsim_String__concat(s.tmp_2, "\n}");
-    { step = 17; continue; }
-  case 14:
-  case 15:
-  case 16:
-    r0 = undefined;
-  case 17:
-    return leave(s, r0)
-  default: oops()
-} } }
-console_inspect__P382.info = {"start":2271,"length":1190,"line":81,"column":4,"endLine":114,"endColumn":5,"fileName":"pxt_modules/base/console.ts","functionName":"inspect","argumentNames":["obj","maxElements"]}
-
-function console_inspect__P382_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: console_inspect__P382, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  tmp_1: undefined,
-  tmp_2: undefined,
-  tmp_3: undefined,
-  tmp_4: undefined,
-  tmp_5: undefined,
-  tmp_6: undefined,
-  tmp_7: undefined,
-  tmp_8: undefined,
-  tmp_9: undefined,
-  tmp_10: undefined,
-  asArr___9709: undefined,
-  asString___9727: undefined,
-  keys___9739: undefined,
-  snipped___9743: undefined,
-  arg0: undefined,
-  arg1: undefined,
-} }
-
-
-
-
-
-function console_inspect_inline__P9760(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.arg1 = (s.lambdaArgs[1]);
-      s.lambdaArgs = null;
-    }
-    if ((s.arg0) && (s.arg0).vtable) {
-    setupResume(s, 1);
-    pxsim_String__stringConv(s.arg0);
-    checkResumeConsumed();
-    return;
-    } else { s.retval = (s.arg0) + ""; }
-  case 1:
-    r0 = s.retval;
-    s.tmp_0 = r0;
-    if ((s.arg1) && (s.arg1).vtable) {
-    setupResume(s, 2);
-    pxsim_String__stringConv(s.arg1);
-    checkResumeConsumed();
-    return;
-    } else { s.retval = (s.arg1) + ""; }
-  case 2:
-    r0 = s.retval;
-    s.tmp_5 = r0;
-    r0 = pxsim_String__concat("\n    ", s.tmp_5);
-    s.tmp_4 = r0;
-    r0 = pxsim_String__concat(s.tmp_4, ": ");
-    s.tmp_3 = r0;
-    r0 = pxsim_pxtrt.mapGetGeneric(s.caps[0], s.arg1);
-    s.tmp_7 = r0;
-    if ((s.tmp_7) && (s.tmp_7).vtable) {
-    setupResume(s, 3);
-    pxsim_String__stringConv(s.tmp_7);
-    checkResumeConsumed();
-    return;
-    } else { s.retval = (s.tmp_7) + ""; }
-  case 3:
-    r0 = s.retval;
-    s.tmp_6 = r0;
-    r0 = pxsim_String__concat(s.tmp_3, s.tmp_6);
-    s.tmp_2 = r0;
-    if ((s.tmp_2) && (s.tmp_2).vtable) {
-    setupResume(s, 4);
-    pxsim_String__stringConv(s.tmp_2);
-    checkResumeConsumed();
-    return;
-    } else { s.retval = (s.tmp_2) + ""; }
-  case 4:
-    r0 = s.retval;
-    s.tmp_1 = r0;
-    r0 = pxsim_String__concat(s.tmp_0, s.tmp_1);
-    return leave(s, r0)
-  default: oops()
-} } }
-console_inspect_inline__P9760.info = {"start":3293,"length":61,"line":108,"column":20,"endLine":108,"endColumn":81,"fileName":"pxt_modules/base/console.ts","functionName":"inline","argumentNames":["prev","currKey"]}
-
-function console_inspect_inline__P9760_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: console_inspect_inline__P9760, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  tmp_1: undefined,
-  tmp_2: undefined,
-  tmp_3: undefined,
-  tmp_4: undefined,
-  tmp_5: undefined,
-  tmp_6: undefined,
-  tmp_7: undefined,
-  arg0: undefined,
-  arg1: undefined,
-} }
-
-
-
-
-
-function helpers_arraySlice__P115(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    s.res___9808 = undefined;
-    s.len___9810 = undefined;
-    s.i___9844 = undefined;
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.arg1 = (s.lambdaArgs[1]);
-      s.arg2 = (s.lambdaArgs[2]);
-      s.lambdaArgs = null;
-    }
-    r0 = pxsim_Array__mk();
-    s.res___9808 = (r0);
-    r0 = pxsim_Array__length(s.arg0);
-    s.len___9810 = (r0);
-    r0 = (s.arg1 === undefined);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 1; continue; }
-    s.arg1 = (0);
-    { step = 4; continue; }
-  case 1:
-    r0 = (s.arg1 < 0);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 2; continue; }
-    s.tmp_1 = Math_max__P130_mk(s);
-    r0 = (s.len___9810 + s.arg1);
-    s.tmp_1.arg0 = r0;
-    s.tmp_1.arg1 = 0;
-    s.callLocIdx = 8; s.pc = 16; return s.tmp_1;
-  case 16:
-    r0 = s.retval;
-    s.arg1 = (r0);
-  case 2:
-  case 3:
-  case 4:
-    r0 = (s.arg1 > s.len___9810);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 5; continue; }
-    r0 = s.res___9808;
-    { step = 15; continue; }
-  case 5:
-  case 6:
-    r0 = (s.arg2 === undefined);
-    s.tmp_1 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_1);
-    if (!r0) { step = 7; continue; }
-    s.arg2 = (s.len___9810);
-    { step = 10; continue; }
-  case 7:
-    r0 = (s.arg2 < 0);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 8; continue; }
-    r0 = (s.len___9810 + s.arg2);
-    s.arg2 = (r0);
-  case 8:
-  case 9:
-  case 10:
-    r0 = (s.arg2 > s.len___9810);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 11; continue; }
-    s.arg2 = (s.len___9810);
-  case 11:
-  case 12:
-    s.i___9844 = (s.arg1);
-  case 13:
-    r0 = (s.i___9844 < s.arg2);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 14; continue; }
-    s.tmp_1 = r0 = s.res___9808;
-    r0 = pxsim_Array__getAt(s.arg0, s.i___9844);
-    s.tmp_2 = r0;
-    r0 = pxsim_Array__push(s.tmp_1, s.tmp_2);
-    r0 = (s.i___9844 + 1);
-    s.i___9844 = (r0);
-    { step = 13; continue; }
-  case 14:
-    r0 = s.res___9808;
-  case 15:
-    return leave(s, r0)
-  default: oops()
-} } }
-helpers_arraySlice__P115.info = {"start":9027,"length":690,"line":303,"column":4,"endLine":328,"endColumn":5,"fileName":"pxt_modules/base/pxt-helpers.ts","functionName":"arraySlice","argumentNames":["arr","start","end"]}
-
-function helpers_arraySlice__P115_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: helpers_arraySlice__P115, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  tmp_1: undefined,
-  tmp_2: undefined,
-  res___9808: undefined,
-  len___9810: undefined,
-  i___9844: undefined,
-  arg0: undefined,
-  arg1: undefined,
-  arg2: undefined,
-} }
-
-
-
-
-
-function helpers_arrayReduce__P112(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    s.len___9787 = undefined;
-    s.i___9790 = undefined;
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.arg1 = (s.lambdaArgs[1]);
-      s.arg2 = (s.lambdaArgs[2]);
-      s.lambdaArgs = null;
-    }
-    r0 = pxsim_Array__length(s.arg0);
-    s.len___9787 = (r0);
-    s.i___9790 = (0);
-  case 1:
-    r0 = (s.i___9790 < s.len___9787);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 2; continue; }
-    s.tmp_1 = lambda_4_mk(s);
-    s.tmp_1.argL = s.arg1;
-    s.tmp_1.arg0 = s.arg2;
-    r0 = pxsim_Array__getAt(s.arg0, s.i___9790);
-    s.tmp_1.arg1 = r0;
-    s.tmp_1.arg2 = s.i___9790;
-    setupLambda(s.tmp_1, s.tmp_1.argL);
-    s.callLocIdx = 7; s.pc = 3; return s.tmp_1;
-  case 3:
-    r0 = s.retval;
-    s.arg2 = (r0);
-    r0 = (s.i___9790 + 1);
-    s.i___9790 = (r0);
-    { step = 1; continue; }
-  case 2:
-    r0 = s.arg2;
-    return leave(s, r0)
-  default: oops()
-} } }
-helpers_arrayReduce__P112.info = {"start":8316,"length":317,"line":280,"column":4,"endLine":286,"endColumn":5,"fileName":"pxt_modules/base/pxt-helpers.ts","functionName":"arrayReduce","argumentNames":["arr","callbackfn","initialValue"]}
-
-function helpers_arrayReduce__P112_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: helpers_arrayReduce__P112, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  tmp_1: undefined,
-  len___9787: undefined,
-  i___9790: undefined,
-  arg0: undefined,
-  arg1: undefined,
-  arg2: undefined,
-} }
-
-
-
-
-
-function helpers_arrayJoin__P103(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    s.r___9869 = undefined;
-    s.len___9870 = undefined;
-    s.i___9873 = undefined;
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.arg1 = (s.lambdaArgs[1]);
-      s.lambdaArgs = null;
-    }
-    r0 = (s.arg1 === undefined);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBool(s.tmp_0);
-    if (!r0) { step = 1; continue; }
-    r0 = s.tmp_0;
-    { step = 2; continue; }
-  case 1:
-    r0 = (s.arg1 === null);
-  case 2:
-    // jmp value (already in r0)
-    s.tmp_1 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_1);
-    if (!r0) { step = 3; continue; }
-    s.arg1 = (",");
-  case 3:
-  case 4:
-    r0 = pxsim_String_.mkEmpty();
-    s.r___9869 = (r0);
-    r0 = pxsim_Array__length(s.arg0);
-    s.len___9870 = (r0);
-    s.i___9873 = (0);
-  case 5:
-    r0 = (s.i___9873 < s.len___9870);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
-    if (!r0) { step = 14; continue; }
-    r0 = (s.i___9873 > 0);
-    s.tmp_1 = r0;
-    r0 = pxsim_numops_toBool(s.tmp_1);
-    if (r0) { step = 6; continue; }
-    r0 = s.tmp_1;
-    { step = 7; continue; }
-  case 6:
-    r0 = s.arg1;
-  case 7:
-    // jmp value (already in r0)
-    s.tmp_2 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_2);
-    if (!r0) { step = 8; continue; }
-    if ((s.r___9869) && (s.r___9869).vtable) {
-    setupResume(s, 15);
-    pxsim_String__stringConv(s.r___9869);
-    checkResumeConsumed();
-    return;
-    } else { s.retval = (s.r___9869) + ""; }
-  case 15:
-    r0 = s.retval;
-    s.tmp_3 = r0;
-    if ((s.arg1) && (s.arg1).vtable) {
-    setupResume(s, 16);
-    pxsim_String__stringConv(s.arg1);
-    checkResumeConsumed();
-    return;
-    } else { s.retval = (s.arg1) + ""; }
-  case 16:
-    r0 = s.retval;
-    s.tmp_4 = r0;
-    r0 = pxsim_String__concat(s.tmp_3, s.tmp_4);
-    s.r___9869 = (r0);
-  case 8:
-  case 9:
-    r0 = pxsim_Array__getAt(s.arg0, s.i___9873);
-    s.tmp_1 = r0;
-    r0 = (s.tmp_1 === undefined);
-    s.tmp_0 = r0;
-    r0 = pxsim_numops_toBool(s.tmp_0);
-    if (!r0) { step = 10; continue; }
-    r0 = s.tmp_0;
-    { step = 11; continue; }
-  case 10:
-    r0 = pxsim_Array__getAt(s.arg0, s.i___9873);
-    s.tmp_2 = r0;
-    r0 = (s.tmp_2 === null);
-  case 11:
-    // jmp value (already in r0)
-    s.tmp_3 = r0;
-    r0 = pxsim_numops_toBoolDecr(s.tmp_3);
-    if (!r0) { step = 12; continue; }
-    r0 = pxsim_String_.mkEmpty();
-    { step = 13; continue; }
-  case 12:
-    r0 = pxsim_Array__getAt(s.arg0, s.i___9873);
-  case 13:
-    // jmp value (already in r0)
-    s.tmp_4 = r0;
-    if ((s.r___9869) && (s.r___9869).vtable) {
-    setupResume(s, 17);
-    pxsim_String__stringConv(s.r___9869);
-    checkResumeConsumed();
-    return;
-    } else { s.retval = (s.r___9869) + ""; }
-  case 17:
-    r0 = s.retval;
-    s.tmp_5 = r0;
-    if ((s.tmp_4) && (s.tmp_4).vtable) {
-    setupResume(s, 18);
-    pxsim_String__stringConv(s.tmp_4);
-    checkResumeConsumed();
-    return;
-    } else { s.retval = (s.tmp_4) + ""; }
-  case 18:
-    r0 = s.retval;
-    s.tmp_6 = r0;
-    r0 = pxsim_String__concat(s.tmp_5, s.tmp_6);
-    s.r___9869 = (r0);
-    r0 = (s.i___9873 + 1);
-    s.i___9873 = (r0);
-    { step = 5; continue; }
-  case 14:
-    r0 = s.r___9869;
-    return leave(s, r0)
-  default: oops()
-} } }
-helpers_arrayJoin__P103.info = {"start":4133,"length":432,"line":157,"column":4,"endLine":170,"endColumn":5,"fileName":"pxt_modules/base/pxt-helpers.ts","functionName":"arrayJoin","argumentNames":["arr","sep"]}
-
-function helpers_arrayJoin__P103_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: helpers_arrayJoin__P103, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  tmp_1: undefined,
-  tmp_2: undefined,
-  tmp_3: undefined,
-  tmp_4: undefined,
-  tmp_5: undefined,
-  tmp_6: undefined,
-  r___9869: undefined,
-  len___9870: undefined,
-  i___9873: undefined,
-  arg0: undefined,
-  arg1: undefined,
-} }
-
-
-
-
-
-function Cursor_set_speed__P125768(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.arg1 = (s.lambdaArgs[1]);
-      s.lambdaArgs = null;
-    }
-    r0 = s.arg0;
-    if (!checkSubtype(r0, Cursor__C125766_VT)) failedCast(r0);
-    r0 = (s.arg0).fields["speed"] = (s.arg1);
-    r0 = undefined;
-    return leave(s, r0)
-  default: oops()
-} } }
-Cursor_set_speed__P125768.info = {"start":15065,"length":65,"line":348,"column":4,"endLine":350,"endColumn":5,"fileName":"main.ts","functionName":"set_speed","argumentNames":["this","speed"]}
-
-function Cursor_set_speed__P125768_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: Cursor_set_speed__P125768, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  arg0: undefined,
-  arg1: undefined,
-} }
-
-
-
-
-
-function Cursor_set_default_speed__P125769(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.arg1 = (s.lambdaArgs[1]);
-      s.lambdaArgs = null;
-    }
-    r0 = s.arg0;
-    if (!checkSubtype(r0, Cursor__C125766_VT)) failedCast(r0);
-    r0 = (s.arg0).fields["defaultSpeed"] = (s.arg1);
-    r0 = undefined;
-    return leave(s, r0)
-  default: oops()
-} } }
-Cursor_set_default_speed__P125769.info = {"start":15136,"length":80,"line":352,"column":4,"endLine":354,"endColumn":5,"fileName":"main.ts","functionName":"set_default_speed","argumentNames":["this","speed"]}
-
-function Cursor_set_default_speed__P125769_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: Cursor_set_default_speed__P125769, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  arg0: undefined,
-  arg1: undefined,
-} }
-
-
-
-
-
-function scene_setBackgroundColor__P2900(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    s.scene___8374 = undefined;
-    if (s.lambdaArgs) {
-      s.arg0 = (s.lambdaArgs[0]);
-      s.lambdaArgs = null;
-    }
-    s.tmp_0 = game_currentScene__P3033_mk(s);
-    s.callLocIdx = 924; s.pc = 1; return s.tmp_0;
-  case 1:
-    r0 = s.retval;
-    s.scene___8374 = (r0);
-    r0 = s.scene___8374.fields["background"];
-    s.tmp_0 = r0;
-    r0 = (s.tmp_0).fields["color"] = (s.arg0);
-    r0 = undefined;
-    return leave(s, r0)
-  default: oops()
-} } }
-scene_setBackgroundColor__P2900.info = {"start":1231,"length":140,"line":53,"column":4,"endLine":56,"endColumn":5,"fileName":"pxt_modules/game/scenes.ts","functionName":"setBackgroundColor","argumentNames":["color"]}
-
-function scene_setBackgroundColor__P2900_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: scene_setBackgroundColor__P2900, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  scene___8374: undefined,
-  arg0: undefined,
-} }
-
-
-
-
-
-function EventListener_handle_events__P125380(s) {
-let r0 = s.r0, step = s.pc;
-s.pc = -1;
-
-
-while (true) {
-if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
-switch (step) {
-  case 0:
-
-    s.handler_id___125419 = undefined;
+    s.handler_id___180370 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, EventListener__C125377_VT)) failedCast(r0);
-    s.handler_id___125419 = (0);
+    if (!checkSubtype(r0, EventListener__C180284_VT)) failedCast(r0);
+    s.handler_id___180370 = (0);
   case 1:
-    s.tmp_1 = r0 = s.handler_id___125419;
+    s.tmp_1 = r0 = s.handler_id___180370;
     r0 = s.arg0.fields["handlers"];
     s.tmp_3 = r0;
     r0 = pxsim_Array__length(s.tmp_3);
@@ -6740,30 +4304,30 @@ switch (step) {
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 2; continue; }
-    s.tmp_4 = EventHandler__C125315_v0_1_mk(s);
+    s.tmp_4 = EventHandler__C180222_v0_1_mk(s);
     r0 = s.arg0.fields["handlers"];
     s.tmp_5 = r0;
-    r0 = pxsim_Array__getAt(s.tmp_5, s.handler_id___125419);
+    r0 = pxsim_Array__getAt(s.tmp_5, s.handler_id___180370);
     s.tmp_4.arg0 = r0;
-    if (!checkSubtype(s.tmp_4.arg0, EventHandler__C125315_VT)) failedCast(s.tmp_4.arg0);
+    if (!checkSubtype(s.tmp_4.arg0, EventHandler__C180222_VT)) failedCast(s.tmp_4.arg0);
     s.tmp_4.fn = s.tmp_4.arg0.vtable.methods.run;
     s.pc = 3; return s.tmp_4;
   case 3:
     r0 = s.retval;
-    r0 = (s.handler_id___125419 + 1);
-    s.handler_id___125419 = (r0);
+    r0 = (s.handler_id___180370 + 1);
+    s.handler_id___180370 = (r0);
     { step = 1; continue; }
   case 2:
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-EventListener_handle_events__P125380.info = {"start":3399,"length":170,"line":106,"column":4,"endLine":110,"endColumn":5,"fileName":"main.ts","functionName":"handle_events","argumentNames":["this"]}
+EventListener_handle_events__P180289.info = {"start":3989,"length":170,"line":121,"column":4,"endLine":125,"endColumn":5,"fileName":"main.ts","functionName":"handle_events","argumentNames":["this"]}
 
-function EventListener_handle_events__P125380_mk(s) {
+function EventListener_handle_events__P180289_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: EventListener_handle_events__P125380, depth: s.depth + 1,
+        parent: s, fn: EventListener_handle_events__P180289, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -6771,7 +4335,7 @@ function EventListener_handle_events__P125380_mk(s) {
   tmp_3: undefined,
   tmp_4: undefined,
   tmp_5: undefined,
-  handler_id___125419: undefined,
+  handler_id___180370: undefined,
   arg0: undefined,
 } }
 
@@ -6779,7 +4343,7 @@ function EventListener_handle_events__P125380_mk(s) {
 
 
 
-function EventHandler_run__P125316(s) {
+function EventHandler_run__P180223(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -6794,7 +4358,7 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, EventHandler__C125315_VT)) failedCast(r0);
+    if (!checkSubtype(r0, EventHandler__C180222_VT)) failedCast(r0);
     s.tmp_0 = if_handler_1_mk(s);
     s.tmp_0.arg0 = s.arg0;
     if (!s.tmp_0.arg0.vtable.iface) {
@@ -6812,12 +4376,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-EventHandler_run__P125316.info = {"start":2151,"length":36,"line":68,"column":4,"endLine":70,"endColumn":5,"fileName":"main.ts","functionName":"run","argumentNames":["this"]}
+EventHandler_run__P180223.info = {"start":2233,"length":36,"line":69,"column":4,"endLine":71,"endColumn":5,"fileName":"main.ts","functionName":"run","argumentNames":["this"]}
 
-function EventHandler_run__P125316_mk(s) {
+function EventHandler_run__P180223_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: EventHandler_run__P125316, depth: s.depth + 1,
+        parent: s, fn: EventHandler_run__P180223, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   arg0: undefined,
@@ -6827,7 +4391,7 @@ function EventHandler_run__P125316_mk(s) {
 
 
 
-function dummy__P125189(s) {
+function dummy__P180096(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -6841,12 +4405,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-dummy__P125189.info = {"start":708,"length":25,"line":17,"column":0,"endLine":17,"endColumn":25,"fileName":"main.ts","functionName":"dummy","argumentNames":[]}
+dummy__P180096.info = {"start":790,"length":25,"line":18,"column":0,"endLine":18,"endColumn":25,"fileName":"main.ts","functionName":"dummy","argumentNames":[]}
 
-function dummy__P125189_mk(s) {
+function dummy__P180096_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: dummy__P125189, depth: s.depth + 1,
+        parent: s, fn: dummy__P180096, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
 } }
 
@@ -7768,7 +5332,7 @@ function control_EventHandler_register_inline__P8544_mk(s) {
 
 
 
-function Palette_load__P125626(s) {
+function Palette_load__P180577(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -7784,8 +5348,8 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, Palette__C125623_VT)) failedCast(r0);
-    r0 = pxsim_numops_toBoolDecr(globals.Palette_disabled___125638);
+    if (!checkSubtype(r0, Palette__C180574_VT)) failedCast(r0);
+    r0 = pxsim_numops_toBoolDecr(globals.Palette_disabled___180589);
     if (!r0) { step = 1; continue; }
     { step = 13; continue; }
   case 1:
@@ -7814,9 +5378,9 @@ switch (step) {
     s.tmp_3 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_3);
     if (!r0) { step = 7; continue; }
-    r0 = pxsim_pxtcore_mkClassInstance(OutOfRangeException__C125263_VT);
+    r0 = pxsim_pxtcore_mkClassInstance(OutOfRangeException__C180170_VT);
     s.tmp_5 = r0;
-    s.tmp_6 = OutOfRangeException_constructor__P125265_mk(s);
+    s.tmp_6 = OutOfRangeException_constructor__P180172_mk(s);
     s.tmp_6.arg0 = s.tmp_5;
     s.tmp_6.arg1 = 0;
     s.tmp_6.arg2 = 4;
@@ -7824,22 +5388,22 @@ switch (step) {
     s.callLocIdx = 178; s.pc = 14; return s.tmp_6;
   case 14:
     r0 = s.retval;
-    s.tmp_7 = raise__P125311_mk(s);
+    s.tmp_7 = raise__P180218_mk(s);
     s.tmp_7.arg0 = s.tmp_5;
     s.callLocIdx = 179; s.pc = 15; return s.tmp_7;
   case 15:
     r0 = s.retval;
   case 7:
   case 8:
-    r0 = pxsim_Array__getAt(globals.Palette_buf___125635, s.arg1);
+    r0 = pxsim_Array__getAt(globals.Palette_buf___180586, s.arg1);
     s.tmp_1 = r0;
     r0 = (s.tmp_1 !== null);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 9; continue; }
-    r0 = pxsim_pxtcore_mkClassInstance(AlreadyInUseException__C125296_VT);
+    r0 = pxsim_pxtcore_mkClassInstance(AlreadyInUseException__C180203_VT);
     s.tmp_2 = r0;
-    s.tmp_3 = AlreadyInUseException_constructor__P125298_mk(s);
+    s.tmp_3 = AlreadyInUseException_constructor__P180205_mk(s);
     s.tmp_3.arg0 = s.tmp_2;
     if ((s.arg1) && (s.arg1).vtable) {
     setupResume(s, 17);
@@ -7866,7 +5430,7 @@ switch (step) {
     s.callLocIdx = 180; s.pc = 16; return s.tmp_3;
   case 16:
     r0 = s.retval;
-    s.tmp_7 = raise__P125311_mk(s);
+    s.tmp_7 = raise__P180218_mk(s);
     s.tmp_7.arg0 = s.tmp_2;
     s.callLocIdx = 181; s.pc = 19; return s.tmp_7;
   case 19:
@@ -7879,10 +5443,10 @@ switch (step) {
     s.tmp_0 = r0;
     r0 = s.arg0.fields["colors"];
     s.tmp_1 = r0;
-    r0 = pxsim_Array_.setAt(globals.Palette_buf___125635, s.tmp_0, s.tmp_1);
-    r0 = pxsim_numops_toBoolDecr(globals.debug_log_load___125173);
+    r0 = pxsim_Array_.setAt(globals.Palette_buf___180586, s.tmp_0, s.tmp_1);
+    r0 = pxsim_numops_toBoolDecr(globals.log_load___180077);
     if (!r0) { step = 11; continue; }
-    s.tmp_0 = debug_log__P125171_mk(s);
+    s.tmp_0 = debug_log__P180088_mk(s);
     r0 = s.arg0.fields["buf_id"];
     s.tmp_2 = r0;
     if ((s.tmp_2) && (s.tmp_2).vtable) {
@@ -7901,7 +5465,7 @@ switch (step) {
     r0 = s.retval;
   case 11:
   case 12:
-    s.tmp_0 = Palette_apply__P125627_mk(s);
+    s.tmp_0 = Palette_apply__P180578_mk(s);
     s.tmp_0.arg0 = s.arg0;
     s.callLocIdx = 183; s.pc = 22; return s.tmp_0;
   case 22:
@@ -7911,12 +5475,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-Palette_load__P125626.info = {"start":13304,"length":547,"line":289,"column":4,"endLine":305,"endColumn":5,"fileName":"main.ts","functionName":"load","argumentNames":["this","buf_id"]}
+Palette_load__P180577.info = {"start":13894,"length":547,"line":304,"column":4,"endLine":320,"endColumn":5,"fileName":"main.ts","functionName":"load","argumentNames":["this","buf_id"]}
 
-function Palette_load__P125626_mk(s) {
+function Palette_load__P180577_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: Palette_load__P125626, depth: s.depth + 1,
+        parent: s, fn: Palette_load__P180577, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -7934,7 +5498,7 @@ function Palette_load__P125626_mk(s) {
 
 
 
-function Palette_apply__P125627(s) {
+function Palette_apply__P180578(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -7944,14 +5508,14 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.color_id___125713 = undefined;
+    s.color_id___180664 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, Palette__C125623_VT)) failedCast(r0);
-    r0 = pxsim_numops_toBoolDecr(globals.Palette_disabled___125638);
+    if (!checkSubtype(r0, Palette__C180574_VT)) failedCast(r0);
+    r0 = pxsim_numops_toBoolDecr(globals.Palette_disabled___180589);
     if (!r0) { step = 1; continue; }
     { step = 7; continue; }
   case 1:
@@ -7967,9 +5531,9 @@ switch (step) {
     { step = 7; continue; }
   case 3:
   case 4:
-    s.color_id___125713 = (0);
+    s.color_id___180664 = (0);
   case 5:
-    r0 = (s.color_id___125713 < 3);
+    r0 = (s.color_id___180664 < 3);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 6; continue; }
@@ -7978,20 +5542,20 @@ switch (step) {
     s.tmp_4 = r0;
     r0 = (s.tmp_4 * 3);
     s.tmp_3 = r0;
-    r0 = (s.tmp_3 + s.color_id___125713);
+    r0 = (s.tmp_3 + s.color_id___180664);
     s.tmp_2 = r0;
     r0 = (s.tmp_2 + 1);
     s.tmp_1.arg0 = r0;
     r0 = s.arg0.fields["colors"];
     s.tmp_5 = r0;
-    r0 = pxsim_Array__getAt(s.tmp_5, s.color_id___125713);
+    r0 = pxsim_Array__getAt(s.tmp_5, s.color_id___180664);
     s.tmp_1.arg1 = r0;
     s.tmp_1.arg2 = undefined;
     s.callLocIdx = 185; s.pc = 8; return s.tmp_1;
   case 8:
     r0 = s.retval;
-    r0 = (s.color_id___125713 + 1);
-    s.color_id___125713 = (r0);
+    r0 = (s.color_id___180664 + 1);
+    s.color_id___180664 = (r0);
     { step = 5; continue; }
   case 6:
   case 7:
@@ -7999,12 +5563,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-Palette_apply__P125627.info = {"start":13857,"length":247,"line":307,"column":4,"endLine":313,"endColumn":5,"fileName":"main.ts","functionName":"apply","argumentNames":["this"]}
+Palette_apply__P180578.info = {"start":14447,"length":247,"line":322,"column":4,"endLine":328,"endColumn":5,"fileName":"main.ts","functionName":"apply","argumentNames":["this"]}
 
-function Palette_apply__P125627_mk(s) {
+function Palette_apply__P180578_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: Palette_apply__P125627, depth: s.depth + 1,
+        parent: s, fn: Palette_apply__P180578, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -8012,8 +5576,53 @@ function Palette_apply__P125627_mk(s) {
   tmp_3: undefined,
   tmp_4: undefined,
   tmp_5: undefined,
-  color_id___125713: undefined,
+  color_id___180664: undefined,
   arg0: undefined,
+} }
+
+
+
+
+
+function Palette_abs_id__P180580(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.arg1 = (s.lambdaArgs[1]);
+      s.lambdaArgs = null;
+    }
+    r0 = s.arg0;
+    if (!checkSubtype(r0, Palette__C180574_VT)) failedCast(r0);
+    r0 = s.arg0.fields["buf_id"];
+    s.tmp_2 = r0;
+    r0 = (s.tmp_2 * 3);
+    s.tmp_1 = r0;
+    r0 = (s.tmp_1 + s.arg1);
+    s.tmp_0 = r0;
+    r0 = (s.tmp_0 + 1);
+    return leave(s, r0)
+  default: oops()
+} } }
+Palette_abs_id__P180580.info = {"start":15069,"length":93,"line":341,"column":4,"endLine":343,"endColumn":5,"fileName":"main.ts","functionName":"abs_id","argumentNames":["this","color_id"]}
+
+function Palette_abs_id__P180580_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: Palette_abs_id__P180580, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  tmp_1: undefined,
+  tmp_2: undefined,
+  arg0: undefined,
+  arg1: undefined,
 } }
 
 
@@ -10239,6 +7848,50 @@ function color_hexArrayToPalette__P4458_mk(s) {
 
 
 
+function Math_min__P131(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.arg1 = (s.lambdaArgs[1]);
+      s.lambdaArgs = null;
+    }
+    r0 = (s.arg0 <= s.arg1);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 1; continue; }
+    r0 = s.arg0;
+    { step = 3; continue; }
+  case 1:
+  case 2:
+    r0 = s.arg1;
+  case 3:
+    return leave(s, r0)
+  default: oops()
+} } }
+Math_min__P131.info = {"start":16854,"length":105,"line":568,"column":4,"endLine":571,"endColumn":5,"fileName":"pxt_modules/base/pxt-helpers.ts","functionName":"min","argumentNames":["a","b"]}
+
+function Math_min__P131_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: Math_min__P131, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  arg0: undefined,
+  arg1: undefined,
+} }
+
+
+
+
+
 function color_bufferToPalette__P4457(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
@@ -10394,7 +8047,930 @@ function color_ColorBuffer_setColor__P4410_mk(s) {
 
 
 
-function AlreadyInUseException_constructor__P125298(s) {
+function debug_log__P180088(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.lambdaArgs = null;
+    }
+    s.tmp_0 = console_log__P380_mk(s);
+    if ((s.arg0) && (s.arg0).vtable) {
+    setupResume(s, 2);
+    pxsim_String__stringConv(s.arg0);
+    checkResumeConsumed();
+    return;
+    } else { s.retval = (s.arg0) + ""; }
+  case 2:
+    r0 = s.retval;
+    s.tmp_1 = r0;
+    r0 = pxsim_String__concat("DEBUG: ", s.tmp_1);
+    s.tmp_0.arg0 = r0;
+    s.callLocIdx = 71; s.pc = 1; return s.tmp_0;
+  case 1:
+    r0 = s.retval;
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+debug_log__P180088.info = {"start":600,"length":79,"line":12,"column":4,"endLine":14,"endColumn":5,"fileName":"main.ts","functionName":"log","argumentNames":["data"]}
+
+function debug_log__P180088_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: debug_log__P180088, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  tmp_1: undefined,
+  arg0: undefined,
+} }
+
+
+
+
+
+function console_log__P380(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.lambdaArgs = null;
+    }
+    s.tmp_0 = console_add__P376_mk(s);
+    s.tmp_0.arg0 = 1;
+    s.tmp_0.arg1 = s.arg0;
+    s.callLocIdx = 33; s.pc = 1; return s.tmp_0;
+  case 1:
+    r0 = s.retval;
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+console_log__P380.info = {"start":1450,"length":86,"line":58,"column":4,"endLine":60,"endColumn":5,"fileName":"pxt_modules/base/console.ts","functionName":"log","argumentNames":["value"]}
+
+function console_log__P380_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: console_log__P380, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  arg0: undefined,
+} }
+
+
+
+
+
+function console_add__P376(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    s.text___9662 = undefined;
+    s.i___9671 = undefined;
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.arg1 = (s.lambdaArgs[1]);
+      s.lambdaArgs = null;
+    }
+    r0 = (s.arg0 < globals.minPriority___375);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 1; continue; }
+    { step = 5; continue; }
+  case 1:
+  case 2:
+    s.tmp_1 = console_inspect__P382_mk(s);
+    s.tmp_1.arg0 = s.arg1;
+    s.tmp_1.arg1 = 20;
+    s.callLocIdx = 31; s.pc = 6; return s.tmp_1;
+  case 6:
+    r0 = s.retval;
+    s.text___9662 = (r0);
+    if ((s.text___9662) && (s.text___9662).vtable) {
+    setupResume(s, 7);
+    pxsim_String__stringConv(s.text___9662);
+    checkResumeConsumed();
+    return;
+    } else { s.retval = (s.text___9662) + ""; }
+  case 7:
+    r0 = s.retval;
+    s.tmp_0 = r0;
+    r0 = pxsim_String__concat(s.tmp_0, "\n");
+    s.text___9662 = (r0);
+    s.i___9671 = (0);
+  case 3:
+    s.tmp_1 = r0 = s.i___9671;
+    r0 = pxsim_Array__length(globals.listeners___4693);
+    s.tmp_2 = r0;
+    r0 = (s.tmp_1 < s.tmp_2);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 4; continue; }
+    s.tmp_3 = lambda_3_mk(s);
+    r0 = pxsim_Array__getAt(globals.listeners___4693, s.i___9671);
+    s.tmp_3.argL = r0;
+    s.tmp_3.arg0 = s.arg0;
+    s.tmp_3.arg1 = s.text___9662;
+    setupLambda(s.tmp_3, s.tmp_3.argL);
+    s.callLocIdx = 32; s.pc = 8; return s.tmp_3;
+  case 8:
+    r0 = s.retval;
+    r0 = (s.i___9671 + 1);
+    s.i___9671 = (r0);
+    { step = 3; continue; }
+  case 4:
+  case 5:
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+console_add__P376.info = {"start":632,"length":317,"line":28,"column":4,"endLine":36,"endColumn":5,"fileName":"pxt_modules/base/console.ts","functionName":"add","argumentNames":["priority","message"]}
+
+function console_add__P376_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: console_add__P376, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  tmp_1: undefined,
+  tmp_2: undefined,
+  tmp_3: undefined,
+  text___9662: undefined,
+  i___9671: undefined,
+  arg0: undefined,
+  arg1: undefined,
+} }
+
+
+
+
+
+function listeners_inline__P4692(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.arg1 = (s.lambdaArgs[1]);
+      s.lambdaArgs = null;
+    }
+    r0 = pxsim.control.__log(s.arg0, s.arg1);
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+listeners_inline__P4692.info = {"start":534,"length":85,"line":25,"column":8,"endLine":25,"endColumn":93,"fileName":"pxt_modules/base/console.ts","functionName":"inline","argumentNames":["priority","text"]}
+
+function listeners_inline__P4692_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: listeners_inline__P4692, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  arg0: undefined,
+  arg1: undefined,
+} }
+
+
+
+
+
+function console_inspect__P382(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    s.asArr___9709 = undefined;
+    s.asString___9727 = undefined;
+    s.keys___9739 = undefined;
+    s.snipped___9743 = undefined;
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.arg1 = (s.lambdaArgs[1]);
+      s.lambdaArgs = null;
+    }
+    r0 = pxsim_pxtcore.typeOf(s.arg0);
+    s.tmp_1 = r0;
+    r0 = (s.tmp_1 == "string");
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 1; continue; }
+    r0 = s.arg0;
+    { step = 17; continue; }
+    { step = 16; continue; }
+  case 1:
+    r0 = pxsim_pxtcore.typeOf(s.arg0);
+    s.tmp_3 = r0;
+    r0 = (s.tmp_3 == "number");
+    s.tmp_2 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_2);
+    if (!r0) { step = 2; continue; }
+    r0 = pxsim_String_.mkEmpty();
+    s.tmp_4 = r0;
+    if ((s.arg0) && (s.arg0).vtable) {
+    setupResume(s, 18);
+    pxsim_String__stringConv(s.arg0);
+    checkResumeConsumed();
+    return;
+    } else { s.retval = (s.arg0) + ""; }
+  case 18:
+    r0 = s.retval;
+    s.tmp_5 = r0;
+    r0 = pxsim_String__concat(s.tmp_4, s.tmp_5);
+    { step = 17; continue; }
+    { step = 15; continue; }
+  case 2:
+    r0 = pxsim_Array_.isArray(s.arg0);
+    s.tmp_6 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_6);
+    if (!r0) { step = 5; continue; }
+    s.asArr___9709 = (s.arg0);
+    r0 = pxsim_Array__length(s.asArr___9709);
+    s.tmp_1 = r0;
+    r0 = (s.tmp_1 <= s.arg1);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 3; continue; }
+    s.tmp_2 = helpers_arrayJoin__P103_mk(s);
+    s.tmp_2.arg0 = s.asArr___9709;
+    s.tmp_2.arg1 = ",";
+    s.callLocIdx = 34; s.pc = 19; return s.tmp_2;
+  case 19:
+    r0 = s.retval;
+    { step = 17; continue; }
+    { step = 4; continue; }
+  case 3:
+    r0 = pxsim_String_.mkEmpty();
+    s.tmp_4 = r0;
+    s.tmp_7 = helpers_arrayJoin__P103_mk(s);
+    s.tmp_8 = helpers_arraySlice__P115_mk(s);
+    s.tmp_8.arg0 = s.asArr___9709;
+    s.tmp_8.arg1 = 0;
+    s.tmp_8.arg2 = s.arg1;
+    s.callLocIdx = 35; s.pc = 21; return s.tmp_8;
+  case 21:
+    r0 = s.retval;
+    s.tmp_7.arg0 = r0;
+    s.tmp_7.arg1 = ",";
+    s.callLocIdx = 36; s.pc = 20; return s.tmp_7;
+  case 20:
+    r0 = s.retval;
+    s.tmp_6 = r0;
+    if ((s.tmp_6) && (s.tmp_6).vtable) {
+    setupResume(s, 22);
+    pxsim_String__stringConv(s.tmp_6);
+    checkResumeConsumed();
+    return;
+    } else { s.retval = (s.tmp_6) + ""; }
+  case 22:
+    r0 = s.retval;
+    s.tmp_5 = r0;
+    r0 = pxsim_String__concat(s.tmp_4, s.tmp_5);
+    s.tmp_3 = r0;
+    r0 = pxsim_String__concat(s.tmp_3, "...");
+    { step = 17; continue; }
+  case 4:
+    { step = 14; continue; }
+  case 5:
+    if ((s.arg0) && (s.arg0).vtable) {
+    setupResume(s, 23);
+    pxsim_String__stringConv(s.arg0);
+    checkResumeConsumed();
+    return;
+    } else { s.retval = (s.arg0) + ""; }
+  case 23:
+    r0 = s.retval;
+    s.tmp_9 = r0;
+    r0 = pxsim_String_.mkEmpty();
+    s.tmp_10 = r0;
+    r0 = pxsim_String__concat(s.tmp_9, s.tmp_10);
+    s.asString___9727 = (r0);
+    r0 = (s.asString___9727 != "[object Object]");
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBool(s.tmp_0);
+    if (r0) { step = 6; continue; }
+    r0 = s.tmp_0;
+    { step = 7; continue; }
+  case 6:
+    r0 = (s.asString___9727 != "[Object]");
+  case 7:
+    // jmp value (already in r0)
+    s.tmp_1 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_1);
+    if (!r0) { step = 8; continue; }
+    r0 = s.asString___9727;
+    { step = 17; continue; }
+  case 8:
+  case 9:
+    r0 = pxsim_pxtrt.keysOf(s.arg0);
+    s.keys___9739 = (r0);
+    r0 = pxsim_Array__length(s.keys___9739);
+    s.tmp_0 = r0;
+    r0 = (s.tmp_0 > s.arg1);
+    s.snipped___9743 = (r0);
+    r0 = pxsim_numops_toBoolDecr(s.snipped___9743);
+    if (!r0) { step = 10; continue; }
+    s.tmp_0 = helpers_arraySlice__P115_mk(s);
+    s.tmp_0.arg0 = s.keys___9739;
+    s.tmp_0.arg1 = 0;
+    s.tmp_0.arg2 = s.arg1;
+    s.callLocIdx = 37; s.pc = 24; return s.tmp_0;
+  case 24:
+    r0 = s.retval;
+    s.keys___9739 = (r0);
+  case 10:
+  case 11:
+    r0 = pxsim_pxtcore_mkAction(1, console_inspect_inline__P9760);
+    s.tmp_0 = r0;
+    r0 = pxsim_pxtrt_stclo(s.tmp_0, 0, s.arg0);
+    r0 = pxsim_numops_toBoolDecr(s.snipped___9743);
+    if (!r0) { step = 12; continue; }
+    r0 = "\n    ...";
+    { step = 13; continue; }
+  case 12:
+    r0 = pxsim_String_.mkEmpty();
+  case 13:
+    // jmp value (already in r0)
+    s.tmp_1 = r0;
+    s.tmp_7 = helpers_arrayReduce__P112_mk(s);
+    s.tmp_7.arg0 = s.keys___9739;
+    s.tmp_7.arg1 = s.tmp_0;
+    r0 = pxsim_String_.mkEmpty();
+    s.tmp_7.arg2 = r0;
+    s.callLocIdx = 38; s.pc = 25; return s.tmp_7;
+  case 25:
+    r0 = s.retval;
+    s.tmp_6 = r0;
+    if ((s.tmp_6) && (s.tmp_6).vtable) {
+    setupResume(s, 26);
+    pxsim_String__stringConv(s.tmp_6);
+    checkResumeConsumed();
+    return;
+    } else { s.retval = (s.tmp_6) + ""; }
+  case 26:
+    r0 = s.retval;
+    s.tmp_5 = r0;
+    if ((s.tmp_1) && (s.tmp_1).vtable) {
+    setupResume(s, 27);
+    pxsim_String__stringConv(s.tmp_1);
+    checkResumeConsumed();
+    return;
+    } else { s.retval = (s.tmp_1) + ""; }
+  case 27:
+    r0 = s.retval;
+    s.tmp_8 = r0;
+    r0 = pxsim_String__concat(s.tmp_5, s.tmp_8);
+    s.tmp_4 = r0;
+    if ((s.tmp_4) && (s.tmp_4).vtable) {
+    setupResume(s, 28);
+    pxsim_String__stringConv(s.tmp_4);
+    checkResumeConsumed();
+    return;
+    } else { s.retval = (s.tmp_4) + ""; }
+  case 28:
+    r0 = s.retval;
+    s.tmp_3 = r0;
+    r0 = pxsim_String__concat("{", s.tmp_3);
+    s.tmp_2 = r0;
+    r0 = pxsim_String__concat(s.tmp_2, "\n}");
+    { step = 17; continue; }
+  case 14:
+  case 15:
+  case 16:
+    r0 = undefined;
+  case 17:
+    return leave(s, r0)
+  default: oops()
+} } }
+console_inspect__P382.info = {"start":2271,"length":1190,"line":81,"column":4,"endLine":114,"endColumn":5,"fileName":"pxt_modules/base/console.ts","functionName":"inspect","argumentNames":["obj","maxElements"]}
+
+function console_inspect__P382_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: console_inspect__P382, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  tmp_1: undefined,
+  tmp_2: undefined,
+  tmp_3: undefined,
+  tmp_4: undefined,
+  tmp_5: undefined,
+  tmp_6: undefined,
+  tmp_7: undefined,
+  tmp_8: undefined,
+  tmp_9: undefined,
+  tmp_10: undefined,
+  asArr___9709: undefined,
+  asString___9727: undefined,
+  keys___9739: undefined,
+  snipped___9743: undefined,
+  arg0: undefined,
+  arg1: undefined,
+} }
+
+
+
+
+
+function console_inspect_inline__P9760(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.arg1 = (s.lambdaArgs[1]);
+      s.lambdaArgs = null;
+    }
+    if ((s.arg0) && (s.arg0).vtable) {
+    setupResume(s, 1);
+    pxsim_String__stringConv(s.arg0);
+    checkResumeConsumed();
+    return;
+    } else { s.retval = (s.arg0) + ""; }
+  case 1:
+    r0 = s.retval;
+    s.tmp_0 = r0;
+    if ((s.arg1) && (s.arg1).vtable) {
+    setupResume(s, 2);
+    pxsim_String__stringConv(s.arg1);
+    checkResumeConsumed();
+    return;
+    } else { s.retval = (s.arg1) + ""; }
+  case 2:
+    r0 = s.retval;
+    s.tmp_5 = r0;
+    r0 = pxsim_String__concat("\n    ", s.tmp_5);
+    s.tmp_4 = r0;
+    r0 = pxsim_String__concat(s.tmp_4, ": ");
+    s.tmp_3 = r0;
+    r0 = pxsim_pxtrt.mapGetGeneric(s.caps[0], s.arg1);
+    s.tmp_7 = r0;
+    if ((s.tmp_7) && (s.tmp_7).vtable) {
+    setupResume(s, 3);
+    pxsim_String__stringConv(s.tmp_7);
+    checkResumeConsumed();
+    return;
+    } else { s.retval = (s.tmp_7) + ""; }
+  case 3:
+    r0 = s.retval;
+    s.tmp_6 = r0;
+    r0 = pxsim_String__concat(s.tmp_3, s.tmp_6);
+    s.tmp_2 = r0;
+    if ((s.tmp_2) && (s.tmp_2).vtable) {
+    setupResume(s, 4);
+    pxsim_String__stringConv(s.tmp_2);
+    checkResumeConsumed();
+    return;
+    } else { s.retval = (s.tmp_2) + ""; }
+  case 4:
+    r0 = s.retval;
+    s.tmp_1 = r0;
+    r0 = pxsim_String__concat(s.tmp_0, s.tmp_1);
+    return leave(s, r0)
+  default: oops()
+} } }
+console_inspect_inline__P9760.info = {"start":3293,"length":61,"line":108,"column":20,"endLine":108,"endColumn":81,"fileName":"pxt_modules/base/console.ts","functionName":"inline","argumentNames":["prev","currKey"]}
+
+function console_inspect_inline__P9760_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: console_inspect_inline__P9760, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  tmp_1: undefined,
+  tmp_2: undefined,
+  tmp_3: undefined,
+  tmp_4: undefined,
+  tmp_5: undefined,
+  tmp_6: undefined,
+  tmp_7: undefined,
+  arg0: undefined,
+  arg1: undefined,
+} }
+
+
+
+
+
+function helpers_arraySlice__P115(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    s.res___9808 = undefined;
+    s.len___9810 = undefined;
+    s.i___9844 = undefined;
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.arg1 = (s.lambdaArgs[1]);
+      s.arg2 = (s.lambdaArgs[2]);
+      s.lambdaArgs = null;
+    }
+    r0 = pxsim_Array__mk();
+    s.res___9808 = (r0);
+    r0 = pxsim_Array__length(s.arg0);
+    s.len___9810 = (r0);
+    r0 = (s.arg1 === undefined);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 1; continue; }
+    s.arg1 = (0);
+    { step = 4; continue; }
+  case 1:
+    r0 = (s.arg1 < 0);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 2; continue; }
+    s.tmp_1 = Math_max__P130_mk(s);
+    r0 = (s.len___9810 + s.arg1);
+    s.tmp_1.arg0 = r0;
+    s.tmp_1.arg1 = 0;
+    s.callLocIdx = 8; s.pc = 16; return s.tmp_1;
+  case 16:
+    r0 = s.retval;
+    s.arg1 = (r0);
+  case 2:
+  case 3:
+  case 4:
+    r0 = (s.arg1 > s.len___9810);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 5; continue; }
+    r0 = s.res___9808;
+    { step = 15; continue; }
+  case 5:
+  case 6:
+    r0 = (s.arg2 === undefined);
+    s.tmp_1 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_1);
+    if (!r0) { step = 7; continue; }
+    s.arg2 = (s.len___9810);
+    { step = 10; continue; }
+  case 7:
+    r0 = (s.arg2 < 0);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 8; continue; }
+    r0 = (s.len___9810 + s.arg2);
+    s.arg2 = (r0);
+  case 8:
+  case 9:
+  case 10:
+    r0 = (s.arg2 > s.len___9810);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 11; continue; }
+    s.arg2 = (s.len___9810);
+  case 11:
+  case 12:
+    s.i___9844 = (s.arg1);
+  case 13:
+    r0 = (s.i___9844 < s.arg2);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 14; continue; }
+    s.tmp_1 = r0 = s.res___9808;
+    r0 = pxsim_Array__getAt(s.arg0, s.i___9844);
+    s.tmp_2 = r0;
+    r0 = pxsim_Array__push(s.tmp_1, s.tmp_2);
+    r0 = (s.i___9844 + 1);
+    s.i___9844 = (r0);
+    { step = 13; continue; }
+  case 14:
+    r0 = s.res___9808;
+  case 15:
+    return leave(s, r0)
+  default: oops()
+} } }
+helpers_arraySlice__P115.info = {"start":9027,"length":690,"line":303,"column":4,"endLine":328,"endColumn":5,"fileName":"pxt_modules/base/pxt-helpers.ts","functionName":"arraySlice","argumentNames":["arr","start","end"]}
+
+function helpers_arraySlice__P115_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: helpers_arraySlice__P115, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  tmp_1: undefined,
+  tmp_2: undefined,
+  res___9808: undefined,
+  len___9810: undefined,
+  i___9844: undefined,
+  arg0: undefined,
+  arg1: undefined,
+  arg2: undefined,
+} }
+
+
+
+
+
+function Math_max__P130(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.arg1 = (s.lambdaArgs[1]);
+      s.lambdaArgs = null;
+    }
+    r0 = (s.arg0 >= s.arg1);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 1; continue; }
+    r0 = s.arg0;
+    { step = 3; continue; }
+  case 1:
+  case 2:
+    r0 = s.arg1;
+  case 3:
+    return leave(s, r0)
+  default: oops()
+} } }
+Math_max__P130.info = {"start":16614,"length":105,"line":558,"column":4,"endLine":561,"endColumn":5,"fileName":"pxt_modules/base/pxt-helpers.ts","functionName":"max","argumentNames":["a","b"]}
+
+function Math_max__P130_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: Math_max__P130, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  arg0: undefined,
+  arg1: undefined,
+} }
+
+
+
+
+
+function helpers_arrayReduce__P112(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    s.len___9787 = undefined;
+    s.i___9790 = undefined;
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.arg1 = (s.lambdaArgs[1]);
+      s.arg2 = (s.lambdaArgs[2]);
+      s.lambdaArgs = null;
+    }
+    r0 = pxsim_Array__length(s.arg0);
+    s.len___9787 = (r0);
+    s.i___9790 = (0);
+  case 1:
+    r0 = (s.i___9790 < s.len___9787);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 2; continue; }
+    s.tmp_1 = lambda_4_mk(s);
+    s.tmp_1.argL = s.arg1;
+    s.tmp_1.arg0 = s.arg2;
+    r0 = pxsim_Array__getAt(s.arg0, s.i___9790);
+    s.tmp_1.arg1 = r0;
+    s.tmp_1.arg2 = s.i___9790;
+    setupLambda(s.tmp_1, s.tmp_1.argL);
+    s.callLocIdx = 7; s.pc = 3; return s.tmp_1;
+  case 3:
+    r0 = s.retval;
+    s.arg2 = (r0);
+    r0 = (s.i___9790 + 1);
+    s.i___9790 = (r0);
+    { step = 1; continue; }
+  case 2:
+    r0 = s.arg2;
+    return leave(s, r0)
+  default: oops()
+} } }
+helpers_arrayReduce__P112.info = {"start":8316,"length":317,"line":280,"column":4,"endLine":286,"endColumn":5,"fileName":"pxt_modules/base/pxt-helpers.ts","functionName":"arrayReduce","argumentNames":["arr","callbackfn","initialValue"]}
+
+function helpers_arrayReduce__P112_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: helpers_arrayReduce__P112, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  tmp_1: undefined,
+  len___9787: undefined,
+  i___9790: undefined,
+  arg0: undefined,
+  arg1: undefined,
+  arg2: undefined,
+} }
+
+
+
+
+
+function helpers_arrayJoin__P103(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    s.r___9869 = undefined;
+    s.len___9870 = undefined;
+    s.i___9873 = undefined;
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.arg1 = (s.lambdaArgs[1]);
+      s.lambdaArgs = null;
+    }
+    r0 = (s.arg1 === undefined);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBool(s.tmp_0);
+    if (!r0) { step = 1; continue; }
+    r0 = s.tmp_0;
+    { step = 2; continue; }
+  case 1:
+    r0 = (s.arg1 === null);
+  case 2:
+    // jmp value (already in r0)
+    s.tmp_1 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_1);
+    if (!r0) { step = 3; continue; }
+    s.arg1 = (",");
+  case 3:
+  case 4:
+    r0 = pxsim_String_.mkEmpty();
+    s.r___9869 = (r0);
+    r0 = pxsim_Array__length(s.arg0);
+    s.len___9870 = (r0);
+    s.i___9873 = (0);
+  case 5:
+    r0 = (s.i___9873 < s.len___9870);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 14; continue; }
+    r0 = (s.i___9873 > 0);
+    s.tmp_1 = r0;
+    r0 = pxsim_numops_toBool(s.tmp_1);
+    if (r0) { step = 6; continue; }
+    r0 = s.tmp_1;
+    { step = 7; continue; }
+  case 6:
+    r0 = s.arg1;
+  case 7:
+    // jmp value (already in r0)
+    s.tmp_2 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_2);
+    if (!r0) { step = 8; continue; }
+    if ((s.r___9869) && (s.r___9869).vtable) {
+    setupResume(s, 15);
+    pxsim_String__stringConv(s.r___9869);
+    checkResumeConsumed();
+    return;
+    } else { s.retval = (s.r___9869) + ""; }
+  case 15:
+    r0 = s.retval;
+    s.tmp_3 = r0;
+    if ((s.arg1) && (s.arg1).vtable) {
+    setupResume(s, 16);
+    pxsim_String__stringConv(s.arg1);
+    checkResumeConsumed();
+    return;
+    } else { s.retval = (s.arg1) + ""; }
+  case 16:
+    r0 = s.retval;
+    s.tmp_4 = r0;
+    r0 = pxsim_String__concat(s.tmp_3, s.tmp_4);
+    s.r___9869 = (r0);
+  case 8:
+  case 9:
+    r0 = pxsim_Array__getAt(s.arg0, s.i___9873);
+    s.tmp_1 = r0;
+    r0 = (s.tmp_1 === undefined);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBool(s.tmp_0);
+    if (!r0) { step = 10; continue; }
+    r0 = s.tmp_0;
+    { step = 11; continue; }
+  case 10:
+    r0 = pxsim_Array__getAt(s.arg0, s.i___9873);
+    s.tmp_2 = r0;
+    r0 = (s.tmp_2 === null);
+  case 11:
+    // jmp value (already in r0)
+    s.tmp_3 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_3);
+    if (!r0) { step = 12; continue; }
+    r0 = pxsim_String_.mkEmpty();
+    { step = 13; continue; }
+  case 12:
+    r0 = pxsim_Array__getAt(s.arg0, s.i___9873);
+  case 13:
+    // jmp value (already in r0)
+    s.tmp_4 = r0;
+    if ((s.r___9869) && (s.r___9869).vtable) {
+    setupResume(s, 17);
+    pxsim_String__stringConv(s.r___9869);
+    checkResumeConsumed();
+    return;
+    } else { s.retval = (s.r___9869) + ""; }
+  case 17:
+    r0 = s.retval;
+    s.tmp_5 = r0;
+    if ((s.tmp_4) && (s.tmp_4).vtable) {
+    setupResume(s, 18);
+    pxsim_String__stringConv(s.tmp_4);
+    checkResumeConsumed();
+    return;
+    } else { s.retval = (s.tmp_4) + ""; }
+  case 18:
+    r0 = s.retval;
+    s.tmp_6 = r0;
+    r0 = pxsim_String__concat(s.tmp_5, s.tmp_6);
+    s.r___9869 = (r0);
+    r0 = (s.i___9873 + 1);
+    s.i___9873 = (r0);
+    { step = 5; continue; }
+  case 14:
+    r0 = s.r___9869;
+    return leave(s, r0)
+  default: oops()
+} } }
+helpers_arrayJoin__P103.info = {"start":4133,"length":432,"line":157,"column":4,"endLine":170,"endColumn":5,"fileName":"pxt_modules/base/pxt-helpers.ts","functionName":"arrayJoin","argumentNames":["arr","sep"]}
+
+function helpers_arrayJoin__P103_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: helpers_arrayJoin__P103, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  tmp_1: undefined,
+  tmp_2: undefined,
+  tmp_3: undefined,
+  tmp_4: undefined,
+  tmp_5: undefined,
+  tmp_6: undefined,
+  r___9869: undefined,
+  len___9870: undefined,
+  i___9873: undefined,
+  arg0: undefined,
+  arg1: undefined,
+} }
+
+
+
+
+
+function AlreadyInUseException_constructor__P180205(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -10410,8 +8986,8 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, AlreadyInUseException__C125296_VT)) failedCast(r0);
-    s.tmp_0 = Exception_constructor__P125192_mk(s);
+    if (!checkSubtype(r0, AlreadyInUseException__C180203_VT)) failedCast(r0);
+    s.tmp_0 = Exception_constructor__P180099_mk(s);
     s.tmp_0.arg0 = s.arg0;
     s.tmp_0.arg1 = "AlreadyInUse";
     if ((s.arg1) && (s.arg1).vtable) {
@@ -10444,12 +9020,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-AlreadyInUseException_constructor__P125298.info = {"start":1738,"length":128,"line":52,"column":4,"endLine":54,"endColumn":5,"fileName":"main.ts","functionName":"inline","argumentNames":["this","resource"]}
+AlreadyInUseException_constructor__P180205.info = {"start":1820,"length":128,"line":53,"column":4,"endLine":55,"endColumn":5,"fileName":"main.ts","functionName":"inline","argumentNames":["this","resource"]}
 
-function AlreadyInUseException_constructor__P125298_mk(s) {
+function AlreadyInUseException_constructor__P180205_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: AlreadyInUseException_constructor__P125298, depth: s.depth + 1,
+        parent: s, fn: AlreadyInUseException_constructor__P180205, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -10463,7 +9039,7 @@ function AlreadyInUseException_constructor__P125298_mk(s) {
 
 
 
-function Exception_constructor__P125192(s) {
+function Exception_constructor__P180099(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -10481,7 +9057,7 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, Exception__C125190_VT)) failedCast(r0);
+    if (!checkSubtype(r0, Exception__C180097_VT)) failedCast(r0);
     r0 = (s.arg0).fields["name"] = (s.arg1);
     r0 = (s.arg0).fields["desc"] = (s.arg2);
     r0 = (s.arg0).fields["code"] = (s.arg3);
@@ -10489,12 +9065,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-Exception_constructor__P125192.info = {"start":915,"length":136,"line":24,"column":4,"endLine":28,"endColumn":5,"fileName":"main.ts","functionName":"inline","argumentNames":["this","name","desc","code"]}
+Exception_constructor__P180099.info = {"start":997,"length":136,"line":25,"column":4,"endLine":29,"endColumn":5,"fileName":"main.ts","functionName":"inline","argumentNames":["this","name","desc","code"]}
 
-function Exception_constructor__P125192_mk(s) {
+function Exception_constructor__P180099_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: Exception_constructor__P125192, depth: s.depth + 1,
+        parent: s, fn: Exception_constructor__P180099, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   arg0: undefined,
   arg1: undefined,
@@ -10506,7 +9082,7 @@ function Exception_constructor__P125192_mk(s) {
 
 
 
-function OutOfRangeException_constructor__P125265(s) {
+function OutOfRangeException_constructor__P180172(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -10524,8 +9100,8 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, OutOfRangeException__C125263_VT)) failedCast(r0);
-    s.tmp_0 = Exception_constructor__P125192_mk(s);
+    if (!checkSubtype(r0, OutOfRangeException__C180170_VT)) failedCast(r0);
+    s.tmp_0 = Exception_constructor__P180099_mk(s);
     s.tmp_0.arg0 = s.arg0;
     s.tmp_0.arg1 = "OutOfRange";
     if ((s.arg3) && (s.arg3).vtable) {
@@ -10620,12 +9196,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-OutOfRangeException_constructor__P125265.info = {"start":1501,"length":180,"line":45,"column":4,"endLine":47,"endColumn":5,"fileName":"main.ts","functionName":"inline","argumentNames":["this","min_","max_","actual"]}
+OutOfRangeException_constructor__P180172.info = {"start":1583,"length":180,"line":46,"column":4,"endLine":48,"endColumn":5,"fileName":"main.ts","functionName":"inline","argumentNames":["this","min_","max_","actual"]}
 
-function OutOfRangeException_constructor__P125265_mk(s) {
+function OutOfRangeException_constructor__P180172_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: OutOfRangeException_constructor__P125265, depth: s.depth + 1,
+        parent: s, fn: OutOfRangeException_constructor__P180172, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -10651,7 +9227,7 @@ function OutOfRangeException_constructor__P125265_mk(s) {
 
 
 
-function raise__P125311(s) {
+function raise__P180218(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -10665,7 +9241,7 @@ switch (step) {
       s.arg0 = (s.lambdaArgs[0]);
       s.lambdaArgs = null;
     }
-    s.tmp_0 = Exception_raise__P125191_mk(s);
+    s.tmp_0 = Exception_raise__P180098_mk(s);
     s.tmp_0.arg0 = s.arg0;
     s.callLocIdx = 75; s.pc = 1; return s.tmp_0;
   case 1:
@@ -10674,12 +9250,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-raise__P125311.info = {"start":1870,"length":46,"line":57,"column":0,"endLine":59,"endColumn":1,"fileName":"main.ts","functionName":"raise","argumentNames":["e"]}
+raise__P180218.info = {"start":1952,"length":46,"line":58,"column":0,"endLine":60,"endColumn":1,"fileName":"main.ts","functionName":"raise","argumentNames":["e"]}
 
-function raise__P125311_mk(s) {
+function raise__P180218_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: raise__P125311, depth: s.depth + 1,
+        parent: s, fn: raise__P180218, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   arg0: undefined,
@@ -10689,7 +9265,7 @@ function raise__P125311_mk(s) {
 
 
 
-function Exception_raise__P125191(s) {
+function Exception_raise__P180098(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -10704,7 +9280,7 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, Exception__C125190_VT)) failedCast(r0);
+    if (!checkSubtype(r0, Exception__C180097_VT)) failedCast(r0);
     s.tmp_0 = console_log__P380_mk(s);
     r0 = s.arg0.fields["code"];
     s.tmp_10 = r0;
@@ -10795,12 +9371,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-Exception_raise__P125191.info = {"start":1057,"length":145,"line":30,"column":4,"endLine":33,"endColumn":5,"fileName":"main.ts","functionName":"raise","argumentNames":["this"]}
+Exception_raise__P180098.info = {"start":1139,"length":145,"line":31,"column":4,"endLine":34,"endColumn":5,"fileName":"main.ts","functionName":"raise","argumentNames":["this"]}
 
-function Exception_raise__P125191_mk(s) {
+function Exception_raise__P180098_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: Exception_raise__P125191, depth: s.depth + 1,
+        parent: s, fn: Exception_raise__P180098, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -10824,7 +9400,7 @@ function Exception_raise__P125191_mk(s) {
 
 
 
-function Cursor_constructor__P125778(s) {
+function Cursor_render__P180718(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -10840,15 +9416,1534 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, Cursor__C125766_VT)) failedCast(r0);
+    if (!checkSubtype(r0, Cursor__C180717_VT)) failedCast(r0);
+    r0 = s.arg0.fields["img"];
+    s.tmp_0 = r0;
+    r0 = s.arg0.fields["x"];
+    s.tmp_1 = r0;
+    r0 = s.arg0.fields["y"];
+    s.tmp_2 = r0;
+    r0 = pxsim_ImageMethods.drawTransparentImage(s.arg1, s.tmp_0, s.tmp_1, s.tmp_2);
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+Cursor_render__P180718.info = {"start":15558,"length":91,"line":359,"column":4,"endLine":361,"endColumn":5,"fileName":"main.ts","functionName":"render","argumentNames":["this","img"]}
+
+function Cursor_render__P180718_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: Cursor_render__P180718, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  tmp_1: undefined,
+  tmp_2: undefined,
+  arg0: undefined,
+  arg1: undefined,
+} }
+
+
+
+
+
+function Screen_render__P181225(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    s.window_id___181247 = undefined;
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.arg1 = (s.lambdaArgs[1]);
+      s.lambdaArgs = null;
+    }
+    r0 = s.arg0;
+    if (!checkSubtype(r0, Screen__C181224_VT)) failedCast(r0);
+    s.tmp_0 = r0 = s.arg1;
+    r0 = s.arg0.fields["palette"];
+    s.tmp_2 = r0;
+    r0 = s.tmp_2.fields["buf_id"];
+    s.tmp_5 = r0;
+    r0 = (s.tmp_5 * 3);
+    s.tmp_4 = r0;
+    r0 = (s.tmp_4 + 0);
+    s.tmp_3 = r0;
+    r0 = (s.tmp_3 + 1);
+    s.tmp_1 = r0;
+    r0 = pxsim_ImageMethods.fill(s.tmp_0, s.tmp_1);
+    s.window_id___181247 = (0);
+  case 1:
+    s.tmp_1 = r0 = s.window_id___181247;
+    r0 = s.arg0.fields["windows"];
+    s.tmp_3 = r0;
+    r0 = pxsim_Array__length(s.tmp_3);
+    s.tmp_2 = r0;
+    r0 = (s.tmp_1 < s.tmp_2);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 2; continue; }
+    s.tmp_4 = Window_render__P181001_mk(s);
+    r0 = s.arg0.fields["windows"];
+    s.tmp_5 = r0;
+    r0 = pxsim_Array__getAt(s.tmp_5, s.window_id___181247);
+    s.tmp_4.arg0 = r0;
+    s.tmp_4.arg1 = s.arg1;
+    s.callLocIdx = 221; s.pc = 3; return s.tmp_4;
+  case 3:
+    r0 = s.retval;
+    r0 = (s.window_id___181247 + 1);
+    s.window_id___181247 = (r0);
+    { step = 1; continue; }
+  case 2:
+    s.tmp_0 = scene_setBackgroundImage__P2902_mk(s);
+    s.tmp_0.arg0 = s.arg1;
+    s.callLocIdx = 222; s.pc = 4; return s.tmp_0;
+  case 4:
+    r0 = s.retval;
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+Screen_render__P181225.info = {"start":20699,"length":325,"line":504,"column":4,"endLine":513,"endColumn":5,"fileName":"main.ts","functionName":"render","argumentNames":["this","img"]}
+
+function Screen_render__P181225_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: Screen_render__P181225, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  tmp_1: undefined,
+  tmp_2: undefined,
+  tmp_3: undefined,
+  tmp_4: undefined,
+  tmp_5: undefined,
+  window_id___181247: undefined,
+  arg0: undefined,
+  arg1: undefined,
+} }
+
+
+
+
+
+function scene_setBackgroundImage__P2902(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    s.scene___8573 = undefined;
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.lambdaArgs = null;
+    }
+    s.tmp_0 = game_currentScene__P3033_mk(s);
+    s.callLocIdx = 925; s.pc = 1; return s.tmp_0;
+  case 1:
+    r0 = s.retval;
+    s.scene___8573 = (r0);
+    s.tmp_0 = scene_Background_image__P2692_mk(s);
+    r0 = s.scene___8573.fields["background"];
+    s.tmp_0.arg0 = r0;
+    s.tmp_0.arg1 = s.arg0;
+    s.callLocIdx = 926; s.pc = 2; return s.tmp_0;
+  case 2:
+    r0 = s.retval;
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+scene_setBackgroundImage__P2902.info = {"start":1962,"length":135,"line":78,"column":4,"endLine":81,"endColumn":5,"fileName":"pxt_modules/game/scenes.ts","functionName":"setBackgroundImage","argumentNames":["img"]}
+
+function scene_setBackgroundImage__P2902_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: scene_setBackgroundImage__P2902, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  scene___8573: undefined,
+  arg0: undefined,
+} }
+
+
+
+
+
+function scene_Background_image__P2692(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.arg1 = (s.lambdaArgs[1]);
+      s.lambdaArgs = null;
+    }
+    r0 = s.arg0;
+    if (!checkSubtype(r0, scene_Background__C2685_VT)) failedCast(r0);
+    r0 = (s.arg0).fields["_image"] = (s.arg1);
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+scene_Background_image__P2692.info = {"start":1003,"length":68,"line":40,"column":8,"endLine":42,"endColumn":9,"fileName":"pxt_modules/game/background.ts","functionName":"image","argumentNames":["this","image"]}
+
+function scene_Background_image__P2692_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: scene_Background_image__P2692, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  arg0: undefined,
+  arg1: undefined,
+} }
+
+
+
+
+
+function scene_Background_image__P2691(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.lambdaArgs = null;
+    }
+    r0 = s.arg0;
+    if (!checkSubtype(r0, scene_Background__C2685_VT)) failedCast(r0);
+    r0 = s.arg0.fields["_image"];
+    s.tmp_2 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_2);
+    s.tmp_1 = r0;
+    r0 = pxsim_Boolean__bang(s.tmp_1);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 1; continue; }
+    s.tmp_3 = r0 = s.arg0;
+    r0 = pxsim_ImageMethods.width(globals.screen___2037);
+    s.tmp_5 = r0;
+    r0 = pxsim_ImageMethods.height(globals.screen___2037);
+    s.tmp_6 = r0;
+    r0 = pxsim.image.create(s.tmp_5, s.tmp_6);
+    s.tmp_4 = r0;
+    r0 = (s.tmp_3).fields["_image"] = (s.tmp_4);
+  case 1:
+  case 2:
+    r0 = s.arg0.fields["_image"];
+    return leaveAccessor(s, r0)
+  default: oops()
+} } }
+scene_Background_image__P2691.info = {"start":811,"length":174,"line":33,"column":8,"endLine":38,"endColumn":9,"fileName":"pxt_modules/game/background.ts","functionName":"image","argumentNames":["this"]}
+scene_Background_image__P2691.isGetter = true;
+
+function scene_Background_image__P2691_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: scene_Background_image__P2691, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  tmp_1: undefined,
+  tmp_2: undefined,
+  tmp_3: undefined,
+  tmp_4: undefined,
+  tmp_5: undefined,
+  tmp_6: undefined,
+  arg0: undefined,
+} }
+
+
+
+
+
+function Window_render__P181001(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    s.c0___181063 = undefined;
+    s.c1___181067 = undefined;
+    s.c2___181071 = undefined;
+    s.titlesize___181075 = undefined;
+    s.widget_id___181181 = undefined;
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.arg1 = (s.lambdaArgs[1]);
+      s.lambdaArgs = null;
+    }
+    r0 = s.arg0;
+    if (!checkSubtype(r0, Window__C181000_VT)) failedCast(r0);
+    r0 = s.arg0.fields["palette"];
+    s.tmp_0 = r0;
+    r0 = s.tmp_0.fields["buf_id"];
+    s.tmp_3 = r0;
+    r0 = (s.tmp_3 * 3);
+    s.tmp_2 = r0;
+    r0 = (s.tmp_2 + 0);
+    s.tmp_1 = r0;
+    r0 = (s.tmp_1 + 1);
+    s.c0___181063 = (r0);
+    r0 = s.arg0.fields["palette"];
+    s.tmp_0 = r0;
+    r0 = s.tmp_0.fields["buf_id"];
+    s.tmp_3 = r0;
+    r0 = (s.tmp_3 * 3);
+    s.tmp_2 = r0;
+    r0 = (s.tmp_2 + 1);
+    s.tmp_1 = r0;
+    r0 = (s.tmp_1 + 1);
+    s.c1___181067 = (r0);
+    r0 = s.arg0.fields["palette"];
+    s.tmp_0 = r0;
+    r0 = s.tmp_0.fields["buf_id"];
+    s.tmp_3 = r0;
+    r0 = (s.tmp_3 * 3);
+    s.tmp_2 = r0;
+    r0 = (s.tmp_2 + 2);
+    s.tmp_1 = r0;
+    r0 = (s.tmp_1 + 1);
+    s.c2___181071 = (r0);
+    s.tmp_0 = if_charHeight_1_mk(s);
+    r0 = s.arg0.fields["font"];
+    s.tmp_0.arg0 = r0;
+    if (!s.tmp_0.arg0.vtable.iface) {
+      s.retval = pxsim_pxtrt.mapGetByString(s.tmp_0.arg0, "charHeight");
+    } else {
+      s.tmp_0.fn = s.tmp_0.arg0.vtable.iface["charHeight"];
+      if (s.tmp_0.fn == null) { s.retval = s.tmp_0.arg0.fields["charHeight"]; }
+      else if (!s.tmp_0.fn.isGetter) { s.retval = bind(s.tmp_0); }
+     else { s.callLocIdx = 212; s.pc = 3; return s.tmp_0; }
+    }
+  case 3:
+    r0 = s.retval;
+    s.titlesize___181075 = (r0);
+    s.tmp_0 = helpers_imageFillRect__P1961_mk(s);
+    s.tmp_0.arg0 = s.arg1;
+    r0 = s.arg0.fields["x"];
+    s.tmp_0.arg1 = r0;
+    r0 = s.arg0.fields["y"];
+    s.tmp_0.arg2 = r0;
+    r0 = s.arg0.fields["w"];
+    s.tmp_0.arg3 = r0;
+    r0 = s.arg0.fields["h"];
+    s.tmp_0.arg4 = r0;
+    s.tmp_0.arg5 = s.c0___181063;
+    s.callLocIdx = 213; s.pc = 4; return s.tmp_0;
+  case 4:
+    r0 = s.retval;
+    s.tmp_0 = helpers_imageFillRect__P1961_mk(s);
+    s.tmp_0.arg0 = s.arg1;
+    r0 = s.arg0.fields["x"];
+    s.tmp_0.arg1 = r0;
+    r0 = s.arg0.fields["y"];
+    s.tmp_0.arg2 = r0;
+    r0 = s.arg0.fields["w"];
+    s.tmp_0.arg3 = r0;
+    s.tmp_0.arg4 = s.titlesize___181075;
+    s.tmp_0.arg5 = s.c1___181067;
+    s.callLocIdx = 214; s.pc = 5; return s.tmp_0;
+  case 5:
+    r0 = s.retval;
+    s.tmp_0 = helpers_imageDrawLine__P1963_mk(s);
+    s.tmp_0.arg0 = s.arg1;
+    r0 = s.arg0.fields["x"];
+    s.tmp_0.arg1 = r0;
+    r0 = s.arg0.fields["y"];
+    s.tmp_1 = r0;
+    r0 = (s.tmp_1 + s.titlesize___181075);
+    s.tmp_0.arg2 = r0;
+    r0 = s.arg0.fields["x"];
+    s.tmp_0.arg3 = r0;
+    r0 = s.arg0.fields["y"];
+    s.tmp_3 = r0;
+    r0 = s.arg0.fields["h"];
+    s.tmp_4 = r0;
+    r0 = (s.tmp_3 + s.tmp_4);
+    s.tmp_2 = r0;
+    r0 = (s.tmp_2 - 1);
+    s.tmp_0.arg4 = r0;
+    s.tmp_0.arg5 = s.c1___181067;
+    s.callLocIdx = 215; s.pc = 6; return s.tmp_0;
+  case 6:
+    r0 = s.retval;
+    s.tmp_0 = helpers_imageDrawLine__P1963_mk(s);
+    s.tmp_0.arg0 = s.arg1;
+    r0 = s.arg0.fields["x"];
+    s.tmp_2 = r0;
+    r0 = s.arg0.fields["w"];
+    s.tmp_3 = r0;
+    r0 = (s.tmp_2 + s.tmp_3);
+    s.tmp_1 = r0;
+    r0 = (s.tmp_1 - 1);
+    s.tmp_0.arg1 = r0;
+    r0 = s.arg0.fields["y"];
+    s.tmp_4 = r0;
+    r0 = (s.tmp_4 + s.titlesize___181075);
+    s.tmp_0.arg2 = r0;
+    r0 = s.arg0.fields["x"];
+    s.tmp_6 = r0;
+    r0 = s.arg0.fields["w"];
+    s.tmp_7 = r0;
+    r0 = (s.tmp_6 + s.tmp_7);
+    s.tmp_5 = r0;
+    r0 = (s.tmp_5 - 1);
+    s.tmp_0.arg3 = r0;
+    r0 = s.arg0.fields["y"];
+    s.tmp_9 = r0;
+    r0 = s.arg0.fields["h"];
+    s.tmp_10 = r0;
+    r0 = (s.tmp_9 + s.tmp_10);
+    s.tmp_8 = r0;
+    r0 = (s.tmp_8 - 1);
+    s.tmp_0.arg4 = r0;
+    s.tmp_0.arg5 = s.c1___181067;
+    s.callLocIdx = 216; s.pc = 7; return s.tmp_0;
+  case 7:
+    r0 = s.retval;
+    s.tmp_0 = helpers_imageDrawLine__P1963_mk(s);
+    s.tmp_0.arg0 = s.arg1;
+    r0 = s.arg0.fields["x"];
+    s.tmp_1 = r0;
+    r0 = (s.tmp_1 + 1);
+    s.tmp_0.arg1 = r0;
+    r0 = s.arg0.fields["y"];
+    s.tmp_3 = r0;
+    r0 = s.arg0.fields["h"];
+    s.tmp_4 = r0;
+    r0 = (s.tmp_3 + s.tmp_4);
+    s.tmp_2 = r0;
+    r0 = (s.tmp_2 - 1);
+    s.tmp_0.arg2 = r0;
+    r0 = s.arg0.fields["x"];
+    s.tmp_6 = r0;
+    r0 = s.arg0.fields["w"];
+    s.tmp_7 = r0;
+    r0 = (s.tmp_6 + s.tmp_7);
+    s.tmp_5 = r0;
+    r0 = (s.tmp_5 - 2);
+    s.tmp_0.arg3 = r0;
+    r0 = s.arg0.fields["y"];
+    s.tmp_9 = r0;
+    r0 = s.arg0.fields["h"];
+    s.tmp_10 = r0;
+    r0 = (s.tmp_9 + s.tmp_10);
+    s.tmp_8 = r0;
+    r0 = (s.tmp_8 - 1);
+    s.tmp_0.arg4 = r0;
+    s.tmp_0.arg5 = s.c1___181067;
+    s.callLocIdx = 217; s.pc = 8; return s.tmp_0;
+  case 8:
+    r0 = s.retval;
+    s.tmp_0 = helpers_imagePrint__P1995_mk(s);
+    s.tmp_0.arg0 = s.arg1;
+    r0 = s.arg0.fields["title"];
+    s.tmp_0.arg1 = r0;
+    r0 = s.arg0.fields["x"];
+    s.tmp_1 = r0;
+    r0 = (s.tmp_1 + 1);
+    s.tmp_0.arg2 = r0;
+    r0 = s.arg0.fields["y"];
+    s.tmp_0.arg3 = r0;
+    s.tmp_0.arg4 = s.c0___181063;
+    r0 = s.arg0.fields["font"];
+    s.tmp_0.arg5 = r0;
+    s.tmp_0.arg6 = undefined;
+    s.callLocIdx = 218; s.pc = 9; return s.tmp_0;
+  case 9:
+    r0 = s.retval;
+    s.widget_id___181181 = (0);
+  case 1:
+    s.tmp_1 = r0 = s.widget_id___181181;
+    r0 = s.arg0.fields["widgets"];
+    s.tmp_3 = r0;
+    r0 = pxsim_Array__length(s.tmp_3);
+    s.tmp_2 = r0;
+    r0 = (s.tmp_1 < s.tmp_2);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 2; continue; }
+    s.tmp_4 = if_render_4_mk(s);
+    r0 = s.arg0.fields["widgets"];
+    s.tmp_5 = r0;
+    r0 = pxsim_Array__getAt(s.tmp_5, s.widget_id___181181);
+    s.tmp_4.arg0 = r0;
+    s.tmp_4.arg1 = s.arg1;
+    r0 = s.arg0.fields["x"];
+    s.tmp_6 = r0;
+    r0 = (s.tmp_6 + 2);
+    s.tmp_4.arg2 = r0;
+    r0 = s.arg0.fields["y"];
+    s.tmp_8 = r0;
+    r0 = (s.tmp_8 + s.titlesize___181075);
+    s.tmp_7 = r0;
+    r0 = (s.tmp_7 + 1);
+    s.tmp_4.arg3 = r0;
+    if (!s.tmp_4.arg0.vtable.iface) {
+      setupLambda(s.tmp_4, pxsim_pxtrt.mapGetByString(s.tmp_4.arg0, "render"), 4);
+      s.callLocIdx = 219; s.pc = 10; return s.tmp_4;
+    } else {
+      s.tmp_4.fn = s.tmp_4.arg0.vtable.iface["render"];
+      if (s.tmp_4.fn == null) { setupLambda(s.tmp_4, s.tmp_4.arg0.fields["render"], 4); s.callLocIdx = 219; s.pc = 10; return s.tmp_4; }
+      else if (s.tmp_4.fn.isGetter) { s.tmp_4.stage2Call = true; s.callLocIdx = 219; s.pc = 10; return s.tmp_4;; }
+     else { s.callLocIdx = 219; s.pc = 10; return s.tmp_4; }
+    }
+  case 10:
+    r0 = s.retval;
+    r0 = (s.widget_id___181181 + 1);
+    s.widget_id___181181 = (r0);
+    { step = 1; continue; }
+  case 2:
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+Window_render__P181001.info = {"start":19166,"length":1130,"line":465,"column":4,"endLine":484,"endColumn":5,"fileName":"main.ts","functionName":"render","argumentNames":["this","img"]}
+
+function Window_render__P181001_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: Window_render__P181001, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  tmp_1: undefined,
+  tmp_2: undefined,
+  tmp_3: undefined,
+  tmp_4: undefined,
+  tmp_5: undefined,
+  tmp_6: undefined,
+  tmp_7: undefined,
+  tmp_8: undefined,
+  tmp_9: undefined,
+  tmp_10: undefined,
+  c0___181063: undefined,
+  c1___181067: undefined,
+  c2___181071: undefined,
+  titlesize___181075: undefined,
+  widget_id___181181: undefined,
+  arg0: undefined,
+  arg1: undefined,
+} }
+
+
+
+
+
+function helpers_imagePrint__P1995(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    s.x0___8692 = undefined;
+    s.cp___8694 = undefined;
+    s.mult___8695 = undefined;
+    s.dataW___8700 = undefined;
+    s.dataH___8706 = undefined;
+    s.byteHeight___8712 = undefined;
+    s.charSize___8718 = undefined;
+    s.dataSize___8722 = undefined;
+    s.fontdata___8726 = undefined;
+    s.lastchar___8729 = undefined;
+    s.imgBuf___8736 = undefined;
+    s.xOffset___8760 = undefined;
+    s.yOffset___8761 = undefined;
+    s.ch___8776 = undefined;
+    s.l___8795 = undefined;
+    s.r___8796 = undefined;
+    s.off___8798 = undefined;
+    s.guess___8799 = undefined;
+    s.m___8818 = undefined;
+    s.v___8827 = undefined;
+    s.i___8883 = undefined;
+    s.j___8888 = undefined;
+    s.mask___8889 = undefined;
+    s.c___8890 = undefined;
+    s.n___8907 = undefined;
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.arg1 = (s.lambdaArgs[1]);
+      s.arg2 = (s.lambdaArgs[2]);
+      s.arg3 = (s.lambdaArgs[3]);
+      s.arg4 = (s.lambdaArgs[4]);
+      s.arg5 = (s.lambdaArgs[5]);
+      s.arg6 = (s.lambdaArgs[6]);
+      s.lambdaArgs = null;
+    }
+    r0 = (s.arg2 | 0);
+    s.arg2 = (r0);
+    r0 = (s.arg3 | 0);
+    s.arg3 = (r0);
+    r0 = pxsim_numops_toBoolDecr(s.arg5);
+    s.tmp_1 = r0;
+    r0 = pxsim_Boolean__bang(s.tmp_1);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 1; continue; }
+    s.tmp_2 = image_getFontForText__P1982_mk(s);
+    s.tmp_2.arg0 = s.arg1;
+    s.callLocIdx = 97; s.pc = 39; return s.tmp_2;
+  case 39:
+    r0 = s.retval;
+    s.arg5 = (r0);
+  case 1:
+  case 2:
+    r0 = pxsim_numops_toBoolDecr(s.arg4);
+    s.tmp_1 = r0;
+    r0 = pxsim_Boolean__bang(s.tmp_1);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 3; continue; }
+    s.arg4 = (1);
+  case 3:
+  case 4:
+    s.x0___8692 = (s.arg2);
+    s.cp___8694 = (0);
+    s.tmp_1 = if_multiplier_1_mk(s);
+    s.tmp_1.arg0 = s.arg5;
+    if (!s.tmp_1.arg0.vtable.iface) {
+      s.retval = pxsim_pxtrt.mapGetByString(s.tmp_1.arg0, "multiplier");
+    } else {
+      s.tmp_1.fn = s.tmp_1.arg0.vtable.iface["multiplier"];
+      if (s.tmp_1.fn == null) { s.retval = s.tmp_1.arg0.fields["multiplier"]; }
+      else if (!s.tmp_1.fn.isGetter) { s.retval = bind(s.tmp_1); }
+     else { s.callLocIdx = 98; s.pc = 40; return s.tmp_1; }
+    }
+  case 40:
+    r0 = s.retval;
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 5; continue; }
+    s.tmp_2 = if_multiplier_1_mk(s);
+    s.tmp_2.arg0 = s.arg5;
+    if (!s.tmp_2.arg0.vtable.iface) {
+      s.retval = pxsim_pxtrt.mapGetByString(s.tmp_2.arg0, "multiplier");
+    } else {
+      s.tmp_2.fn = s.tmp_2.arg0.vtable.iface["multiplier"];
+      if (s.tmp_2.fn == null) { s.retval = s.tmp_2.arg0.fields["multiplier"]; }
+      else if (!s.tmp_2.fn.isGetter) { s.retval = bind(s.tmp_2); }
+     else { s.callLocIdx = 99; s.pc = 41; return s.tmp_2; }
+    }
+  case 41:
+    r0 = s.retval;
+    { step = 6; continue; }
+  case 5:
+    r0 = 1;
+  case 6:
+    // jmp value (already in r0)
+    s.tmp_3 = r0;
+    s.mult___8695 = (s.tmp_3);
+    s.tmp_1 = if_charWidth_1_mk(s);
+    s.tmp_1.arg0 = s.arg5;
+    if (!s.tmp_1.arg0.vtable.iface) {
+      s.retval = pxsim_pxtrt.mapGetByString(s.tmp_1.arg0, "charWidth");
+    } else {
+      s.tmp_1.fn = s.tmp_1.arg0.vtable.iface["charWidth"];
+      if (s.tmp_1.fn == null) { s.retval = s.tmp_1.arg0.fields["charWidth"]; }
+      else if (!s.tmp_1.fn.isGetter) { s.retval = bind(s.tmp_1); }
+     else { s.callLocIdx = 100; s.pc = 42; return s.tmp_1; }
+    }
+  case 42:
+    r0 = s.retval;
+    s.tmp_0 = r0;
+    r0 = pxsim.Math_.idiv(s.tmp_0, s.mult___8695);
+    s.dataW___8700 = (r0);
+    s.tmp_1 = if_charHeight_1_mk(s);
+    s.tmp_1.arg0 = s.arg5;
+    if (!s.tmp_1.arg0.vtable.iface) {
+      s.retval = pxsim_pxtrt.mapGetByString(s.tmp_1.arg0, "charHeight");
+    } else {
+      s.tmp_1.fn = s.tmp_1.arg0.vtable.iface["charHeight"];
+      if (s.tmp_1.fn == null) { s.retval = s.tmp_1.arg0.fields["charHeight"]; }
+      else if (!s.tmp_1.fn.isGetter) { s.retval = bind(s.tmp_1); }
+     else { s.callLocIdx = 101; s.pc = 43; return s.tmp_1; }
+    }
+  case 43:
+    r0 = s.retval;
+    s.tmp_0 = r0;
+    r0 = pxsim.Math_.idiv(s.tmp_0, s.mult___8695);
+    s.dataH___8706 = (r0);
+    r0 = (s.dataH___8706 + 7);
+    s.tmp_0 = r0;
+    r0 = (s.tmp_0 >> 3);
+    s.byteHeight___8712 = (r0);
+    r0 = (s.byteHeight___8712 * s.dataW___8700);
+    s.charSize___8718 = (r0);
+    r0 = (2 + s.charSize___8718);
+    s.dataSize___8722 = (r0);
+    s.tmp_0 = if_data_1_mk(s);
+    s.tmp_0.arg0 = s.arg5;
+    if (!s.tmp_0.arg0.vtable.iface) {
+      s.retval = pxsim_pxtrt.mapGetByString(s.tmp_0.arg0, "data");
+    } else {
+      s.tmp_0.fn = s.tmp_0.arg0.vtable.iface["data"];
+      if (s.tmp_0.fn == null) { s.retval = s.tmp_0.arg0.fields["data"]; }
+      else if (!s.tmp_0.fn.isGetter) { s.retval = bind(s.tmp_0); }
+     else { s.callLocIdx = 102; s.pc = 44; return s.tmp_0; }
+    }
+  case 44:
+    r0 = s.retval;
+    s.fontdata___8726 = (r0);
+    r0 = pxsim.BufferMethods.length(s.fontdata___8726);
+    s.tmp_1 = r0;
+    r0 = pxsim.Math_.idiv(s.tmp_1, s.dataSize___8722);
+    s.tmp_0 = r0;
+    r0 = (s.tmp_0 - 1);
+    s.lastchar___8729 = (r0);
+    r0 = (s.mult___8695 == 1);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 7; continue; }
+    r0 = (8 + s.charSize___8718);
+    s.tmp_1 = r0;
+    r0 = pxsim.control.createBuffer(s.tmp_1);
+    s.imgBuf___8736 = (r0);
+    r0 = pxsim.BufferMethods.setByte(s.imgBuf___8736, 0, 135);
+    r0 = pxsim.BufferMethods.setByte(s.imgBuf___8736, 1, 1);
+    r0 = pxsim.BufferMethods.setByte(s.imgBuf___8736, 2, s.dataW___8700);
+    r0 = pxsim.BufferMethods.setByte(s.imgBuf___8736, 4, s.dataH___8706);
+  case 7:
+  case 8:
+  case 9:
+    s.tmp_1 = r0 = s.cp___8694;
+    r0 = pxsim_String_.length(s.arg1);
+    s.tmp_2 = r0;
+    r0 = (s.tmp_1 < s.tmp_2);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 38; continue; }
+    s.xOffset___8760 = (0);
+    s.yOffset___8761 = (0);
+    s.tmp_0 = r0 = s.arg6;
+    r0 = pxsim_numops_toBool(s.tmp_0);
+    if (r0) { step = 10; continue; }
+    r0 = s.tmp_0;
+    { step = 11; continue; }
+  case 10:
+    s.tmp_1 = r0 = s.cp___8694;
+    r0 = pxsim_Array__length(s.arg6);
+    s.tmp_2 = r0;
+    r0 = (s.tmp_1 < s.tmp_2);
+  case 11:
+    // jmp value (already in r0)
+    s.tmp_3 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_3);
+    if (!r0) { step = 12; continue; }
+    s.tmp_4 = if_xOffset_1_mk(s);
+    r0 = pxsim_Array__getAt(s.arg6, s.cp___8694);
+    s.tmp_4.arg0 = r0;
+    if (!s.tmp_4.arg0.vtable.iface) {
+      s.retval = pxsim_pxtrt.mapGetByString(s.tmp_4.arg0, "xOffset");
+    } else {
+      s.tmp_4.fn = s.tmp_4.arg0.vtable.iface["xOffset"];
+      if (s.tmp_4.fn == null) { s.retval = s.tmp_4.arg0.fields["xOffset"]; }
+      else if (!s.tmp_4.fn.isGetter) { s.retval = bind(s.tmp_4); }
+     else { s.callLocIdx = 103; s.pc = 45; return s.tmp_4; }
+    }
+  case 45:
+    r0 = s.retval;
+    s.xOffset___8760 = (r0);
+    s.tmp_0 = if_yOffset_1_mk(s);
+    r0 = pxsim_Array__getAt(s.arg6, s.cp___8694);
+    s.tmp_0.arg0 = r0;
+    if (!s.tmp_0.arg0.vtable.iface) {
+      s.retval = pxsim_pxtrt.mapGetByString(s.tmp_0.arg0, "yOffset");
+    } else {
+      s.tmp_0.fn = s.tmp_0.arg0.vtable.iface["yOffset"];
+      if (s.tmp_0.fn == null) { s.retval = s.tmp_0.arg0.fields["yOffset"]; }
+      else if (!s.tmp_0.fn.isGetter) { s.retval = bind(s.tmp_0); }
+     else { s.callLocIdx = 104; s.pc = 46; return s.tmp_0; }
+    }
+  case 46:
+    r0 = s.retval;
+    s.yOffset___8761 = (r0);
+  case 12:
+  case 13:
+    s.tmp_0 = r0 = s.cp___8694;
+    r0 = (s.tmp_0 + 1);
+    s.cp___8694 = (r0);
+    r0 = pxsim_String_.charCodeAt(s.arg1, s.tmp_0);
+    s.ch___8776 = (r0);
+    r0 = (s.ch___8776 == 10);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 14; continue; }
+    s.tmp_1 = r0 = s.arg3;
+    s.tmp_4 = if_charHeight_1_mk(s);
+    s.tmp_4.arg0 = s.arg5;
+    if (!s.tmp_4.arg0.vtable.iface) {
+      s.retval = pxsim_pxtrt.mapGetByString(s.tmp_4.arg0, "charHeight");
+    } else {
+      s.tmp_4.fn = s.tmp_4.arg0.vtable.iface["charHeight"];
+      if (s.tmp_4.fn == null) { s.retval = s.tmp_4.arg0.fields["charHeight"]; }
+      else if (!s.tmp_4.fn.isGetter) { s.retval = bind(s.tmp_4); }
+     else { s.callLocIdx = 105; s.pc = 47; return s.tmp_4; }
+    }
+  case 47:
+    r0 = s.retval;
+    s.tmp_3 = r0;
+    r0 = (s.tmp_3 + 2);
+    s.tmp_2 = r0;
+    r0 = (s.tmp_1 + s.tmp_2);
+    s.arg3 = (r0);
+    s.arg2 = (s.x0___8692);
+  case 14:
+  case 15:
+    r0 = (s.ch___8776 < 32);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 16; continue; }
+    { step = 9; continue; }
+  case 16:
+  case 17:
+    s.l___8795 = (0);
+    s.r___8796 = (s.lastchar___8729);
+    s.off___8798 = (0);
+    r0 = (s.ch___8776 - 32);
+    s.tmp_0 = r0;
+    r0 = (s.tmp_0 * s.dataSize___8722);
+    s.guess___8799 = (r0);
+    r0 = pxsim.BufferMethods.getNumber(s.fontdata___8726, 4, s.guess___8799);
+    s.tmp_1 = r0;
+    r0 = (s.tmp_1 == s.ch___8776);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 18; continue; }
+    s.off___8798 = (s.guess___8799);
+    { step = 25; continue; }
+  case 18:
+  case 19:
+    r0 = (s.l___8795 <= s.r___8796);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 24; continue; }
+    s.tmp_1 = r0 = s.l___8795;
+    r0 = (s.r___8796 - s.l___8795);
+    s.tmp_3 = r0;
+    r0 = (s.tmp_3 >> 1);
+    s.tmp_2 = r0;
+    r0 = (s.tmp_1 + s.tmp_2);
+    s.m___8818 = (r0);
+    s.tmp_0 = r0 = s.fontdata___8726;
+    r0 = (s.m___8818 * s.dataSize___8722);
+    s.tmp_1 = r0;
+    r0 = pxsim.BufferMethods.getNumber(s.tmp_0, 4, s.tmp_1);
+    s.v___8827 = (r0);
+    r0 = (s.v___8827 == s.ch___8776);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 20; continue; }
+    r0 = (s.m___8818 * s.dataSize___8722);
+    s.off___8798 = (r0);
+    { step = 24; continue; }
+  case 20:
+  case 21:
+    r0 = (s.v___8827 < s.ch___8776);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 22; continue; }
+    r0 = (s.m___8818 + 1);
+    s.l___8795 = (r0);
+    { step = 23; continue; }
+  case 22:
+    r0 = (s.m___8818 - 1);
+    s.r___8796 = (r0);
+  case 23:
+    { step = 19; continue; }
+  case 24:
+  case 25:
+    r0 = (s.mult___8695 == 1);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 26; continue; }
+    s.tmp_1 = r0 = s.imgBuf___8736;
+    s.tmp_3 = r0 = s.fontdata___8726;
+    r0 = (s.off___8798 + 2);
+    s.tmp_4 = r0;
+    r0 = pxsim.BufferMethods.slice(s.tmp_3, s.tmp_4, s.charSize___8718);
+    s.tmp_2 = r0;
+    r0 = pxsim.BufferMethods.write(s.tmp_1, 8, s.tmp_2);
+    s.tmp_0 = helpers_imageDrawIcon__P1960_mk(s);
+    s.tmp_0.arg0 = s.arg0;
+    s.tmp_0.arg1 = s.imgBuf___8736;
+    r0 = (s.arg2 + s.xOffset___8760);
+    s.tmp_0.arg2 = r0;
+    r0 = (s.arg3 + s.yOffset___8761);
+    s.tmp_0.arg3 = r0;
+    s.tmp_0.arg4 = s.arg4;
+    s.callLocIdx = 106; s.pc = 48; return s.tmp_0;
+  case 48:
+    r0 = s.retval;
+    s.tmp_0 = r0 = s.arg2;
+    s.tmp_2 = if_charWidth_1_mk(s);
+    s.tmp_2.arg0 = s.arg5;
+    if (!s.tmp_2.arg0.vtable.iface) {
+      s.retval = pxsim_pxtrt.mapGetByString(s.tmp_2.arg0, "charWidth");
+    } else {
+      s.tmp_2.fn = s.tmp_2.arg0.vtable.iface["charWidth"];
+      if (s.tmp_2.fn == null) { s.retval = s.tmp_2.arg0.fields["charWidth"]; }
+      else if (!s.tmp_2.fn.isGetter) { s.retval = bind(s.tmp_2); }
+     else { s.callLocIdx = 107; s.pc = 49; return s.tmp_2; }
+    }
+  case 49:
+    r0 = s.retval;
+    s.tmp_1 = r0;
+    r0 = (s.tmp_0 + s.tmp_1);
+    s.arg2 = (r0);
+    { step = 37; continue; }
+  case 26:
+    r0 = (s.off___8798 + 2);
+    s.off___8798 = (r0);
+    s.i___8883 = (0);
+  case 27:
+    r0 = (s.i___8883 < s.dataW___8700);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 36; continue; }
+    s.j___8888 = (0);
+    s.mask___8889 = (1);
+    s.tmp_0 = r0 = s.off___8798;
+    r0 = (s.tmp_0 + 1);
+    s.off___8798 = (r0);
+    r0 = pxsim.BufferMethods.getByte(s.fontdata___8726, s.tmp_0);
+    s.c___8890 = (r0);
+  case 28:
+    r0 = (s.j___8888 < s.dataH___8706);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 35; continue; }
+    r0 = (s.mask___8889 == 256);
+    s.tmp_1 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_1);
+    if (!r0) { step = 29; continue; }
+    s.tmp_2 = r0 = s.off___8798;
+    r0 = (s.tmp_2 + 1);
+    s.off___8798 = (r0);
+    r0 = pxsim.BufferMethods.getByte(s.fontdata___8726, s.tmp_2);
+    s.c___8890 = (r0);
+    s.mask___8889 = (1);
+  case 29:
+  case 30:
+    s.n___8907 = (0);
+  case 31:
+    r0 = (s.c___8890 & s.mask___8889);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 32; continue; }
+    r0 = (s.n___8907 + 1);
+    s.n___8907 = (r0);
+    r0 = (s.mask___8889 << 1);
+    s.mask___8889 = (r0);
+    { step = 31; continue; }
+  case 32:
+    r0 = pxsim_numops_toBoolDecr(s.n___8907);
+    if (!r0) { step = 33; continue; }
+    s.tmp_0 = helpers_imageFillRect__P1961_mk(s);
+    s.tmp_0.arg0 = s.arg0;
+    s.tmp_1 = r0 = s.arg2;
+    r0 = (s.xOffset___8760 * s.mult___8695);
+    s.tmp_2 = r0;
+    r0 = (s.tmp_1 + s.tmp_2);
+    s.tmp_0.arg1 = r0;
+    s.tmp_3 = r0 = s.arg3;
+    r0 = (s.j___8888 + s.yOffset___8761);
+    s.tmp_5 = r0;
+    r0 = (s.tmp_5 * s.mult___8695);
+    s.tmp_4 = r0;
+    r0 = (s.tmp_3 + s.tmp_4);
+    s.tmp_0.arg2 = r0;
+    s.tmp_0.arg3 = s.mult___8695;
+    r0 = (s.mult___8695 * s.n___8907);
+    s.tmp_0.arg4 = r0;
+    s.tmp_0.arg5 = s.arg4;
+    s.callLocIdx = 108; s.pc = 50; return s.tmp_0;
+  case 50:
+    r0 = s.retval;
+    r0 = (s.j___8888 + s.n___8907);
+    s.j___8888 = (r0);
+    { step = 34; continue; }
+  case 33:
+    r0 = (s.mask___8889 << 1);
+    s.mask___8889 = (r0);
+    r0 = (s.j___8888 + 1);
+    s.j___8888 = (r0);
+  case 34:
+    { step = 28; continue; }
+  case 35:
+    r0 = (s.arg2 + s.mult___8695);
+    s.arg2 = (r0);
+    r0 = (s.i___8883 + 1);
+    s.i___8883 = (r0);
+    { step = 27; continue; }
+  case 36:
+  case 37:
+    { step = 9; continue; }
+  case 38:
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+helpers_imagePrint__P1995.info = {"start":15326,"length":3300,"line":213,"column":4,"endLine":306,"endColumn":5,"fileName":"pxt_modules/screen/text.ts","functionName":"imagePrint","argumentNames":["img","text","x","y","color","font","offsets"]}
+
+function helpers_imagePrint__P1995_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: helpers_imagePrint__P1995, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  tmp_1: undefined,
+  tmp_2: undefined,
+  tmp_3: undefined,
+  tmp_4: undefined,
+  tmp_5: undefined,
+  x0___8692: undefined,
+  cp___8694: undefined,
+  mult___8695: undefined,
+  dataW___8700: undefined,
+  dataH___8706: undefined,
+  byteHeight___8712: undefined,
+  charSize___8718: undefined,
+  dataSize___8722: undefined,
+  fontdata___8726: undefined,
+  lastchar___8729: undefined,
+  imgBuf___8736: undefined,
+  xOffset___8760: undefined,
+  yOffset___8761: undefined,
+  ch___8776: undefined,
+  l___8795: undefined,
+  r___8796: undefined,
+  off___8798: undefined,
+  guess___8799: undefined,
+  m___8818: undefined,
+  v___8827: undefined,
+  i___8883: undefined,
+  j___8888: undefined,
+  mask___8889: undefined,
+  c___8890: undefined,
+  n___8907: undefined,
+  arg0: undefined,
+  arg1: undefined,
+  arg2: undefined,
+  arg3: undefined,
+  arg4: undefined,
+  arg5: undefined,
+  arg6: undefined,
+} }
+
+
+
+
+
+function image_getFontForText__P1982(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    s.i___8968 = undefined;
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.lambdaArgs = null;
+    }
+    s.i___8968 = (0);
+  case 1:
+    s.tmp_1 = r0 = s.i___8968;
+    r0 = pxsim_String_.length(s.arg0);
+    s.tmp_2 = r0;
+    r0 = (s.tmp_1 < s.tmp_2);
+    s.tmp_0 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_0);
+    if (!r0) { step = 4; continue; }
+    r0 = pxsim_String_.charCodeAt(s.arg0, s.i___8968);
+    s.tmp_4 = r0;
+    r0 = (s.tmp_4 > 8192);
+    s.tmp_3 = r0;
+    r0 = pxsim_numops_toBoolDecr(s.tmp_3);
+    if (!r0) { step = 2; continue; }
+    r0 = globals.font12___1981;
+    { step = 5; continue; }
+  case 2:
+  case 3:
+    r0 = (s.i___8968 + 1);
+    s.i___8968 = (r0);
+    { step = 1; continue; }
+  case 4:
+    r0 = globals.font8___1980;
+  case 5:
+    return leave(s, r0)
+  default: oops()
+} } }
+image_getFontForText__P1982.info = {"start":11713,"length":259,"line":136,"column":4,"endLine":143,"endColumn":5,"fileName":"pxt_modules/screen/text.ts","functionName":"getFontForText","argumentNames":["text"]}
+
+function image_getFontForText__P1982_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: image_getFontForText__P1982, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  tmp_1: undefined,
+  tmp_2: undefined,
+  tmp_3: undefined,
+  tmp_4: undefined,
+  i___8968: undefined,
+  arg0: undefined,
+} }
+
+
+
+
+
+function helpers_imageDrawIcon__P1960(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.arg1 = (s.lambdaArgs[1]);
+      s.arg2 = (s.lambdaArgs[2]);
+      s.arg3 = (s.lambdaArgs[3]);
+      s.arg4 = (s.lambdaArgs[4]);
+      s.lambdaArgs = null;
+    }
     s.tmp_0 = r0 = s.arg0;
-    r0 = (globals.WIDTH___125165 / 2);
+    s.tmp_1 = r0 = s.arg1;
+    s.tmp_3 = helpers_pack__P4852_mk(s);
+    s.tmp_3.arg0 = s.arg2;
+    s.tmp_3.arg1 = s.arg3;
+    s.callLocIdx = 78; s.pc = 1; return s.tmp_3;
+  case 1:
+    r0 = s.retval;
+    s.tmp_2 = r0;
+    r0 = pxsim_ImageMethods._drawIcon(s.tmp_0, s.tmp_1, s.tmp_2, s.arg4);
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+helpers_imageDrawIcon__P1960.info = {"start":6002,"length":145,"line":198,"column":4,"endLine":200,"endColumn":5,"fileName":"pxt_modules/screen/image.ts","functionName":"imageDrawIcon","argumentNames":["img","icon","x","y","c"]}
+
+function helpers_imageDrawIcon__P1960_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: helpers_imageDrawIcon__P1960, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  tmp_1: undefined,
+  tmp_2: undefined,
+  tmp_3: undefined,
+  arg0: undefined,
+  arg1: undefined,
+  arg2: undefined,
+  arg3: undefined,
+  arg4: undefined,
+} }
+
+
+
+
+
+function helpers_pack__P4852(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.arg1 = (s.lambdaArgs[1]);
+      s.lambdaArgs = null;
+    }
+    s.tmp_2 = Math_clamp__P127_mk(s);
+    s.tmp_2.arg0 = -30000;
+    s.tmp_2.arg1 = 30000;
+    r0 = (s.arg0 | 0);
+    s.tmp_2.arg2 = r0;
+    s.callLocIdx = 76; s.pc = 1; return s.tmp_2;
+  case 1:
+    r0 = s.retval;
+    s.tmp_1 = r0;
+    r0 = (s.tmp_1 & 65535);
+    s.tmp_0 = r0;
+    s.tmp_5 = Math_clamp__P127_mk(s);
+    s.tmp_5.arg0 = -30000;
+    s.tmp_5.arg1 = 30000;
+    r0 = (s.arg1 | 0);
+    s.tmp_5.arg2 = r0;
+    s.callLocIdx = 77; s.pc = 2; return s.tmp_5;
+  case 2:
+    r0 = s.retval;
+    s.tmp_4 = r0;
+    r0 = (s.tmp_4 << 16);
+    s.tmp_3 = r0;
+    r0 = (s.tmp_0 | s.tmp_3);
+    return leave(s, r0)
+  default: oops()
+} } }
+helpers_pack__P4852.info = {"start":4976,"length":145,"line":173,"column":4,"endLine":175,"endColumn":5,"fileName":"pxt_modules/screen/image.ts","functionName":"pack","argumentNames":["x","y"]}
+
+function helpers_pack__P4852_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: helpers_pack__P4852, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  tmp_1: undefined,
+  tmp_2: undefined,
+  tmp_3: undefined,
+  tmp_4: undefined,
+  tmp_5: undefined,
+  arg0: undefined,
+  arg1: undefined,
+} }
+
+
+
+
+
+function Math_clamp__P127(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.arg1 = (s.lambdaArgs[1]);
+      s.arg2 = (s.lambdaArgs[2]);
+      s.lambdaArgs = null;
+    }
+    s.tmp_0 = Math_min__P131_mk(s);
+    s.tmp_0.arg0 = s.arg1;
+    s.tmp_1 = Math_max__P130_mk(s);
+    s.tmp_1.arg0 = s.arg0;
+    s.tmp_1.arg1 = s.arg2;
+    s.callLocIdx = 14; s.pc = 2; return s.tmp_1;
+  case 2:
+    r0 = s.retval;
+    s.tmp_0.arg1 = r0;
+    s.callLocIdx = 15; s.pc = 1; return s.tmp_0;
+  case 1:
+    r0 = s.retval;
+    return leave(s, r0)
+  default: oops()
+} } }
+Math_clamp__P127.info = {"start":15643,"length":130,"line":528,"column":4,"endLine":530,"endColumn":5,"fileName":"pxt_modules/base/pxt-helpers.ts","functionName":"clamp","argumentNames":["min","max","value"]}
+
+function Math_clamp__P127_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: Math_clamp__P127, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  tmp_1: undefined,
+  arg0: undefined,
+  arg1: undefined,
+  arg2: undefined,
+} }
+
+
+
+
+
+function helpers_imageDrawLine__P1963(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.arg1 = (s.lambdaArgs[1]);
+      s.arg2 = (s.lambdaArgs[2]);
+      s.arg3 = (s.lambdaArgs[3]);
+      s.arg4 = (s.lambdaArgs[4]);
+      s.arg5 = (s.lambdaArgs[5]);
+      s.lambdaArgs = null;
+    }
+    s.tmp_0 = r0 = s.arg0;
+    s.tmp_2 = helpers_pack__P4852_mk(s);
+    s.tmp_2.arg0 = s.arg1;
+    s.tmp_2.arg1 = s.arg2;
+    s.callLocIdx = 81; s.pc = 1; return s.tmp_2;
+  case 1:
+    r0 = s.retval;
+    s.tmp_1 = r0;
+    s.tmp_4 = helpers_pack__P4852_mk(s);
+    s.tmp_4.arg0 = s.arg3;
+    s.tmp_4.arg1 = s.arg4;
+    s.callLocIdx = 82; s.pc = 2; return s.tmp_4;
+  case 2:
+    r0 = s.retval;
+    s.tmp_3 = r0;
+    r0 = pxsim_ImageMethods._drawLine(s.tmp_0, s.tmp_1, s.tmp_3, s.arg5);
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+helpers_imageDrawLine__P1963.info = {"start":6479,"length":159,"line":207,"column":4,"endLine":209,"endColumn":5,"fileName":"pxt_modules/screen/image.ts","functionName":"imageDrawLine","argumentNames":["img","x","y","w","h","c"]}
+
+function helpers_imageDrawLine__P1963_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: helpers_imageDrawLine__P1963, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  tmp_1: undefined,
+  tmp_2: undefined,
+  tmp_3: undefined,
+  tmp_4: undefined,
+  arg0: undefined,
+  arg1: undefined,
+  arg2: undefined,
+  arg3: undefined,
+  arg4: undefined,
+  arg5: undefined,
+} }
+
+
+
+
+
+function helpers_imageFillRect__P1961(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.arg1 = (s.lambdaArgs[1]);
+      s.arg2 = (s.lambdaArgs[2]);
+      s.arg3 = (s.lambdaArgs[3]);
+      s.arg4 = (s.lambdaArgs[4]);
+      s.arg5 = (s.lambdaArgs[5]);
+      s.lambdaArgs = null;
+    }
+    s.tmp_0 = r0 = s.arg0;
+    s.tmp_2 = helpers_pack__P4852_mk(s);
+    s.tmp_2.arg0 = s.arg1;
+    s.tmp_2.arg1 = s.arg2;
+    s.callLocIdx = 79; s.pc = 1; return s.tmp_2;
+  case 1:
+    r0 = s.retval;
+    s.tmp_1 = r0;
+    s.tmp_4 = helpers_pack__P4852_mk(s);
+    s.tmp_4.arg0 = s.arg3;
+    s.tmp_4.arg1 = s.arg4;
+    s.callLocIdx = 80; s.pc = 2; return s.tmp_4;
+  case 2:
+    r0 = s.retval;
+    s.tmp_3 = r0;
+    r0 = pxsim_ImageMethods._fillRect(s.tmp_0, s.tmp_1, s.tmp_3, s.arg5);
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+helpers_imageFillRect__P1961.info = {"start":6152,"length":159,"line":201,"column":4,"endLine":203,"endColumn":5,"fileName":"pxt_modules/screen/image.ts","functionName":"imageFillRect","argumentNames":["img","x","y","w","h","c"]}
+
+function helpers_imageFillRect__P1961_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: helpers_imageFillRect__P1961, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  tmp_1: undefined,
+  tmp_2: undefined,
+  tmp_3: undefined,
+  tmp_4: undefined,
+  arg0: undefined,
+  arg1: undefined,
+  arg2: undefined,
+  arg3: undefined,
+  arg4: undefined,
+  arg5: undefined,
+} }
+
+
+
+
+
+function EventHandler_constructor__P180224(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.arg1 = (s.lambdaArgs[1]);
+      s.lambdaArgs = null;
+    }
+    r0 = s.arg0;
+    if (!checkSubtype(r0, EventHandler__C180222_VT)) failedCast(r0);
+    r0 = (s.arg0).fields["handler"] = (s.arg1);
+    r0 = undefined;
+    return leave(s, r0)
+  default: oops()
+} } }
+EventHandler_constructor__P180224.info = {"start":2156,"length":71,"line":65,"column":4,"endLine":67,"endColumn":5,"fileName":"main.ts","functionName":"inline","argumentNames":["this","handler"]}
+
+function EventHandler_constructor__P180224_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: EventHandler_constructor__P180224, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  arg0: undefined,
+  arg1: undefined,
+} }
+
+
+
+
+
+function EventListener_add_handler__P180285(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.arg1 = (s.lambdaArgs[1]);
+      s.lambdaArgs = null;
+    }
+    r0 = s.arg0;
+    if (!checkSubtype(r0, EventListener__C180284_VT)) failedCast(r0);
+    r0 = s.arg0.fields["handlers"];
+    s.tmp_0 = r0;
+    r0 = pxsim_Array__push(s.tmp_0, s.arg1);
+    r0 = pxsim_numops_toBoolDecr(globals.log_add_handler___180081);
+    if (!r0) { step = 1; continue; }
+    s.tmp_0 = debug_log__P180088_mk(s);
+    r0 = pxsim_pxtcore.typeOf(s.arg1);
+    s.tmp_2 = r0;
+    if ((s.tmp_2) && (s.tmp_2).vtable) {
+    setupResume(s, 4);
+    pxsim_String__stringConv(s.tmp_2);
+    checkResumeConsumed();
+    return;
+    } else { s.retval = (s.tmp_2) + ""; }
+  case 4:
+    r0 = s.retval;
+    s.tmp_1 = r0;
+    r0 = pxsim_String__concat("Added handler ", s.tmp_1);
+    s.tmp_0.arg0 = r0;
+    s.callLocIdx = 80; s.pc = 3; return s.tmp_0;
+  case 3:
+    r0 = s.retval;
+  case 1:
+  case 2:
+    r0 = s.arg0.fields["handlers"];
+    s.tmp_1 = r0;
+    r0 = pxsim_Array__length(s.tmp_1);
+    s.tmp_0 = r0;
+    r0 = (s.tmp_0 - 1);
+    return leave(s, r0)
+  default: oops()
+} } }
+EventListener_add_handler__P180285.info = {"start":3070,"length":210,"line":96,"column":4,"endLine":100,"endColumn":5,"fileName":"main.ts","functionName":"add_handler","argumentNames":["this","handler"]}
+
+function EventListener_add_handler__P180285_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: EventListener_add_handler__P180285, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  tmp_1: undefined,
+  tmp_2: undefined,
+  arg0: undefined,
+  arg1: undefined,
+} }
+
+
+
+
+
+function Cursor_constructor__P180729(s) {
+let r0 = s.r0, step = s.pc;
+s.pc = -1;
+
+
+while (true) {
+if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) return null;
+switch (step) {
+  case 0:
+
+    if (s.lambdaArgs) {
+      s.arg0 = (s.lambdaArgs[0]);
+      s.arg1 = (s.lambdaArgs[1]);
+      s.lambdaArgs = null;
+    }
+    r0 = s.arg0;
+    if (!checkSubtype(r0, Cursor__C180717_VT)) failedCast(r0);
+    s.tmp_0 = r0 = s.arg0;
+    r0 = (globals.WIDTH___180071 / 2);
     s.tmp_2 = r0;
     r0 = pxsim.Math_.round(s.tmp_2);
     s.tmp_1 = r0;
     r0 = (s.tmp_0).fields["x"] = (s.tmp_1);
     s.tmp_3 = r0 = s.arg0;
-    r0 = (globals.HEIGHT___125168 / 2);
+    r0 = (globals.HEIGHT___180074 / 2);
     s.tmp_5 = r0;
     r0 = pxsim.Math_.round(s.tmp_5);
     s.tmp_4 = r0;
@@ -10865,12 +10960,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-Cursor_constructor__P125778.info = {"start":14908,"length":54,"line":340,"column":4,"endLine":342,"endColumn":5,"fileName":"main.ts","functionName":"inline","argumentNames":["this","img"]}
+Cursor_constructor__P180729.info = {"start":15498,"length":54,"line":355,"column":4,"endLine":357,"endColumn":5,"fileName":"main.ts","functionName":"inline","argumentNames":["this","img"]}
 
-function Cursor_constructor__P125778_mk(s) {
+function Cursor_constructor__P180729_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: Cursor_constructor__P125778, depth: s.depth + 1,
+        parent: s, fn: Cursor_constructor__P180729, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -10888,7 +10983,7 @@ function Cursor_constructor__P125778_mk(s) {
 
 
 
-function EventListener_constructor__P125381(s) {
+function EventListener_constructor__P180290(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -10903,7 +10998,7 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, EventListener__C125377_VT)) failedCast(r0);
+    if (!checkSubtype(r0, EventListener__C180284_VT)) failedCast(r0);
     s.tmp_0 = r0 = s.arg0;
     r0 = pxsim_Array__mk();
     s.tmp_1 = r0;
@@ -10912,12 +11007,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-EventListener_constructor__P125381.info = {"start":2966,"length":16,"line":93,"column":4,"endLine":93,"endColumn":20,"fileName":"main.ts","functionName":"inline","argumentNames":["this"]}
+EventListener_constructor__P180290.info = {"start":3048,"length":16,"line":94,"column":4,"endLine":94,"endColumn":20,"fileName":"main.ts","functionName":"inline","argumentNames":["this"]}
 
-function EventListener_constructor__P125381_mk(s) {
+function EventListener_constructor__P180290_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: EventListener_constructor__P125381, depth: s.depth + 1,
+        parent: s, fn: EventListener_constructor__P180290, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -10928,7 +11023,7 @@ function EventListener_constructor__P125381_mk(s) {
 
 
 
-function Screen_constructor__P126277(s) {
+function Screen_constructor__P181228(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -10944,7 +11039,7 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, Screen__C126273_VT)) failedCast(r0);
+    if (!checkSubtype(r0, Screen__C181224_VT)) failedCast(r0);
     s.tmp_0 = r0 = s.arg0;
     r0 = pxsim_Array__mk();
     s.tmp_1 = r0;
@@ -10954,12 +11049,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-Screen_constructor__P126277.info = {"start":20009,"length":94,"line":484,"column":4,"endLine":487,"endColumn":5,"fileName":"main.ts","functionName":"inline","argumentNames":["this","palette"]}
+Screen_constructor__P181228.info = {"start":20599,"length":94,"line":499,"column":4,"endLine":502,"endColumn":5,"fileName":"main.ts","functionName":"inline","argumentNames":["this","palette"]}
 
-function Screen_constructor__P126277_mk(s) {
+function Screen_constructor__P181228_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: Screen_constructor__P126277, depth: s.depth + 1,
+        parent: s, fn: Screen_constructor__P181228, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -10971,7 +11066,7 @@ function Screen_constructor__P126277_mk(s) {
 
 
 
-function Palette_constructor__P125641(s) {
+function Palette_constructor__P180592(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -10987,7 +11082,7 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, Palette__C125623_VT)) failedCast(r0);
+    if (!checkSubtype(r0, Palette__C180574_VT)) failedCast(r0);
     r0 = (s.arg0).fields["buf_id"] = (0);
     r0 = (s.arg0).fields["colors"] = (s.arg1);
     r0 = (s.arg0).fields["loaded"] = (false);
@@ -10995,12 +11090,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-Palette_constructor__P125641.info = {"start":13164,"length":134,"line":283,"column":4,"endLine":287,"endColumn":5,"fileName":"main.ts","functionName":"inline","argumentNames":["this","colors"]}
+Palette_constructor__P180592.info = {"start":13754,"length":134,"line":298,"column":4,"endLine":302,"endColumn":5,"fileName":"main.ts","functionName":"inline","argumentNames":["this","colors"]}
 
-function Palette_constructor__P125641_mk(s) {
+function Palette_constructor__P180592_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: Palette_constructor__P125641, depth: s.depth + 1,
+        parent: s, fn: Palette_constructor__P180592, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   arg0: undefined,
   arg1: undefined,
@@ -11147,7 +11242,7 @@ function color_setPalette__P4447_mk(s) {
 
 
 
-function ord__P125432(s) {
+function ord__P180383(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -11165,12 +11260,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-ord__P125432.info = {"start":3680,"length":68,"line":114,"column":0,"endLine":116,"endColumn":1,"fileName":"main.ts","functionName":"ord","argumentNames":["char"]}
+ord__P180383.info = {"start":4270,"length":68,"line":129,"column":0,"endLine":131,"endColumn":1,"fileName":"main.ts","functionName":"ord","argumentNames":["char"]}
 
-function ord__P125432_mk(s) {
+function ord__P180383_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: ord__P125432, depth: s.depth + 1,
+        parent: s, fn: ord__P180383, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   arg0: undefined,
 } }
@@ -11243,7 +11338,7 @@ function Buffer_fromArray__P210_mk(s) {
 
 
 
-function imageX_Font_constructor__P125480(s) {
+function imageX_Font_constructor__P180431(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -11261,7 +11356,7 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, imageX_Font__C125478_VT)) failedCast(r0);
+    if (!checkSubtype(r0, imageX_Font__C180429_VT)) failedCast(r0);
     r0 = (s.arg0).fields["charWidth"] = (s.arg1);
     r0 = (s.arg0).fields["charHeight"] = (s.arg2);
     r0 = (s.arg0).fields["data"] = (s.arg3);
@@ -11269,12 +11364,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-imageX_Font_constructor__P125480.info = {"start":4333,"length":185,"line":132,"column":8,"endLine":136,"endColumn":9,"fileName":"main.ts","functionName":"inline","argumentNames":["this","charWidth","charHeight","data"]}
+imageX_Font_constructor__P180431.info = {"start":4923,"length":185,"line":147,"column":8,"endLine":151,"endColumn":9,"fileName":"main.ts","functionName":"inline","argumentNames":["this","charWidth","charHeight","data"]}
 
-function imageX_Font_constructor__P125480_mk(s) {
+function imageX_Font_constructor__P180431_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: imageX_Font_constructor__P125480, depth: s.depth + 1,
+        parent: s, fn: imageX_Font_constructor__P180431, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   arg0: undefined,
   arg1: undefined,
@@ -45065,7 +45160,7 @@ function color_FadeEffect_constructor__P4444_mk(s) {
 
 
 
-function ControllerEventHandler_run__P125328(s) {
+function ControllerEventHandler_run__P180235(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -45080,7 +45175,7 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, ControllerEventHandler__C125326_VT)) failedCast(r0);
+    if (!checkSubtype(r0, ControllerEventHandler__C180233_VT)) failedCast(r0);
     r0 = s.arg0.fields["eventType"];
     s.tmp_1 = r0;
     r0 = (s.tmp_1 == 2049);
@@ -45136,7 +45231,7 @@ switch (step) {
     s.tmp_10 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_10);
     if (!r0) { step = 11; continue; }
-    r0 = pxsim_numops_toBoolDecr(globals.debug_log_event___125181);
+    r0 = pxsim_numops_toBoolDecr(globals.log_event___180087);
     if (!r0) { step = 9; continue; }
     r0 = s.arg0.fields["eventType"];
     s.tmp_12 = r0;
@@ -45151,7 +45246,7 @@ switch (step) {
   case 8:
     // jmp value (already in r0)
     s.tmp_13 = r0;
-    s.tmp_14 = debug_log__P125171_mk(s);
+    s.tmp_14 = debug_log__P180088_mk(s);
     if ((s.tmp_13) && (s.tmp_13).vtable) {
     setupResume(s, 16);
     pxsim_String__stringConv(s.tmp_13);
@@ -45168,7 +45263,7 @@ switch (step) {
     r0 = s.retval;
   case 9:
   case 10:
-    s.tmp_0 = EventHandler_run__P125316_mk(s);
+    s.tmp_0 = EventHandler_run__P180223_mk(s);
     s.tmp_0.arg0 = s.arg0;
     s.callLocIdx = 79; s.pc = 17; return s.tmp_0;
   case 17:
@@ -45179,12 +45274,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-ControllerEventHandler_run__P125328.info = {"start":2508,"length":394,"line":82,"column":4,"endLine":88,"endColumn":5,"fileName":"main.ts","functionName":"run","argumentNames":["this"]}
+ControllerEventHandler_run__P180235.info = {"start":2590,"length":394,"line":83,"column":4,"endLine":89,"endColumn":5,"fileName":"main.ts","functionName":"run","argumentNames":["this"]}
 
-function ControllerEventHandler_run__P125328_mk(s) {
+function ControllerEventHandler_run__P180235_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: ControllerEventHandler_run__P125328, depth: s.depth + 1,
+        parent: s, fn: ControllerEventHandler_run__P180235, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -45209,7 +45304,7 @@ function ControllerEventHandler_run__P125328_mk(s) {
 
 
 
-function WLabel_render__P125999(s) {
+function WLabel_render__P180950(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -45227,7 +45322,7 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, WLabel__C125998_VT)) failedCast(r0);
+    if (!checkSubtype(r0, WLabel__C180949_VT)) failedCast(r0);
     s.tmp_0 = helpers_imagePrint__P1995_mk(s);
     s.tmp_0.arg0 = s.arg1;
     r0 = s.arg0.fields["text"];
@@ -45260,12 +45355,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-WLabel_render__P125999.info = {"start":17780,"length":153,"line":417,"column":4,"endLine":419,"endColumn":5,"fileName":"main.ts","functionName":"render","argumentNames":["this","img","wx","wy"]}
+WLabel_render__P180950.info = {"start":18370,"length":153,"line":432,"column":4,"endLine":434,"endColumn":5,"fileName":"main.ts","functionName":"render","argumentNames":["this","img","wx","wy"]}
 
-function WLabel_render__P125999_mk(s) {
+function WLabel_render__P180950_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: WLabel_render__P125999, depth: s.depth + 1,
+        parent: s, fn: WLabel_render__P180950, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -47167,6 +47262,97 @@ function scene_Camera_left__P2809_mk(s) {
 
 
 
+function if_handler_1_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: null, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  tmp_1: undefined,
+  tmp_2: undefined,
+  tmp_3: undefined,
+  tmp_4: undefined,
+  arg0: undefined,
+} }
+
+
+function lambda_3_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: null, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  tmp_1: undefined,
+  tmp_2: undefined,
+  tmp_3: undefined,
+  tmp_4: undefined,
+  arg0: undefined,
+  arg1: undefined,
+  arg2: undefined,
+} }
+
+
+function if_callback_1_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: null, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  tmp_1: undefined,
+  tmp_2: undefined,
+  tmp_3: undefined,
+  tmp_4: undefined,
+  arg0: undefined,
+} }
+
+
+function if_revert_2_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: null, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  tmp_1: undefined,
+  tmp_2: undefined,
+  tmp_3: undefined,
+  tmp_4: undefined,
+  arg0: undefined,
+  arg1: undefined,
+} }
+
+
+function lambda_2_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: null, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  tmp_1: undefined,
+  tmp_2: undefined,
+  tmp_3: undefined,
+  tmp_4: undefined,
+  arg0: undefined,
+  arg1: undefined,
+} }
+
+
+function lambda_4_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: null, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  tmp_1: undefined,
+  tmp_2: undefined,
+  tmp_3: undefined,
+  tmp_4: undefined,
+  arg0: undefined,
+  arg1: undefined,
+  arg2: undefined,
+  arg3: undefined,
+} }
+
+
 function if_multiplier_1_mk(s) {
     checkStack(s.depth);
     return {
@@ -47248,97 +47434,6 @@ function if_yOffset_1_mk(s) {
   tmp_3: undefined,
   tmp_4: undefined,
   arg0: undefined,
-} }
-
-
-function if_handler_1_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: null, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  tmp_1: undefined,
-  tmp_2: undefined,
-  tmp_3: undefined,
-  tmp_4: undefined,
-  arg0: undefined,
-} }
-
-
-function lambda_3_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: null, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  tmp_1: undefined,
-  tmp_2: undefined,
-  tmp_3: undefined,
-  tmp_4: undefined,
-  arg0: undefined,
-  arg1: undefined,
-  arg2: undefined,
-} }
-
-
-function lambda_4_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: null, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  tmp_1: undefined,
-  tmp_2: undefined,
-  tmp_3: undefined,
-  tmp_4: undefined,
-  arg0: undefined,
-  arg1: undefined,
-  arg2: undefined,
-  arg3: undefined,
-} }
-
-
-function if_callback_1_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: null, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  tmp_1: undefined,
-  tmp_2: undefined,
-  tmp_3: undefined,
-  tmp_4: undefined,
-  arg0: undefined,
-} }
-
-
-function if_revert_2_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: null, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  tmp_1: undefined,
-  tmp_2: undefined,
-  tmp_3: undefined,
-  tmp_4: undefined,
-  arg0: undefined,
-  arg1: undefined,
-} }
-
-
-function lambda_2_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: null, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  tmp_1: undefined,
-  tmp_2: undefined,
-  tmp_3: undefined,
-  tmp_4: undefined,
-  arg0: undefined,
-  arg1: undefined,
 } }
 
 
@@ -48173,6 +48268,20 @@ function if_state_1_mk(s) {
 } }
 
 
+function EventHandler__C180222_v0_1_mk(s) {
+    checkStack(s.depth);
+    return {
+        parent: s, fn: null, depth: s.depth + 1,
+        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
+  tmp_0: undefined,
+  tmp_1: undefined,
+  tmp_2: undefined,
+  tmp_3: undefined,
+  tmp_4: undefined,
+  arg0: undefined,
+} }
+
+
 function if_render_4_mk(s) {
     checkStack(s.depth);
     return {
@@ -48187,20 +48296,6 @@ function if_render_4_mk(s) {
   arg1: undefined,
   arg2: undefined,
   arg3: undefined,
-} }
-
-
-function EventHandler__C125315_v0_1_mk(s) {
-    checkStack(s.depth);
-    return {
-        parent: s, fn: null, depth: s.depth + 1,
-        pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
-  tmp_0: undefined,
-  tmp_1: undefined,
-  tmp_2: undefined,
-  tmp_3: undefined,
-  tmp_4: undefined,
-  arg0: undefined,
 } }
 
 
@@ -48400,7 +48495,7 @@ const color_FadeState__C7152_VT = mkVTable({
     "set/scene": null,
   },
 });
-const imageX_Font__C125478_VT = mkVTable({
+const imageX_Font__C180429_VT = mkVTable({
   name: "Font",
   numFields: 3,
   classNo: 22,
@@ -48417,7 +48512,7 @@ const imageX_Font__C125478_VT = mkVTable({
     "set/data": null,
   },
 });
-const Palette__C125623_VT = mkVTable({
+const Palette__C180574_VT = mkVTable({
   name: "Palette",
   numFields: 3,
   classNo: 23,
@@ -48432,12 +48527,12 @@ const Palette__C125623_VT = mkVTable({
     "set/colors": null,
     "loaded": null,
     "set/loaded": null,
-    "load": Palette_load__P125626,
-    "apply": Palette_apply__P125627,
-    "abs_id": Palette_abs_id__P125629,
+    "load": Palette_load__P180577,
+    "apply": Palette_apply__P180578,
+    "abs_id": Palette_abs_id__P180580,
   },
 });
-const Screen__C126273_VT = mkVTable({
+const Screen__C181224_VT = mkVTable({
   name: "Screen",
   numFields: 2,
   classNo: 24,
@@ -48450,11 +48545,11 @@ const Screen__C126273_VT = mkVTable({
     "set/windows": null,
     "palette": null,
     "set/palette": null,
-    "render": Screen_render__P126274,
-    "add_window": Screen_add_window__P126275,
+    "render": Screen_render__P181225,
+    "add_window": Screen_add_window__P181226,
   },
 });
-const EventListener__C125377_VT = mkVTable({
+const EventListener__C180284_VT = mkVTable({
   name: "EventListener",
   numFields: 1,
   classNo: 25,
@@ -48465,11 +48560,11 @@ const EventListener__C125377_VT = mkVTable({
   iface: {
     "handlers": null,
     "set/handlers": null,
-    "add_handler": EventListener_add_handler__P125378,
-    "handle_events": EventListener_handle_events__P125380,
+    "add_handler": EventListener_add_handler__P180285,
+    "handle_events": EventListener_handle_events__P180289,
   },
 });
-const Cursor__C125766_VT = mkVTable({
+const Cursor__C180717_VT = mkVTable({
   name: "Cursor",
   numFields: 7,
   classNo: 26,
@@ -48492,22 +48587,37 @@ const Cursor__C125766_VT = mkVTable({
     "set/ignoreSpeed": null,
     "controllerEventHandler_ids": null,
     "set/controllerEventHandler_ids": null,
-    "render": Cursor_render__P125767,
-    "set_speed": Cursor_set_speed__P125768,
-    "set_default_speed": Cursor_set_default_speed__P125769,
-    "set_ignore_speed": Cursor_set_ignore_speed__P125770,
-    "set_pos": Cursor_set_pos__P125771,
-    "move": Cursor_move__P125773,
-    "move_h": Cursor_move_h__P125774,
-    "move_v": Cursor_move_v__P125775,
-    "add_handlers": Cursor_add_handlers__P125776,
+    "render": Cursor_render__P180718,
+    "set_speed": Cursor_set_speed__P180719,
+    "set_default_speed": Cursor_set_default_speed__P180720,
+    "set_ignore_speed": Cursor_set_ignore_speed__P180721,
+    "set_pos": Cursor_set_pos__P180722,
+    "move": Cursor_move__P180724,
+    "move_h": Cursor_move_h__P180725,
+    "move_v": Cursor_move_v__P180726,
+    "add_handlers": Cursor_add_handlers__P180727,
   },
 });
-const WLabel__C125998_VT = mkVTable({
+const EventHandler__C180222_VT = mkVTable({
+  name: "EventHandler",
+  numFields: 1,
+  classNo: 27,
+  lastSubtypeNo: 28,
+  maxBgInstances: null,
+  methods: {
+    "run": EventHandler_run__P180223,
+  },
+  iface: {
+    "handler": null,
+    "set/handler": null,
+    "run": EventHandler_run__P180223,
+  },
+});
+const WLabel__C180949_VT = mkVTable({
   name: "WLabel",
   numFields: 5,
-  classNo: 27,
-  lastSubtypeNo: 27,
+  classNo: 29,
+  lastSubtypeNo: 29,
   maxBgInstances: null,
   methods: {
   },
@@ -48522,14 +48632,14 @@ const WLabel__C125998_VT = mkVTable({
     "set/text": null,
     "font": null,
     "set/font": null,
-    "render": WLabel_render__P125999,
+    "render": WLabel_render__P180950,
   },
 });
-const Window__C126049_VT = mkVTable({
+const Window__C181000_VT = mkVTable({
   name: "Window",
   numFields: 8,
-  classNo: 28,
-  lastSubtypeNo: 28,
+  classNo: 30,
+  lastSubtypeNo: 30,
   maxBgInstances: null,
   methods: {
   },
@@ -48550,37 +48660,34 @@ const Window__C126049_VT = mkVTable({
     "set/w": null,
     "h": null,
     "set/h": null,
-    "render": Window_render__P126050,
-    "add_widget": Window_add_widget__P126051,
+    "render": Window_render__P181001,
+    "add_widget": Window_add_widget__P181002,
   },
 });
-const scene_Background__C2685_VT = mkVTable({
-  name: "Background",
-  numFields: 4,
-  classNo: 29,
-  lastSubtypeNo: 29,
+const ControllerEventHandler__C180233_VT = mkVTable({
+  name: "ControllerEventHandler",
+  numFields: 3,
+  classNo: 28,
+  lastSubtypeNo: 28,
   maxBgInstances: null,
   methods: {
+    "run": ControllerEventHandler_run__P180235,
   },
   iface: {
-    "color": null,
-    "set/color": null,
-    "_image": null,
-    "set/_image": null,
-    "camera": null,
-    "set/camera": null,
-    "_layers": null,
-    "set/_layers": null,
-    "image": scene_Background_image__P2691,
-    "set/image": scene_Background_image__P2692,
-    "draw": scene_Background_draw__P2694,
+    "handler": null,
+    "set/handler": null,
+    "button": null,
+    "set/button": null,
+    "eventType": null,
+    "set/eventType": null,
+    "run": ControllerEventHandler_run__P180235,
   },
 });
 const scene_GameForeverHandler__C2837_VT = mkVTable({
   name: "GameForeverHandler",
   numFields: 2,
-  classNo: 30,
-  lastSubtypeNo: 30,
+  classNo: 31,
+  lastSubtypeNo: 31,
   maxBgInstances: null,
   methods: {
   },
@@ -48591,45 +48698,11 @@ const scene_GameForeverHandler__C2837_VT = mkVTable({
     "set/handler": null,
   },
 });
-const EventHandler__C125315_VT = mkVTable({
-  name: "EventHandler",
-  numFields: 1,
-  classNo: 31,
-  lastSubtypeNo: 32,
-  maxBgInstances: null,
-  methods: {
-    "run": EventHandler_run__P125316,
-  },
-  iface: {
-    "handler": null,
-    "set/handler": null,
-    "run": EventHandler_run__P125316,
-  },
-});
-const ControllerEventHandler__C125326_VT = mkVTable({
-  name: "ControllerEventHandler",
-  numFields: 3,
-  classNo: 32,
-  lastSubtypeNo: 32,
-  maxBgInstances: null,
-  methods: {
-    "run": ControllerEventHandler_run__P125328,
-  },
-  iface: {
-    "handler": null,
-    "set/handler": null,
-    "button": null,
-    "set/button": null,
-    "eventType": null,
-    "set/eventType": null,
-    "run": ControllerEventHandler_run__P125328,
-  },
-});
 const controller_ButtonHandler__C2197_VT = mkVTable({
   name: "ButtonHandler",
   numFields: 2,
-  classNo: 33,
-  lastSubtypeNo: 33,
+  classNo: 32,
+  lastSubtypeNo: 32,
   maxBgInstances: null,
   methods: {
   },
@@ -48643,8 +48716,8 @@ const controller_ButtonHandler__C2197_VT = mkVTable({
 const controller_ButtonEventHandlerState__C2199_VT = mkVTable({
   name: "ButtonEventHandlerState",
   numFields: 3,
-  classNo: 34,
-  lastSubtypeNo: 34,
+  classNo: 33,
+  lastSubtypeNo: 33,
   maxBgInstances: null,
   methods: {
   },
@@ -48660,8 +48733,8 @@ const controller_ButtonEventHandlerState__C2199_VT = mkVTable({
 const control_EventContext__C395_VT = mkVTable({
   name: "EventContext",
   numFields: 10,
-  classNo: 35,
-  lastSubtypeNo: 35,
+  classNo: 34,
+  lastSubtypeNo: 34,
   maxBgInstances: null,
   methods: {
   },
@@ -48698,8 +48771,8 @@ const control_EventContext__C395_VT = mkVTable({
 const control_EventHandler__C4707_VT = mkVTable({
   name: "EventHandler",
   numFields: 4,
-  classNo: 36,
-  lastSubtypeNo: 36,
+  classNo: 35,
+  lastSubtypeNo: 35,
   maxBgInstances: null,
   methods: {
   },
@@ -48716,11 +48789,11 @@ const control_EventHandler__C4707_VT = mkVTable({
     "unregister": control_EventHandler_unregister__P4709,
   },
 });
-const Exception__C125190_VT = mkVTable({
+const Exception__C180097_VT = mkVTable({
   name: "Exception",
   numFields: 3,
-  classNo: 37,
-  lastSubtypeNo: 39,
+  classNo: 36,
+  lastSubtypeNo: 38,
   maxBgInstances: null,
   methods: {
   },
@@ -48731,11 +48804,29 @@ const Exception__C125190_VT = mkVTable({
     "set/desc": null,
     "code": null,
     "set/code": null,
-    "raise": Exception_raise__P125191,
+    "raise": Exception_raise__P180098,
   },
 });
-const OutOfRangeException__C125263_VT = mkVTable({
+const OutOfRangeException__C180170_VT = mkVTable({
   name: "OutOfRangeException",
+  numFields: 3,
+  classNo: 37,
+  lastSubtypeNo: 37,
+  maxBgInstances: null,
+  methods: {
+  },
+  iface: {
+    "name": null,
+    "set/name": null,
+    "desc": null,
+    "set/desc": null,
+    "code": null,
+    "set/code": null,
+    "raise": Exception_raise__P180098,
+  },
+});
+const AlreadyInUseException__C180203_VT = mkVTable({
+  name: "AlreadyInUseException",
   numFields: 3,
   classNo: 38,
   lastSubtypeNo: 38,
@@ -48749,32 +48840,14 @@ const OutOfRangeException__C125263_VT = mkVTable({
     "set/desc": null,
     "code": null,
     "set/code": null,
-    "raise": Exception_raise__P125191,
-  },
-});
-const AlreadyInUseException__C125296_VT = mkVTable({
-  name: "AlreadyInUseException",
-  numFields: 3,
-  classNo: 39,
-  lastSubtypeNo: 39,
-  maxBgInstances: null,
-  methods: {
-  },
-  iface: {
-    "name": null,
-    "set/name": null,
-    "desc": null,
-    "set/desc": null,
-    "code": null,
-    "set/code": null,
-    "raise": Exception_raise__P125191,
+    "raise": Exception_raise__P180098,
   },
 });
 const color_ColorBuffer__C4402_VT = mkVTable({
   name: "ColorBuffer",
   numFields: 2,
-  classNo: 40,
-  lastSubtypeNo: 41,
+  classNo: 39,
+  lastSubtypeNo: 40,
   maxBgInstances: null,
   methods: {
   },
@@ -48792,8 +48865,8 @@ const color_ColorBuffer__C4402_VT = mkVTable({
 const color_Fade__C4464_VT = mkVTable({
   name: "Fade",
   numFields: 4,
-  classNo: 42,
-  lastSubtypeNo: 42,
+  classNo: 41,
+  lastSubtypeNo: 41,
   maxBgInstances: null,
   methods: {
   },
@@ -48819,8 +48892,8 @@ const color_Fade__C4464_VT = mkVTable({
 const color_Palette__C4442_VT = mkVTable({
   name: "Palette",
   numFields: 2,
-  classNo: 41,
-  lastSubtypeNo: 41,
+  classNo: 40,
+  lastSubtypeNo: 40,
   maxBgInstances: null,
   methods: {
   },
@@ -48838,8 +48911,8 @@ const color_Palette__C4442_VT = mkVTable({
 const scene_Scene__C2860_VT = mkVTable({
   name: "Scene",
   numFields: 25,
-  classNo: 43,
-  lastSubtypeNo: 43,
+  classNo: 42,
+  lastSubtypeNo: 42,
   maxBgInstances: null,
   methods: {
   },
@@ -48904,8 +48977,8 @@ const scene_Scene__C2860_VT = mkVTable({
 const color_FadeEffect__C4443_VT = mkVTable({
   name: "FadeEffect",
   numFields: 5,
-  classNo: 44,
-  lastSubtypeNo: 44,
+  classNo: 43,
+  lastSubtypeNo: 43,
   maxBgInstances: null,
   methods: {
   },
@@ -48926,8 +48999,8 @@ const color_FadeEffect__C4443_VT = mkVTable({
 const color_FadeRevert__C7143_VT = mkVTable({
   name: "FadeRevert",
   numFields: 2,
-  classNo: 45,
-  lastSubtypeNo: 45,
+  classNo: 44,
+  lastSubtypeNo: 44,
   maxBgInstances: null,
   methods: {
   },
@@ -48937,6 +49010,28 @@ const color_FadeRevert__C7143_VT = mkVTable({
     "revert": null,
     "set/revert": null,
     "applyRevert": color_FadeRevert_applyRevert__P7144,
+  },
+});
+const scene_Background__C2685_VT = mkVTable({
+  name: "Background",
+  numFields: 4,
+  classNo: 45,
+  lastSubtypeNo: 45,
+  maxBgInstances: null,
+  methods: {
+  },
+  iface: {
+    "color": null,
+    "set/color": null,
+    "_image": null,
+    "set/_image": null,
+    "camera": null,
+    "set/camera": null,
+    "_layers": null,
+    "set/_layers": null,
+    "image": scene_Background_image__P2691,
+    "set/image": scene_Background_image__P2692,
+    "draw": scene_Background_draw__P2694,
   },
 });
 const PhysicsEngine__C2527_VT = mkVTable({
@@ -49961,7 +50056,7 @@ const sprites_BaseSpriteSayRenderer__C2273_VT = mkVTable({
   },
 });
 
-const breakpoints = setupDebugger(1, ["WIDTH___125165","HEIGHT___125168","SYS_ARROW___125521","SYS_4x8___125524","palette___126338","theme___126335","img___126342","screen___126345","controllerEventListener___126349","cursor___126352","debug_log_load___125173","debug_log_free___125175","debug_log_add_handler___125177","debug_log_remove_handler___125179","debug_log_event___125181","label___126388","window___126393","label_id___126399","window_id___126404","Palette_disabled___125638","Palette_buf___125635"])
+const breakpoints = setupDebugger(1, ["WIDTH___180071","HEIGHT___180074","SYS_ARROW___180472","SYS_4x8___180475","palette___181289","theme___181286","img___181293","screen___181296","controllerEventListener___181300","foreverEventListener___181303","cursor___181306","screenRenderer_id___181311","cursorRenderer_id___181321","log_load___180077","log_free___180079","log_add_handler___180081","log_remove_handler___180085","log_event___180087","label___181366","window___181371","label_id___181377","window_id___181382","Palette_disabled___180589","Palette_buf___180586"])
 
-return _main___P126932
+return _main___P181924
 })
