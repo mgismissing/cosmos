@@ -112,7 +112,7 @@ class EventListener {
 }
 
 //  -------------------------------------------------------------------------------------------- UTILS ---
-function ord(char: String): number {
+function ord(char: string): number {
     return char.charCodeAt(0)
 }
 
@@ -136,7 +136,7 @@ namespace imageX {
             this.data = data
         }
 
-        add_glyph(char: String, glyph: number[]) {
+        add_glyph(char: string, glyph: number[]) {
             this.data.concat(Buffer.fromArray([ord(char) & 0xFF, Math.floor(ord(char) & 0xFF00 >> 8)].concat(glyph)))
         }
     }
@@ -422,13 +422,17 @@ class WLabel implements Widget {
 
 class Window {
     palette: Palette
+    title: string
+    font: image.Font
     widgets: Widget[]
     x: number
     y: number
     w: number
     h: number
-    constructor(palette: Palette, x: number, y: number, w: number, h: number) {
+    constructor(palette: Palette, x: number, y: number, w: number, h: number, title: string, font: image.Font) {
         this.palette = palette
+        this.title = title
+        this.font = font
         this.x = x
         this.y = y
         this.w = w
@@ -449,12 +453,13 @@ class Window {
         let c0 = this.palette.abs_id(0)
         let c1 = this.palette.abs_id(1)
         let c2 = this.palette.abs_id(2)
-        let titlesize: number = 8
+        let titlesize: number = this.font.charHeight
         img.fillRect(this.x, this.y, this.w, this.h, c0)
         img.fillRect(this.x, this.y, this.w, titlesize, c1)
         img.drawLine(this.x, this.y + titlesize, this.x, this.y + this.h - 1, c1)
         img.drawLine(this.x + this.w - 1, this.y + titlesize, this.x + this.w - 1, this.y + this.h - 1, c1)
         img.drawLine(this.x + 1, this.y + this.h - 1, this.x + this.w - 2, this.y + this.h - 1, c1)
+        img.print(this.title, this.x + 1, this.y, c0, this.font)
         //let shadow: number = 2;
         //imageX.fillCheckerRect(img, this.x + this.w, this.y + shadow, shadow, this.h - shadow, c1)
         //imageX.fillCheckerRect(img, this.x + shadow, this.y + this.h, this.w, shadow, c1)
@@ -544,7 +549,7 @@ system.cursor.add_handlers(system.controllerEventListener)
 
 // Initialize screen
 let label: WLabel = new WLabel(system.palette, 0, 0, "This is an example text.\nHello, World!", imageX.font.SYS_4x8)
-let window: Window = new Window(system.palette, 0, 0, 0, 0)
+let window: Window = new Window(system.palette, 0, 0, 0, 0, "Example window", imageX.font.SYS_4x8)
 let label_id = window.add_widget(label)
 let window_id: number = system.screen.add_window(window)
 
