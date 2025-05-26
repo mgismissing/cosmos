@@ -3,13 +3,14 @@ const WIDTH: number = scene.screenWidth()
 const HEIGHT: number = scene.screenHeight()
 
 //  -------------------------------------------------------------------------------------------- DEBUG ---
-class debug {
-    static log_load: boolean = false;
-    static log_free: boolean = false;
-    static log_add_handler: boolean = false;
-    static log_remove_handler: boolean = false;
-    static log_event: boolean = false;
-    static log(data: string) {
+namespace debug {
+    export let log_load: boolean = false;
+    export let log_free: boolean = false;
+    export let log_add_handler: boolean = false;
+    export let log_set_handler: boolean = false;
+    export let log_remove_handler: boolean = false;
+    export let log_event: boolean = false;
+    export function log(data: string) {
         console.log("DEBUG: " + data)
     }
 }
@@ -99,9 +100,23 @@ class EventListener {
         return this.handlers.length - 1
     }
 
+    set_handler_at(handler: EventHandler, id: number): number {
+        this.handlers.set(id, handler)
+        if (debug.log_set_handler) { debug.log("Set handler at #" + id + " to " + typeof handler) }
+        return id
+    }
+
     remove_handler(handler_id: number): EventHandler {
-        if (debug.log_add_handler) { debug.log("Removed handler #" + handler_id) }
+        if (debug.log_remove_handler) { debug.log("Removed handler #" + handler_id) }
         return this.handlers.removeAt(handler_id)
+    }
+
+    clear_handlers(): EventHandler[] {
+        let old_handlers: EventHandler[] = this.handlers
+        for (let handler_id: number = 0; handler_id < this.handlers.length; handler_id++) {
+            this.remove_handler(handler_id)
+        }
+        return old_handlers
     }
 
     handle_events() {
@@ -519,7 +534,10 @@ namespace system {
     export let img: Image = image.create(160, 120)
     export let screen: Screen = new Screen(system.palette)
     export let controllerEventListener: EventListener = new EventListener()
+    export let foreverEventListener: EventListener = new EventListener()
     export let cursor: Cursor = new Cursor(imageX.cursor.SYS_ARROW)
+    export let screenRenderer_id: number = system.foreverEventListener.add_handler(new EventHandler(() => { system.screen.render(system.img) }))
+    export let cursorRenderer_id: number = system.foreverEventListener.add_handler(new EventHandler(() => { system.cursor.render(system.img) }))
 }
 
 // Debug
@@ -535,9 +553,10 @@ system.palette.load(0)
 // Disable default menu
 controller.menu.onEvent(ControllerButtonEvent.Pressed, () => { dummy() })
 
-// Assign key bindings to ControllerEventListener
+// Assign ControllerEventListeners
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, () => { system.controllerEventListener.handle_events() })
 controller.anyButton.onEvent(ControllerButtonEvent.Released, () => { system.controllerEventListener.handle_events() })
+forever(() => { system.foreverEventListener.handle_events() })
 
 // Initialize scene
 scene.setBackgroundColor(0)
@@ -552,12 +571,3 @@ let label: WLabel = new WLabel(system.palette, 0, 0, "This is an example text.\n
 let window: Window = new Window(system.palette, 0, 0, 0, 0, "Example window", imageX.font.SYS_4x8)
 let label_id = window.add_widget(label)
 let window_id: number = system.screen.add_window(window)
-
-// Add event handlers
-dummy()
-
-// Render windows
-forever(() => {
-    system.screen.render(system.img)
-    system.cursor.render(system.img)
-})
