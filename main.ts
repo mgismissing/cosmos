@@ -267,6 +267,15 @@ namespace imageX {
 //  ------------------------------------------------------------------------------------ ASSET MANAGER ---
 class Palette {
     static buf: [number, number, number][] = [null, null, null, null, null]
+    static disabled: boolean = false
+
+    public static disable() {
+        Palette.disabled = true
+    }
+
+    public static enable() {
+        Palette.disabled = false
+    }
 
     buf_id: number
     colors: [number, number, number]
@@ -279,6 +288,7 @@ class Palette {
     }
 
     public load(buf_id: number) {
+        if (Palette.disabled) return;
         if (this.loaded) return;
         if (!(0 <= buf_id && buf_id <= 4)) {
             raise(new OutOfRangeException(0, 4, buf_id))
@@ -291,13 +301,20 @@ class Palette {
         this.buf_id = buf_id
         this.loaded = true
         Palette.buf[this.buf_id] = this.colors
+        if (debug.log_load) {debug.log("Loaded palette " + this.buf_id)}
+        this.apply()
+    }
+
+    public apply() {
+        if (Palette.disabled) return;
+        if (!this.loaded) return;
         for (let color_id = 0; color_id < 3; color_id++) {
             color.setColor(this.abs_id(color_id), (this.colors as any[])[color_id])
         }
-        if (debug.log_load) {debug.log("Loaded palette " + this.buf_id)}
     }
 
     public free() {
+        if (Palette.disabled) return;
         if (!this.loaded) return;
         this.loaded = false;
         Palette.buf[this.buf_id] = null
@@ -487,6 +504,10 @@ class Screen {
 }
 
 //  --------------------------------------------------------------------------------------------- MAIN ---
+// Load black palette
+color.setPalette(color.Black)
+
+// Define system namespace
 namespace system {
     export let theme: [number, number, number] = [0x210613, 0xf63090, 0xfffff5]
     export let palette: Palette = new Palette(system.theme)
