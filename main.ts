@@ -135,6 +135,10 @@ namespace imageX {
             this.charHeight = charHeight
             this.data = data
         }
+
+        add_glyph(char: String, glyph: number[]) {
+            this.data.concat(Buffer.fromArray([ord(char) & 0xFF, Math.floor(ord(char) & 0xFF00 >> 8)].concat(glyph)))
+        }
     }
 
     export namespace cursor {
@@ -151,7 +155,7 @@ namespace imageX {
             . . . 3 3 . .
         `
     }
-    
+
     export namespace font {
         // Font structure:
         // 2 Bytes (HEADER): character code in Little Endian format
