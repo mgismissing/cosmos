@@ -1,3 +1,8 @@
+//  ----------------------------------------------------------------------------------------- METADATA ---
+namespace cosmos {
+    let version: string = "2.1.0"
+}
+
 //  ---------------------------------------------------------------------------------------- CONSTANTS ---
 const WIDTH: number = scene.screenWidth()
 const HEIGHT: number = scene.screenHeight()
@@ -353,6 +358,9 @@ class Cursor {
     speed: number = 1
     ignoreSpeed: boolean = false
     controllerEventHandler_ids: number[] = []
+    clicking: boolean = false
+    onClickStarted: EventListener = new EventListener()
+    onClickEnded: EventListener = new EventListener()
     constructor(img: Image) {
         this.img = img
     }
@@ -388,6 +396,23 @@ class Cursor {
 
     move(x: number, y: number): void {
         this.set_pos(this.x + (x * (this.ignoreSpeed ? this.defaultSpeed : this.speed)), this.y + (y * (this.ignoreSpeed ? this.defaultSpeed : this.speed)))
+    }
+
+    set_clicking(clicking: boolean): void {
+        this.clicking = clicking
+        if (clicking && (!this.clicking)) {
+            this.onClickStarted.handle_events()
+        } else if ((!clicking) && this.clicking) {
+            this.onClickEnded.handle_events()
+        }
+    }
+
+    start_clicking(): void {
+        this.set_clicking(true)
+    }
+
+    stop_clicking(): void {
+        this.set_clicking(false)
     }
 
     move_h(x: number): void { this.move(x, 0) }
@@ -529,6 +554,7 @@ color.setPalette(color.Black)
 
 // Define system namespace
 namespace system {
+    export let onLoad: () => void
     export let theme: [number, number, number] = [0x210613, 0xf63090, 0xfffff5]
     export let palette: Palette = new Palette(system.theme)
     export let img: Image = image.create(160, 120)
@@ -539,13 +565,6 @@ namespace system {
     export let screenRenderer_id: number = system.foreverEventListener.add_handler(new EventHandler(() => { system.screen.render(system.img) }))
     export let cursorRenderer_id: number = system.foreverEventListener.add_handler(new EventHandler(() => { system.cursor.render(system.img) }))
 }
-
-// Debug
-debug.log_load = true
-debug.log_free = true
-debug.log_add_handler = true
-debug.log_remove_handler = true
-debug.log_event = true
 
 // Load system resources
 system.palette.load(0)
@@ -566,8 +585,5 @@ system.cursor.set_default_speed(4)
 system.cursor.set_speed(16)
 system.cursor.add_handlers(system.controllerEventListener)
 
-// Initialize screen
-let label: WLabel = new WLabel(system.palette, 0, 0, "This is an example text.\nHello, World!", imageX.font.SYS_4x8)
-let window: Window = new Window(system.palette, 0, 0, 0, 0, "Example window", imageX.font.SYS_4x8)
-let label_id = window.add_widget(label)
-let window_id: number = system.screen.add_window(window)
+// Run onLoad
+if (system.onLoad) system.onLoad()
