@@ -9,7 +9,10 @@ system.onLoad = () => {
 
     // Initialize screen
     let label: WLabel = new WLabel(system.palette, 0, 0, "This is an example text.\nHello, World!", imageX.font.SYS_4x8)
-    let button: WButton = new WButton(system.palette, 0, 99, 64, 10, "Custom button", imageX.font.SYS_4x8)
+    let button_eventListener = new EventListener()
+    let button_eventHandler = new EventHandler(() => { control.panic(404) })
+    let button_eventHandler_id = button_eventListener.add_handler(button_eventHandler)
+    let button: WButton = new WButton(system.palette, 0, 99, 64, 10, "Crash 404!", button_eventListener, imageX.font.SYS_4x8)
     let window: Window = new Window(system.palette, 0, 0, 0, 0, "Example window", imageX.font.SYS_4x8)
     let label_id: number = window.add_widget(label)
     let button_id: number = window.add_widget(button)

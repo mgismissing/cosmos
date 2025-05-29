@@ -498,12 +498,14 @@ enum WButtonState {
 
 class WButton extends WLabel {
     state: WButtonState = WButtonState.Normal
-    constructor(palette: Palette, x: number, y: number, w: number, h: number, text: string, font?: image.Font) {
+    onClick: EventListener
+    constructor(palette: Palette, x: number, y: number, w: number, h: number, text: string, onClick: EventListener, font?: image.Font) {
         super(palette, x, y, text, font)
         if (w < 1) raise(new OutOfRangeException(1, Infinity, w))
         if (h < 1) raise(new OutOfRangeException(1, Infinity, h))
         this.w = w
         this.h = h
+        this.onClick = onClick
     }
 
     public render(img: Image, wx: number, wy: number): void {
@@ -527,6 +529,7 @@ class WButton extends WLabel {
         if ((wx + this.x < cursor.x) && (cursor.x < wx + this.x + this.w) && (wy + this.y < cursor.y) && (cursor.y < wy + this.y + this.h)) {
             if (cursor.clicking) {
                 this.state = WButtonState.Pressed
+                this.onClick.handle_events()
             } else {
                 this.state = WButtonState.Hover
             }
