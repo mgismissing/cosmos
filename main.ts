@@ -138,12 +138,35 @@ function ord(char: string): number {
 
 //  ---------------------------------------------------------------------------------- CLASS INJECTION ---
 namespace imageX {
+    export function fillCheckerLineH(img: Image, x: number, y: number, length: number, c: number) {
+        for (let pos = 0; pos < length; pos++) {
+            if ((pos + x + y) % 2 == 0) img.setPixel(x + pos, y, c)
+        }
+    }
+    export function fillCheckerLineV(img: Image, x: number, y: number, length: number, c: number) {
+        for (let pos = 0; pos < length; pos++) {
+            if ((pos + x + y) % 2 == 0) img.setPixel(x, y + pos, c)
+        }
+    }
     export function fillCheckerRect(img: Image, x: number, y: number, w: number, h: number, c: number) {
-        for (let posy = 0; posy < h; posy++) {
-            for (let posx = 0; posx < w; posx++) {
-                if ((posx + x + posy + y) % 2 == 0) { img.setPixel(posx + x, posy + y, c) }
+        let length: number
+
+        if (w >= h) length = h
+        else length = w
+
+        for (let pos = 0; pos < length; pos++) {
+            if (w >= h) {
+                fillCheckerLineH(img, x, y + pos, w, c)
+            } else {
+                fillCheckerLineV(img, x + pos, y, h, c)
             }
         }
+    }
+    export function drawCheckerRect(img: Image, x: number, y: number, w: number, h: number, c: number) {
+        imageX.fillCheckerLineH(img, x, y, w, c)
+        imageX.fillCheckerLineV(img, x, y, h, c)
+        imageX.fillCheckerLineV(img, x + w - 1, y, h, c)
+        imageX.fillCheckerLineH(img, x, y + h - 1, w, c)
     }
 
     export class Font implements image.Font {
@@ -309,7 +332,7 @@ class Palette {
 
     public load(buf_id: number) {
         if (Palette.disabled) return;
-        if (this.loaded) return;
+        if (this.loaded) this.free();
         if (!(0 <= buf_id && buf_id <= 4)) {
             raise(new OutOfRangeException(0, 4, buf_id))
         }
@@ -382,12 +405,12 @@ class Cursor {
     }
 
     set_pos(x: number, y: number): void {
-        this.x = x
-        this.y = y
-        if (this.x < 0) { this.x = 0 }
-        if (this.x > WIDTH - 1) { this.x = WIDTH - 1 }
-        if (this.y < 0) { this.y = 0 }
-        if (this.y > HEIGHT - 1) { this.y = HEIGHT - 1 }
+        this.x = (x + WIDTH) % WIDTH
+        this.y = (y + HEIGHT) % HEIGHT
+        //if (this.x < 0) { this.x = 0 }
+        //if (this.x > WIDTH - 1) { this.x = WIDTH - 1 }
+        //if (this.y < 0) { this.y = 0 }
+        //if (this.y > HEIGHT - 1) { this.y = HEIGHT - 1 }
     }
 
     get_pos(): [number, number] {
@@ -423,6 +446,8 @@ class Cursor {
         this.controllerEventHandler_ids.push(eventListener.add_handler(new ControllerEventHandler(controller.down, ControllerButtonEvent.Pressed, () => { this.move_v(1) })))
         this.controllerEventHandler_ids.push(eventListener.add_handler(new ControllerEventHandler(controller.left, ControllerButtonEvent.Pressed, () => { this.move_h(-1) })))
         this.controllerEventHandler_ids.push(eventListener.add_handler(new ControllerEventHandler(controller.right, ControllerButtonEvent.Pressed, () => { this.move_h(1) })))
+        this.controllerEventHandler_ids.push(eventListener.add_handler(new ControllerEventHandler(controller.A, ControllerButtonEvent.Pressed, () => { this.set_clicking(true) })))
+        this.controllerEventHandler_ids.push(eventListener.add_handler(new ControllerEventHandler(controller.A, ControllerButtonEvent.Released, () => { this.set_clicking(false) })))
         this.controllerEventHandler_ids.push(eventListener.add_handler(new ControllerEventHandler(controller.B, ControllerButtonEvent.Pressed, () => { this.set_ignore_speed(true) })))
         this.controllerEventHandler_ids.push(eventListener.add_handler(new ControllerEventHandler(controller.B, ControllerButtonEvent.Released, () => { this.set_ignore_speed(false) })))
     }
@@ -439,12 +464,15 @@ interface Widget {
     x: number
     y: number
     render(img: Image, wx: number, wy: number): void;
+    update(cursor: Cursor, wx: number, wy: number): void;
 }
 
 class WLabel implements Widget {
     palette: Palette
     x: number
     y: number
+    w: number
+    h: number
     text: string
     font: image.Font
     constructor(palette: Palette, x: number, y: number, text: string, font?: image.Font) {
@@ -457,6 +485,54 @@ class WLabel implements Widget {
 
     public render(img: Image, wx: number, wy: number): void {
         img.print(this.text, wx + this.x, wy + this.y, this.palette.abs_id(2), this.font)
+    }
+
+    public update(cursor: Cursor, wx: number, wy: number): void {}
+}
+
+enum WButtonState {
+    Normal = 0,
+    Hover = 1,
+    Pressed = 2
+}
+
+class WButton extends WLabel {
+    state: WButtonState = WButtonState.Normal
+    constructor(palette: Palette, x: number, y: number, w: number, h: number, text: string, font?: image.Font) {
+        super(palette, x, y, text, font)
+        if (w < 1) raise(new OutOfRangeException(1, Infinity, w))
+        if (h < 1) raise(new OutOfRangeException(1, Infinity, h))
+        this.w = w
+        this.h = h
+    }
+
+    public render(img: Image, wx: number, wy: number): void {
+        switch (this.state) {
+            case WButtonState.Normal:
+                img.drawRect(wx + this.x, wy + this.y, this.w, this.h, this.palette.abs_id(1))
+                break
+            case WButtonState.Hover:
+                img.drawRect(wx + this.x, wy + this.y, this.w, this.h, this.palette.abs_id(2))
+                imageX.drawCheckerRect(img, wx + this.x, wy + this.y, this.w, this.h, this.palette.abs_id(1))
+                break
+            case WButtonState.Pressed:
+                imageX.fillCheckerRect(img, wx + this.x, wy + this.y, this.w, this.h, this.palette.abs_id(1))
+                img.drawRect(wx + this.x, wy + this.y, this.w, this.h, this.palette.abs_id(2))
+                break
+        }
+        super.render(img, wx + 2, wy + 1)
+    }
+
+    public update(cursor: Cursor, wx: number, wy: number) {
+        if ((wx + this.x < cursor.x) && (cursor.x < wx + this.x + this.w) && (wy + this.y < cursor.y) && (cursor.y < wy + this.y + this.h)) {
+            if (cursor.clicking) {
+                this.state = WButtonState.Pressed
+            } else {
+                this.state = WButtonState.Hover
+            }
+        } else {
+            this.state = WButtonState.Normal
+        }
     }
 }
 
@@ -509,6 +585,14 @@ class Window {
         }
     }
 
+    public update(cursor: Cursor) {
+        let titlesize: number = this.font.charHeight
+        // Update widgets
+        for (let widget_id = 0; widget_id < this.widgets.length; widget_id++) {
+            this.widgets[widget_id].update(cursor, this.x + 2, this.y + titlesize + 1)
+        }
+    }
+
     public add_widget(widget: Widget): number {
         this.widgets.push(widget)
         return this.widgets.length - 1
@@ -538,6 +622,13 @@ class Screen {
         scene.setBackgroundImage(img)
     }
 
+    public update(cursor: Cursor) {
+        // Update windows
+        for (let window_id = 0; window_id < this.windows.length; window_id++) {
+            this.windows[window_id].update(cursor)
+        }
+    }
+
     public add_window(window: Window): number {
         this.windows.push(window)
         return this.windows.length - 1
@@ -562,6 +653,7 @@ namespace system {
     export let controllerEventListener: EventListener = new EventListener()
     export let foreverEventListener: EventListener = new EventListener()
     export let cursor: Cursor = new Cursor(imageX.cursor.SYS_ARROW)
+    export let screenUpdater_id: number = system.foreverEventListener.add_handler(new EventHandler(() => { system.screen.update(system.cursor) }))
     export let screenRenderer_id: number = system.foreverEventListener.add_handler(new EventHandler(() => { system.screen.render(system.img) }))
     export let cursorRenderer_id: number = system.foreverEventListener.add_handler(new EventHandler(() => { system.cursor.render(system.img) }))
 }
