@@ -526,7 +526,7 @@ class WButton extends WLabel {
     }
 
     public update(cursor: Cursor, wx: number, wy: number) {
-        if ((wx + this.x < cursor.x) && (cursor.x < wx + this.x + this.w) && (wy + this.y < cursor.y) && (cursor.y < wy + this.y + this.h)) {
+        if ((wx + this.x <= cursor.x) && (cursor.x <= wx + this.x + this.w) && (wy + this.y <= cursor.y) && (cursor.y <= wy + this.y + this.h)) {
             if (cursor.clicking) {
                 this.state = WButtonState.Pressed
                 this.onClick.handle_events()
