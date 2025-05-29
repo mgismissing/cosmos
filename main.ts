@@ -138,12 +138,12 @@ function ord(char: string): number {
 
 //  ---------------------------------------------------------------------------------- CLASS INJECTION ---
 namespace imageX {
-    export function fillCheckerLineH(img: Image, x: number, y: number, length: number, c: number) {
+    export function drawCheckerLineH(img: Image, x: number, y: number, length: number, c: number) {
         for (let pos = 0; pos < length; pos++) {
             if ((pos + x + y) % 2 == 0) img.setPixel(x + pos, y, c)
         }
     }
-    export function fillCheckerLineV(img: Image, x: number, y: number, length: number, c: number) {
+    export function drawCheckerLineV(img: Image, x: number, y: number, length: number, c: number) {
         for (let pos = 0; pos < length; pos++) {
             if ((pos + x + y) % 2 == 0) img.setPixel(x, y + pos, c)
         }
@@ -156,17 +156,17 @@ namespace imageX {
 
         for (let pos = 0; pos < length; pos++) {
             if (w >= h) {
-                fillCheckerLineH(img, x, y + pos, w, c)
+                drawCheckerLineH(img, x, y + pos, w, c)
             } else {
-                fillCheckerLineV(img, x + pos, y, h, c)
+                drawCheckerLineV(img, x + pos, y, h, c)
             }
         }
     }
     export function drawCheckerRect(img: Image, x: number, y: number, w: number, h: number, c: number) {
-        imageX.fillCheckerLineH(img, x, y, w, c)
-        imageX.fillCheckerLineV(img, x, y, h, c)
-        imageX.fillCheckerLineV(img, x + w - 1, y, h, c)
-        imageX.fillCheckerLineH(img, x, y + h - 1, w, c)
+        imageX.drawCheckerLineH(img, x, y, w, c)
+        imageX.drawCheckerLineV(img, x, y, h, c)
+        imageX.drawCheckerLineV(img, x + w - 1, y, h, c)
+        imageX.drawCheckerLineH(img, x, y + h - 1, w, c)
     }
 
     export class Font implements image.Font {
