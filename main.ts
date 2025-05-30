@@ -137,17 +137,35 @@ function ord(char: string): number {
 }
 
 //  ---------------------------------------------------------------------------------- CLASS INJECTION ---
+class CursorImage {
+    image: Image
+    org: [number, number]
+    constructor(image: Image, org: [number, number]) {
+        this.image = image
+        this.org = org
+    }
+}
+
 namespace imageX {
     export function drawCheckerLineH(img: Image, x: number, y: number, length: number, c: number) {
         for (let pos = 0; pos < length; pos++) {
             if ((pos + x + y) % 2 == 0) img.setPixel(x + pos, y, c)
         }
     }
+
     export function drawCheckerLineV(img: Image, x: number, y: number, length: number, c: number) {
         for (let pos = 0; pos < length; pos++) {
             if ((pos + x + y) % 2 == 0) img.setPixel(x, y + pos, c)
         }
     }
+
+    export function drawCheckerRect(img: Image, x: number, y: number, w: number, h: number, c: number) {
+        imageX.drawCheckerLineH(img, x, y, w, c)
+        imageX.drawCheckerLineV(img, x, y, h, c)
+        imageX.drawCheckerLineV(img, x + w - 1, y, h, c)
+        imageX.drawCheckerLineH(img, x, y + h - 1, w, c)
+    }
+
     export function fillCheckerRect(img: Image, x: number, y: number, w: number, h: number, c: number) {
         let length: number
 
@@ -161,12 +179,6 @@ namespace imageX {
                 drawCheckerLineV(img, x + pos, y, h, c)
             }
         }
-    }
-    export function drawCheckerRect(img: Image, x: number, y: number, w: number, h: number, c: number) {
-        imageX.drawCheckerLineH(img, x, y, w, c)
-        imageX.drawCheckerLineV(img, x, y, h, c)
-        imageX.drawCheckerLineV(img, x + w - 1, y, h, c)
-        imageX.drawCheckerLineH(img, x, y + h - 1, w, c)
     }
 
     export class Font implements image.Font {
@@ -185,7 +197,7 @@ namespace imageX {
     }
 
     export namespace cursor {
-        export const SYS_ARROW: Image = img`
+        export const SYS_ARROW: CursorImage = new CursorImage(img`
             3 3 . . . . .
             3 1 3 . . . .
             3 1 1 3 . . .
@@ -196,7 +208,20 @@ namespace imageX {
             3 1 3 1 1 3 .
             3 3 3 1 1 3 .
             . . . 3 3 . .
-        `
+        `, [0, 0])
+        export const SYS_HAND: CursorImage = new CursorImage(img`
+            . . . 3 . . . . .
+            . . 3 1 3 . . . .
+            . . 3 1 3 3 3 . .
+            . . 3 1 3 1 3 3 .
+            . 3 3 1 3 1 1 1 3
+            3 1 3 1 1 1 1 1 3
+            3 1 1 1 1 1 1 1 3
+            3 1 1 1 1 1 1 1 3
+            . 3 1 1 1 1 1 1 3
+            . . 3 1 1 1 1 3 .
+            . . . 3 3 3 3 . .
+        `, [3, 0])
     }
 
     export namespace font {
@@ -267,7 +292,7 @@ namespace imageX {
             ord("Y"), 0x00, 0b00000110, 0b00111000, 0b00000110, 0b00000000,
             ord("Z"), 0x00, 0b00110010, 0b00101010, 0b00100110, 0b00000000,
             ord("["), 0x00, 0b00000000, 0b01111111, 0b01000001, 0b00000000,
-            ord("\\"), 0x00, 0b00000011, 0b00011100, 0b01100000, 0b00000000,
+            ord(`\\`), 0x00, 0b00000011, 0b00011100, 0b01100000, 0b00000000,
             ord("]"), 0x00, 0b00000000, 0b01000001, 0b01111111, 0b00000000,
             ord("^"), 0x00, 0b00000010, 0b00000001, 0b00000010, 0b00000000,
             ord("_"), 0x00, 0b10000000, 0b10000000, 0b10000000, 0b10000000,
@@ -376,7 +401,8 @@ class Palette {
 class Cursor {
     x = Math.round(WIDTH / 2)
     y = Math.round(HEIGHT / 2)
-    img: Image
+    defaultImg: CursorImage
+    img: CursorImage
     defaultSpeed: number = 1
     speed: number = 1
     ignoreSpeed: boolean = false
@@ -384,12 +410,16 @@ class Cursor {
     clicking: boolean = false
     onClickStarted: EventListener = new EventListener()
     onClickEnded: EventListener = new EventListener()
-    constructor(img: Image) {
-        this.img = img
+    constructor(img: CursorImage) {
+        this.defaultImg = img
     }
 
     render(img: Image): void {
-        img.drawTransparentImage(this.img, this.x, this.y)
+        img.drawTransparentImage(this.img.image, this.x - (this.img.org as any[])[0], this.y - (this.img.org as any[])[1])
+    }
+
+    update(): void {
+        this.img = this.defaultImg
     }
 
     set_speed(speed: number): void {
@@ -499,13 +529,15 @@ enum WButtonState {
 class WButton extends WLabel {
     state: WButtonState = WButtonState.Normal
     onClick: EventListener
-    constructor(palette: Palette, x: number, y: number, w: number, h: number, text: string, onClick: EventListener, font?: image.Font) {
+    cursorImg: CursorImage
+    constructor(palette: Palette, x: number, y: number, w: number, h: number, text: string, cursorImg: CursorImage, onClick: EventListener, font?: image.Font) {
         super(palette, x, y, text, font)
         if (w < 1) raise(new OutOfRangeException(1, Infinity, w))
         if (h < 1) raise(new OutOfRangeException(1, Infinity, h))
         this.w = w
         this.h = h
         this.onClick = onClick
+        this.cursorImg = cursorImg
     }
 
     public render(img: Image, wx: number, wy: number): void {
@@ -526,7 +558,11 @@ class WButton extends WLabel {
     }
 
     public update(cursor: Cursor, wx: number, wy: number) {
+        // Draw according to cursor position
         if ((wx + this.x <= cursor.x) && (cursor.x <= wx + this.x + this.w) && (wy + this.y <= cursor.y) && (cursor.y <= wy + this.y + this.h)) {
+            // Change cursor image
+            cursor.img = this.cursorImg
+            // Differentiate between pressed or just hovered
             if (cursor.clicking) {
                 this.state = WButtonState.Pressed
                 this.onClick.handle_events()
@@ -626,6 +662,8 @@ class Screen {
     }
 
     public update(cursor: Cursor) {
+        // Update cursor
+        cursor.update()
         // Update windows
         for (let window_id = 0; window_id < this.windows.length; window_id++) {
             this.windows[window_id].update(cursor)
