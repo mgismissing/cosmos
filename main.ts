@@ -1,5 +1,5 @@
 //  ----------------------------------------------------------------------------------------- METADATA ---
-namespace cosmos {
+namespace cosmos_meta {
     let version: string = "5.0.0"
 }
 
