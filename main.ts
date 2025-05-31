@@ -620,7 +620,8 @@ class Window {
         //imageX.fillCheckerRect(img, this.x + shadow, this.y + this.h, this.w, shadow, c1)
         // Render widgets
         for (let widget_id = 0; widget_id < this.widgets.length; widget_id++) {
-            this.widgets[widget_id].render(img, this.x + 2, this.y + titlesize + 1)
+            let widget = this.widgets[widget_id]
+            if (widget) widget.render(img, this.x + 2, this.y + titlesize + 1)
         }
     }
 
@@ -628,7 +629,8 @@ class Window {
         let titlesize: number = this.font.charHeight
         // Update widgets
         for (let widget_id = 0; widget_id < this.widgets.length; widget_id++) {
-            this.widgets[widget_id].update(cursor, this.x + 2, this.y + titlesize + 1)
+            let widget = this.widgets[widget_id]
+            if (widget) widget.update(cursor, this.x + 2, this.y + titlesize + 1)
         }
     }
 
@@ -655,7 +657,8 @@ class Screen {
         img.fill(this.palette.abs_id(0))
         // Render windows
         for (let window_id = 0; window_id < this.windows.length; window_id++) {
-            this.windows[window_id].render(img)
+            let window = this.windows[window_id]
+            if (window) window.render(img)
         }
         // Update screen
         scene.setBackgroundImage(img)
@@ -666,7 +669,8 @@ class Screen {
         cursor.update()
         // Update windows
         for (let window_id = 0; window_id < this.windows.length; window_id++) {
-            this.windows[window_id].update(cursor)
+            let window = this.windows[window_id]
+            if (window) window.update(cursor)
         }
     }
 
