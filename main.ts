@@ -148,14 +148,14 @@ class CursorImage {
 
 namespace imageX {
     export function drawCheckerLineH(img: Image, x: number, y: number, length: number, c: number) {
-        for (let pos = 0; pos < length; pos++) {
-            if ((pos + x + y) % 2 == 0) img.setPixel(x + pos, y, c)
+        for (let pos = (x + y) % 2; pos < length; pos += 2) {
+            img.setPixel(x + pos, y, c)
         }
     }
 
     export function drawCheckerLineV(img: Image, x: number, y: number, length: number, c: number) {
-        for (let pos = 0; pos < length; pos++) {
-            if ((pos + x + y) % 2 == 0) img.setPixel(x, y + pos, c)
+        for (let pos = (x + y) % 2; pos < length; pos += 2) {
+            img.setPixel(x, y + pos, c)
         }
     }
 
@@ -614,7 +614,6 @@ class Window {
         let c0 = this.palette.abs_id(0)
         let c1 = this.palette.abs_id(1)
         let c2 = this.palette.abs_id(2)
-        imageX.fillCheckerRect(img, 0, 0, WIDTH, HEIGHT, c0)
         let titlesize: number = this.font.charHeight
         img.fillRect(this.x, this.y, this.w, this.h, c0)
         img.fillRect(this.x, this.y, this.w, titlesize, c1)
@@ -706,9 +705,19 @@ class Screen {
         // Clear screen
         img.fill(this.palette.abs_id(0))
         // Render windows
+        let last_window = 0
+        for (let window_id = this.windows.length - 1; window_id >= 0; window_id--) {
+            if (this.windows[window_id]) {
+                last_window = window_id
+                break
+            }
+        }
         for (let window_id = 0; window_id < this.windows.length; window_id++) {
             let window = this.windows[window_id]
-            if (window) window.render(img)
+            if (window) {
+                if (window_id == last_window) imageX.fillCheckerRect(img, 0, 0, WIDTH, HEIGHT, this.palette.abs_id(0))
+                window.render(img)
+            }
         }
         // Update screen
         scene.setBackgroundImage(img)
@@ -768,8 +777,7 @@ controller.menu.onEvent(ControllerButtonEvent.Pressed, () => { dummy() })
 // Assign ControllerEventListeners
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, () => { system.controllerEventListener.handle_events() })
 controller.anyButton.onEvent(ControllerButtonEvent.Released, () => { system.controllerEventListener.handle_events() })
-forever(() => { system.foreverEventListener.handle_events() })
-
+game.onUpdate(() => { system.foreverEventListener.handle_events() })
 // Initialize scene
 scene.setBackgroundColor(0)
 
