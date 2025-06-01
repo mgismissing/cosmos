@@ -855,11 +855,11 @@ namespace system {
     export let img: Image = image.create(160, 120)
     export let screen: Screen = new Screen(system.palette)
     export let controllerEventListener: EventListener = new EventListener()
-    export let foreverEventListener: EventListener = new EventListener()
+    export let onUpdateEventListener: EventListener = new EventListener()
     export let cursor: Cursor = new Cursor(imageX.cursor.SYS_ARROW)
-    export let screenUpdater_id: number = system.foreverEventListener.add_handler(new EventHandler(() => { system.screen.update(system.cursor) }))
-    export let screenRenderer_id: number = system.foreverEventListener.add_handler(new EventHandler(() => { system.screen.render(system.img) }))
-    export let cursorRenderer_id: number = system.foreverEventListener.add_handler(new EventHandler(() => { system.cursor.render(system.img) }))
+    export let screenUpdater_id: number = system.onUpdateEventListener.add_handler(new EventHandler(() => { system.screen.update(system.cursor) }))
+    export let screenRenderer_id: number = system.onUpdateEventListener.add_handler(new EventHandler(() => { system.screen.render(system.img) }))
+    export let cursorRenderer_id: number = system.onUpdateEventListener.add_handler(new EventHandler(() => { system.cursor.render(system.img) }))
 }
 
 // Load system resources
@@ -871,7 +871,7 @@ controller.menu.onEvent(ControllerButtonEvent.Pressed, () => { dummy() })
 // Assign ControllerEventListeners
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, () => { system.controllerEventListener.handle_events() })
 controller.anyButton.onEvent(ControllerButtonEvent.Released, () => { system.controllerEventListener.handle_events() })
-game.onUpdate(() => { system.foreverEventListener.handle_events() })
+game.onUpdate(() => { system.onUpdateEventListener.handle_events() })
 
 // Initialize scene
 scene.setBackgroundColor(0)
