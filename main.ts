@@ -614,6 +614,7 @@ class Window {
         let c0 = this.palette.abs_id(0)
         let c1 = this.palette.abs_id(1)
         let c2 = this.palette.abs_id(2)
+        imageX.fillCheckerRect(img, 0, 0, WIDTH, HEIGHT, c0)
         let titlesize: number = this.font.charHeight
         img.fillRect(this.x, this.y, this.w, this.h, c0)
         img.fillRect(this.x, this.y, this.w, titlesize, c1)
@@ -716,12 +717,15 @@ class Screen {
     public update(cursor: Cursor) {
         // Update cursor
         cursor.update()
-        // Update windows
-        for (let window_id = 0; window_id < this.windows.length; window_id++) {
+        // Update last window
+        for (let window_id = this.windows.length - 1; window_id >= 0; window_id--) {
             let window = this.windows[window_id]
             if (window) {
                 if (window.toDestroy) this.remove_window(window_id)
-                else window.update(cursor)
+                else {
+                    window.update(cursor)
+                    break
+                }
             }
         }
     }
