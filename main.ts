@@ -501,8 +501,6 @@ class WLabel implements Widget {
     palette: Palette
     x: number
     y: number
-    w: number
-    h: number
     text: string
     font: image.Font
     constructor(palette: Palette, x: number, y: number, text: string, font?: image.Font) {
@@ -527,6 +525,8 @@ enum WButtonState {
 }
 
 class WButton extends WLabel {
+    w: number
+    h: number
     state: WButtonState = WButtonState.Normal
     onClick: EventListener
     onClickHandled: boolean = false
@@ -576,6 +576,41 @@ class WButton extends WLabel {
             }
         } else {
             this.state = WButtonState.Normal
+        }
+    }
+}
+
+class WCheckBox extends WLabel {
+    checked: boolean = false
+    checkedHandled: boolean = false
+    cursorImg: CursorImage
+    constructor(palette: Palette, x: number, y: number, text: string, cursorImg: CursorImage, font?: image.Font) {
+        super(palette, x, y, text, font)
+        this.cursorImg = cursorImg
+    }
+
+    public render(img: Image, wx: number, wy: number): void {
+        img.drawRect(wx + this.x, wy + this.y, 8, 8, this.palette.abs_id(2))
+        if (this.checked) {
+            img.fillRect(wx + this.x + 2, wy + this.y + 2, 4, 4, this.palette.abs_id(1))
+        }
+        super.render(img, wx + 9, wy)
+    }
+
+    public update(cursor: Cursor, wx: number, wy: number) {
+        // Draw according to cursor position
+        if ((wx + this.x <= cursor.x) && (cursor.x <= wx + this.x + 8) && (wy + this.y <= cursor.y) && (cursor.y <= wy + this.y + 8)) {
+            // Change cursor image
+            cursor.img = this.cursorImg
+            // Differentiate between pressed or just hovered
+            if (cursor.clicking) {
+                if (!this.checkedHandled) {
+                    this.checked = !this.checked
+                    this.checkedHandled = true
+                }
+            } else {
+                this.checkedHandled = false
+            }
         }
     }
 }
@@ -778,6 +813,7 @@ controller.menu.onEvent(ControllerButtonEvent.Pressed, () => { dummy() })
 controller.anyButton.onEvent(ControllerButtonEvent.Pressed, () => { system.controllerEventListener.handle_events() })
 controller.anyButton.onEvent(ControllerButtonEvent.Released, () => { system.controllerEventListener.handle_events() })
 game.onUpdate(() => { system.foreverEventListener.handle_events() })
+
 // Initialize scene
 scene.setBackgroundColor(0)
 
