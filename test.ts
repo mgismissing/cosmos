@@ -13,7 +13,7 @@ system.onLoad = () => {
     let button_eventHandler = new EventHandler(() => { console.log("The user pressed the button!") })
     let button_eventHandler_id = button_eventListener.add_handler(button_eventHandler)
     let button: WButton = new WButton(system.palette, 0, 99, 64, 10, "Example button", imageX.cursor.SYS_HAND, button_eventListener, imageX.font.SYS_4x8)
-    let textbox: WCheckBox = new WCheckBox(system.palette, 0, 40, "Checkbox", imageX.cursor.SYS_HAND, imageX.font.SYS_4x8)
+    let textbox: WTextBox = new WTextBox(system.palette, 0, 40, 4, WTextBoxInputType.Text, imageX.cursor.SYS_HAND, imageX.font.SYS_4x8)
     let window: Window = new Window(system.palette, 0, 0, 0, 0, "Example window", imageX.font.SYS_4x8)
     let label_id: number = window.add_widget(label)
     let button_id: number = window.add_widget(button)

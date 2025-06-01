@@ -503,7 +503,7 @@ class WLabel implements Widget {
     y: number
     text: string
     font: image.Font
-    constructor(palette: Palette, x: number, y: number, text: string, font?: image.Font) {
+    constructor(palette: Palette, x: number, y: number, text: string, font: image.Font) {
         this.palette = palette
         this.x = x
         this.y = y
@@ -531,7 +531,7 @@ class WButton extends WLabel {
     onClick: EventListener
     onClickHandled: boolean = false
     cursorImg: CursorImage
-    constructor(palette: Palette, x: number, y: number, w: number, h: number, text: string, cursorImg: CursorImage, onClick: EventListener, font?: image.Font) {
+    constructor(palette: Palette, x: number, y: number, w: number, h: number, text: string, cursorImg: CursorImage, onClick: EventListener, font: image.Font) {
         super(palette, x, y, text, font)
         if (w < 1) raise(new OutOfRangeException(1, Infinity, w))
         if (h < 1) raise(new OutOfRangeException(1, Infinity, h))
@@ -580,11 +580,57 @@ class WButton extends WLabel {
     }
 }
 
+enum WTextBoxInputType {
+    Text = 0,
+    Number = 1
+}
+
+class WTextBox extends WLabel {
+    length: number
+    inputType: WTextBoxInputType
+    cursorImg: CursorImage
+    promptShowed: boolean = false
+    constructor(palette: Palette, x: number, y: number, length: number, inputType: WTextBoxInputType, cursorImg: CursorImage, font: image.Font) {
+        super(palette, x, y, "", font)
+        this.length = length
+        this.inputType = inputType
+        this.cursorImg = cursorImg
+    }
+
+    public render(img: Image, wx: number, wy: number) {
+        img.drawRect(wx + this.x, wy + this.y, this.length * this.font.charWidth + 2, this.font.charHeight + 2, this.palette.abs_id(1))
+        super.render(img, wx + 1, wy + 1)
+    }
+
+    public update(cursor: Cursor, wx: number, wy: number) {
+        // Draw according to cursor position
+        if ((wx + this.x <= cursor.x) && (cursor.x <= wx + this.x + (this.length * this.font.charWidth + 2) - 1) && (wy + this.y <= cursor.y) && (cursor.y <= wy + this.y + this.font.charHeight + 2)) {
+            // Change cursor image
+            cursor.img = this.cursorImg
+            // Differentiate between pressed or just hovered
+            if (cursor.clicking) {
+                if (!this.promptShowed) {
+                    let palette = color.currentPalette()
+                    color.setColor(1, palette.color(3))
+                    color.setColor(3, palette.color(1))
+                    color.setColor(5, palette.color(3))
+                    color.setColor(7, palette.color(2))
+                    this.text = game.askForString("", this.length, true)
+                    color.setPalette(palette)
+                    this.promptShowed = true
+                }
+            } else {
+                this.promptShowed = false
+            }
+        }
+    }
+}
+
 class WCheckBox extends WLabel {
     checked: boolean = false
     checkedHandled: boolean = false
     cursorImg: CursorImage
-    constructor(palette: Palette, x: number, y: number, text: string, cursorImg: CursorImage, font?: image.Font) {
+    constructor(palette: Palette, x: number, y: number, text: string, cursorImg: CursorImage, font: image.Font) {
         super(palette, x, y, text, font)
         this.cursorImg = cursorImg
     }
