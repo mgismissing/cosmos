@@ -69,19 +69,11 @@ function raise(e: Exception) {
 class EventHandler {
     handler: () => void
     constructor(handler: () => void) {
-        this.set_handler(handler)
-    }
-
-    run() {
-        this.get_handler()()
-    }
-
-    set_handler(handler: () => void) {
         this.handler = handler
     }
 
-    get_handler(): () => void {
-        return this.handler
+    run() {
+        this.handler()
     }
 }
 
