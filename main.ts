@@ -615,7 +615,13 @@ class WTextBox extends WLabel {
                     color.setColor(3, palette.color(1))
                     color.setColor(5, palette.color(3))
                     color.setColor(7, palette.color(2))
-                    this.text = game.askForString("", this.length, true)
+                    switch (this.inputType) {
+                        case WTextBoxInputType.Text:
+                            this.text = game.askForString("", this.length, true)
+                            break
+                        case WTextBoxInputType.Number:
+                            this.text = game.askForNumber("", this.length, true).toString()
+                    }
                     color.setPalette(palette)
                     this.promptShowed = true
                 }
