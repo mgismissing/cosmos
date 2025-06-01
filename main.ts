@@ -529,6 +529,7 @@ enum WButtonState {
 class WButton extends WLabel {
     state: WButtonState = WButtonState.Normal
     onClick: EventListener
+    onClickHandled: boolean = false
     cursorImg: CursorImage
     constructor(palette: Palette, x: number, y: number, w: number, h: number, text: string, cursorImg: CursorImage, onClick: EventListener, font?: image.Font) {
         super(palette, x, y, text, font)
@@ -565,9 +566,13 @@ class WButton extends WLabel {
             // Differentiate between pressed or just hovered
             if (cursor.clicking) {
                 this.state = WButtonState.Pressed
-                this.onClick.handle_events()
+                if (!this.onClickHandled) {
+                    this.onClick.handle_events()
+                    this.onClickHandled = true
+                }
             } else {
                 this.state = WButtonState.Hover
+                this.onClickHandled = false
             }
         } else {
             this.state = WButtonState.Normal
