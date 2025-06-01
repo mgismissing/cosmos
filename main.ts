@@ -584,6 +584,7 @@ class Window {
     y: number
     w: number
     h: number
+    toDestroy: boolean = false
     constructor(palette: Palette, x: number, y: number, w: number, h: number, title: string, font: image.Font) {
         this.palette = palette
         this.title = title
@@ -634,6 +635,10 @@ class Window {
         }
     }
 
+    public destroy() {
+        this.toDestroy = true
+    }
+
     public add_widget(widget: Widget): number {
         this.widgets.push(widget)
         return this.widgets.length - 1
@@ -641,6 +646,45 @@ class Window {
 
     public remove_widget(widget_id: number): Widget {
         return this.widgets.removeAt(widget_id)
+    }
+}
+
+enum MessageBoxType {
+    OkOnly = 0,
+    YesNo = 1
+}
+
+class MessageBox extends Window {
+    type_: MessageBoxType
+    message: string
+    button1Listener: EventListener = new EventListener()
+    button2Listener: EventListener = new EventListener()
+    button1Handler_id: number
+    button2Handler_id: number
+    label_id: number
+    button1_id: number
+    button2_id: number
+    constructor(palette: Palette, title: string, message: string, type_: MessageBoxType, font: image.Font, button1Handler?: EventHandler, button2Handler?: EventHandler, cursorButton?: CursorImage) {
+        super(palette, 20, 40, WIDTH - 40, HEIGHT - 80, title, font)
+        if (!cursorButton) cursorButton = imageX.cursor.SYS_HAND
+        // Create message label
+        this.label_id = this.add_widget(new WLabel(this.palette, 0, 0, message, this.font))
+        // Create buttons
+        if (button1Handler) this.button1Listener.add_handler(button1Handler)
+        this.button1Handler_id = this.button1Listener.add_handler(new EventHandler(() => { this.destroy() }))
+        switch (type_) {
+            case MessageBoxType.OkOnly:
+                this.button1_id = this.add_widget(new WButton(this.palette, this.w - 44, this.h - 21, 40, 10, "Ok", cursorButton, this.button1Listener, this.font))
+                break
+            case MessageBoxType.YesNo:
+                if (button2Handler) this.button2Listener.add_handler(button2Handler)
+                this.button2Handler_id = this.button2Listener.add_handler(new EventHandler(() => { this.destroy() }))
+                this.button1_id = this.add_widget(new WButton(this.palette, this.w - 85, this.h - 21, 40, 10, "Yes", cursorButton, this.button1Listener, this.font))
+                this.button2_id = this.add_widget(new WButton(this.palette, this.w - 44, this.h - 21, 40, 10, "No", cursorButton, this.button2Listener, this.font))
+                break
+            default:
+                break
+        }
     }
 }
 
@@ -670,7 +714,10 @@ class Screen {
         // Update windows
         for (let window_id = 0; window_id < this.windows.length; window_id++) {
             let window = this.windows[window_id]
-            if (window) window.update(cursor)
+            if (window) {
+                if (window.toDestroy) this.remove_window(window_id)
+                else window.update(cursor)
+            }
         }
     }
 
