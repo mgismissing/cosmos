@@ -590,11 +590,13 @@ class WTextBox extends WLabel {
     inputType: WTextBoxInputType
     cursorImg: CursorImage
     promptShowed: boolean = false
-    constructor(palette: Palette, x: number, y: number, length: number, inputType: WTextBoxInputType, cursorImg: CursorImage, font: image.Font) {
+    onValueChanged: EventListener
+    constructor(palette: Palette, x: number, y: number, length: number, inputType: WTextBoxInputType, cursorImg: CursorImage, font: image.Font, onValueChanged?: EventListener) {
         super(palette, x, y, "", font)
         this.length = length
         this.inputType = inputType
         this.cursorImg = cursorImg
+        this.onValueChanged = onValueChanged
     }
 
     public render(img: Image, wx: number, wy: number) {
@@ -623,6 +625,7 @@ class WTextBox extends WLabel {
                             this.text = game.askForNumber("", this.length, true).toString()
                     }
                     color.setPalette(palette)
+                    if (this.onValueChanged) this.onValueChanged.handle_events()
                     this.promptShowed = true
                 }
             } else {
