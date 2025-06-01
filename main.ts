@@ -136,6 +136,10 @@ function ord(char: string): number {
     return char.charCodeAt(0)
 }
 
+function chr(charCode: number): string {
+    return String.fromCharCode(charCode)
+}
+
 //  ---------------------------------------------------------------------------------- CLASS INJECTION ---
 class CursorImage {
     image: Image
