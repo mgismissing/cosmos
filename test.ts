@@ -20,6 +20,6 @@ system.onLoad = () => {
     let textbox_id: number = window.add_widget(textbox)
     let window_id: number = system.screen.add_window(window)
 
-    //let msgbox: MessageBox = new MessageBox(system.palette, "Message box", "This is my custom message\nbox!", MessageBoxType.OkOnly, imageX.font.SYS_4x8)
-    //let msgbox_id: number = system.screen.add_window(msgbox)
+    let msgbox: MessageBox = new MessageBox(system.palette, "Message box", "This is my custom message\nbox!", MessageBoxType.OkOnly, imageX.font.SYS_4x8)
+    let msgbox_id: number = system.screen.add_window(msgbox)
 }

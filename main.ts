@@ -441,10 +441,6 @@ class Cursor {
     set_pos(x: number, y: number): void {
         this.x = (x + WIDTH) % WIDTH
         this.y = (y + HEIGHT) % HEIGHT
-        //if (this.x < 0) { this.x = 0 }
-        //if (this.x > WIDTH - 1) { this.x = WIDTH - 1 }
-        //if (this.y < 0) { this.y = 0 }
-        //if (this.y > HEIGHT - 1) { this.y = HEIGHT - 1 }
     }
 
     get_pos(): [number, number] {
