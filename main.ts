@@ -226,6 +226,17 @@ namespace imageX {
             . . 3 1 1 1 1 3 .
             . . . 3 3 3 3 . .
         `, [3, 0])
+        export const SYS_TEXT: CursorImage = new CursorImage(img`
+            3 3 . 3 3
+            . . 3 . .
+            . . 3 . .
+            . . 3 . .
+            . . 3 . .
+            . . 3 . .
+            . . 3 . .
+            . . 3 . .
+            3 3 . 3 3
+        `, [2, 4])
     }
 
     export namespace font {
@@ -336,17 +347,25 @@ namespace imageX {
     }
 }
 
+namespace stringX {
+    export function repeat(s: string, n: number) {
+        let ss = ""
+        for (let i = 0; i < n; i++) ss = ss.concat(s)
+        return ss
+    }
+}
+
 //  ------------------------------------------------------------------------------------ ASSET MANAGER ---
 class Palette {
     static buf: [number, number, number][] = [null, null, null, null, null]
     static disabled: boolean = false
 
-    public static disable() {
-        Palette.disabled = true
-    }
-
     public static enable() {
         Palette.disabled = false
+    }
+
+    public static disable() {
+        Palette.disabled = true
     }
 
     buf_id: number
@@ -581,8 +600,9 @@ class WButton extends WLabel {
 }
 
 enum WTextBoxInputType {
-    Text = 0,
-    Number = 1
+    Number = 0,
+    Text = 1,
+    Password = 2
 }
 
 class WTextBox extends WLabel {
@@ -591,6 +611,7 @@ class WTextBox extends WLabel {
     cursorImg: CursorImage
     promptShowed: boolean = false
     onValueChanged: EventListener
+    rawtext: string = ""
     constructor(palette: Palette, x: number, y: number, length: number, inputType: WTextBoxInputType, cursorImg: CursorImage, font: image.Font, onValueChanged?: EventListener) {
         super(palette, x, y, "", font)
         this.length = length
@@ -600,8 +621,18 @@ class WTextBox extends WLabel {
     }
 
     public render(img: Image, wx: number, wy: number) {
-        img.drawRect(wx + this.x, wy + this.y, this.length * this.font.charWidth + 2, this.font.charHeight + 2, this.palette.abs_id(1))
-        super.render(img, wx + 1, wy + 1)
+        this.text = ""
+        switch (this.inputType) {
+            case WTextBoxInputType.Number:
+            case WTextBoxInputType.Text:
+                this.text = this.rawtext
+                break
+            case WTextBoxInputType.Password:
+                this.text = stringX.repeat("*", this.rawtext.length)
+                break
+        }
+        img.drawRect(wx + this.x, wy + this.y, this.length * this.font.charWidth + 3, this.font.charHeight + 2, this.palette.abs_id(1))
+        super.render(img, wx + 2, wy + 1)
     }
 
     public update(cursor: Cursor, wx: number, wy: number) {
@@ -618,11 +649,13 @@ class WTextBox extends WLabel {
                     color.setColor(5, palette.color(3))
                     color.setColor(7, palette.color(2))
                     switch (this.inputType) {
-                        case WTextBoxInputType.Text:
-                            this.text = game.askForString("", this.length, true)
-                            break
                         case WTextBoxInputType.Number:
-                            this.text = game.askForNumber("", this.length, true).toString()
+                            this.rawtext = game.askForNumber("", this.length, true).toString()
+                            break
+                        case WTextBoxInputType.Text:
+                        case WTextBoxInputType.Password:
+                            this.rawtext = game.askForString("", this.length, true)
+                            break
                     }
                     color.setPalette(palette)
                     if (this.onValueChanged) this.onValueChanged.handle_events()
@@ -645,11 +678,11 @@ class WCheckBox extends WLabel {
     }
 
     public render(img: Image, wx: number, wy: number): void {
-        img.drawRect(wx + this.x, wy + this.y, 8, 8, this.palette.abs_id(2))
+        img.drawRect(wx + this.x, wy + this.y, 7, 7, this.palette.abs_id(1))
         if (this.checked) {
-            img.fillRect(wx + this.x + 2, wy + this.y + 2, 4, 4, this.palette.abs_id(1))
+            img.fillRect(wx + this.x + 2, wy + this.y + 2, 3, 3, this.palette.abs_id(2))
         }
-        super.render(img, wx + 9, wy)
+        super.render(img, wx + 8, wy)
     }
 
     public update(cursor: Cursor, wx: number, wy: number) {
@@ -668,6 +701,55 @@ class WCheckBox extends WLabel {
             }
         }
     }
+}
+
+class WProgressBar implements Widget {
+    palette: Palette
+    x: number
+    y: number
+    w: number
+    h: number
+    progress: number = 0;
+    max_progress: number = 100;
+    constructor(palette: Palette, x: number, y: number, w: number, h: number, progress: number, max_progress: number) {
+        this.palette = palette
+        this.x = x
+        this.y = y
+        this.w = w
+        this.h = h
+        this.progress = progress
+        this.max_progress = max_progress
+    }
+
+    public render(img: Image, wx: number, wy: number): void {
+        let x: number = this.x + wx
+        let y: number = this.y + wy
+        img.drawRect(x, y, this.w, this.h, this.palette.abs_id(1))
+        let progress: number = Math.round(this.progress / this.max_progress * (this.w - 4))
+        img.fillRect(x + 2, y + 2, progress, this.h - 4, this.palette.abs_id(2))
+        imageX.fillCheckerRect(img, x + 3 + progress, y + 2, this.w - progress - 5, this.h - 4, this.palette.abs_id(1))
+    }
+
+    public update(cursor: Cursor, wx: number, wy: number): void {}
+}
+
+class WImage implements Widget {
+    palette: Palette
+    x: number
+    y: number
+    image: Image
+    constructor(palette: Palette, x: number, y: number, image: Image) {
+        this.palette = palette
+        this.x = x
+        this.y = y
+        this.image = image
+    }
+
+    public render(img: Image, wx: number, wy: number): void {
+        img.drawImage(this.image, this.x, this.y)
+    }
+
+    public update(cursor: Cursor, wx: number, wy: number): void {}
 }
 
 class Window {
@@ -734,13 +816,14 @@ class Window {
         this.toDestroy = true
     }
 
-    public add_widget(widget: Widget): number {
+    public add_widget(widget: Widget) {
         this.widgets.push(widget)
-        return this.widgets.length - 1
+        return widget
     }
 
-    public remove_widget(widget_id: number): Widget {
-        return this.widgets.removeAt(widget_id)
+    public remove_widget(widget: Widget): Widget {
+        this.widgets.removeElement(widget)
+        return widget
     }
 }
 
@@ -756,26 +839,26 @@ class MessageBox extends Window {
     button2Listener: EventListener = new EventListener()
     button1Handler_id: number
     button2Handler_id: number
-    label_id: number
-    button1_id: number
-    button2_id: number
+    label: Widget
+    button1: Widget
+    button2: Widget
     constructor(palette: Palette, title: string, message: string, type_: MessageBoxType, font: image.Font, button1Handler?: EventHandler, button2Handler?: EventHandler, cursorButton?: CursorImage) {
         super(palette, 20, 40, WIDTH - 40, HEIGHT - 80, title, font)
         if (!cursorButton) cursorButton = imageX.cursor.SYS_HAND
         // Create message label
-        this.label_id = this.add_widget(new WLabel(this.palette, 0, 0, message, this.font))
+        this.label = this.add_widget(new WLabel(this.palette, 0, 0, message, this.font))
         // Create buttons
         if (button1Handler) this.button1Listener.add_handler(button1Handler)
         this.button1Handler_id = this.button1Listener.add_handler(new EventHandler(() => { this.destroy() }))
         switch (type_) {
             case MessageBoxType.OkOnly:
-                this.button1_id = this.add_widget(new WButton(this.palette, this.w - 44, this.h - 21, 40, 10, "Ok", cursorButton, this.button1Listener, this.font))
+                this.button1 = this.add_widget(new WButton(this.palette, this.w - 44, this.h - 21, 40, 10, "Ok", cursorButton, this.button1Listener, this.font))
                 break
             case MessageBoxType.YesNo:
                 if (button2Handler) this.button2Listener.add_handler(button2Handler)
                 this.button2Handler_id = this.button2Listener.add_handler(new EventHandler(() => { this.destroy() }))
-                this.button1_id = this.add_widget(new WButton(this.palette, this.w - 85, this.h - 21, 40, 10, "Yes", cursorButton, this.button1Listener, this.font))
-                this.button2_id = this.add_widget(new WButton(this.palette, this.w - 44, this.h - 21, 40, 10, "No", cursorButton, this.button2Listener, this.font))
+                this.button1 = this.add_widget(new WButton(this.palette, this.w - 85, this.h - 21, 40, 10, "Yes", cursorButton, this.button1Listener, this.font))
+                this.button2 = this.add_widget(new WButton(this.palette, this.w - 44, this.h - 21, 40, 10, "No", cursorButton, this.button2Listener, this.font))
                 break
             default:
                 break
