@@ -621,7 +621,6 @@ class WTextBox extends WLabel {
     }
 
     public render(img: Image, wx: number, wy: number) {
-        this.text = ""
         switch (this.inputType) {
             case WTextBoxInputType.Number:
             case WTextBoxInputType.Text:
@@ -631,13 +630,19 @@ class WTextBox extends WLabel {
                 this.text = stringX.repeat("*", this.rawtext.length)
                 break
         }
-        img.drawRect(wx + this.x, wy + this.y, this.length * this.font.charWidth + 3, this.font.charHeight + 2, this.palette.abs_id(1))
+        let x = wx + this.x
+        let y = wy + this.y
+        let w = this.length * this.font.charWidth + 4
+        let h = this.font.charHeight + 2
+        let c = this.palette.abs_id(1)
+        if (this.text == "") imageX.drawCheckerRect(img, x + 2, y + 2, w - 4, h - 4, c)
+        img.drawRect(x, y, w, h, c)
         super.render(img, wx + 2, wy + 1)
     }
 
     public update(cursor: Cursor, wx: number, wy: number) {
         // Draw according to cursor position
-        if ((wx + this.x <= cursor.x) && (cursor.x <= wx + this.x + (this.length * this.font.charWidth + 2) - 1) && (wy + this.y <= cursor.y) && (cursor.y <= wy + this.y + this.font.charHeight + 2)) {
+        if ((wx + this.x <= cursor.x) && (cursor.x <= wx + this.x + (this.length * this.font.charWidth + 4) - 1) && (wy + this.y <= cursor.y) && (cursor.y <= wy + this.y + this.font.charHeight + 1)) {
             // Change cursor image
             cursor.img = this.cursorImg
             // Differentiate between pressed or just hovered
@@ -687,7 +692,7 @@ class WCheckBox extends WLabel {
 
     public update(cursor: Cursor, wx: number, wy: number) {
         // Draw according to cursor position
-        if ((wx + this.x <= cursor.x) && (cursor.x <= wx + this.x + 8) && (wy + this.y <= cursor.y) && (cursor.y <= wy + this.y + 8)) {
+        if ((wx + this.x <= cursor.x) && (cursor.x <= wx + this.x + 6) && (wy + this.y <= cursor.y) && (cursor.y <= wy + this.y + 6)) {
             // Change cursor image
             cursor.img = this.cursorImg
             // Differentiate between pressed or just hovered
@@ -750,6 +755,62 @@ class WImage implements Widget {
     }
 
     public update(cursor: Cursor, wx: number, wy: number): void {}
+}
+
+class WGroupBox implements Widget {
+    palette: Palette
+    x: number
+    y: number
+    w: number
+    h: number
+    title: string
+    font: image.Font
+    widgets: Widget[] = []
+
+    constructor(palette: Palette, x: number, y: number, w: number, h: number, title: string, font: image.Font) {
+        this.palette = palette
+        this.x = x
+        this.y = y
+        this.w = w
+        this.h = h
+        this.title = title
+        this.font = font
+    }
+
+    public render(img: Image, wx: number, wy: number) {
+        let c = this.palette.abs_id(1)
+        let x = this.x + wx
+        let y = this.y + wy
+        let titlewidth = this.font.charWidth * (this.title.length+1)
+        let titleheight = Math.round(this.font.charHeight / 2)
+        imageX.drawCheckerLineH(img, x, y, 3, c)
+        img.print(this.title, x + 5, y - titleheight, this.palette.abs_id(2), this.font)
+        imageX.drawCheckerLineH(img, x + titlewidth + 1, y, this.w - titlewidth - 1, c)
+        imageX.drawCheckerLineV(img, x, y, this.h, c)
+        imageX.drawCheckerLineV(img, x + this.w - 1, y, this.h, c)
+        imageX.drawCheckerLineH(img, x, y + this.h - 1, this.w, c)
+        for (let widget_id = 0; widget_id < this.widgets.length; widget_id++) {
+            let widget = this.widgets[widget_id]
+            if (widget) widget.render(img, this.x + wx + 5, this.y + wy + titleheight + 1)
+        }
+    }
+
+    public update(cursor: Cursor, wx: number, wy: number) {
+        for (let widget_id = 0; widget_id < this.widgets.length; widget_id++) {
+            let widget = this.widgets[widget_id]
+            if (widget) widget.update(cursor, this.x + wx + 5, this.y + wy + Math.round(this.font.charHeight / 2) + 1)
+        }
+    }
+
+    public add_widget(widget: Widget): Widget {
+        this.widgets.push(widget)
+        return widget
+    }
+
+    public remove_widget(widget: Widget): Widget {
+        this.widgets.removeElement(widget)
+        return widget
+    }
 }
 
 class Window {
@@ -816,7 +877,7 @@ class Window {
         this.toDestroy = true
     }
 
-    public add_widget(widget: Widget) {
+    public add_widget(widget: Widget): Widget {
         this.widgets.push(widget)
         return widget
     }

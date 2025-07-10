@@ -10,13 +10,18 @@ system.onLoad = () => {
     // Initialize screen
     let label: WLabel = new WLabel(system.palette, 0, 0, "This is an example text.\nHello, World!", imageX.font.SYS_4x8)
     
-    let number_textbox: WTextBox = new WTextBox(system.palette, 0, 20, 4, WTextBoxInputType.Number, imageX.cursor.SYS_TEXT, imageX.font.SYS_4x8)
-    let text_textbox: WTextBox = new WTextBox(system.palette, 20, 20, 4, WTextBoxInputType.Text, imageX.cursor.SYS_TEXT, imageX.font.SYS_4x8)
-    let password_textbox: WTextBox = new WTextBox(system.palette, 40, 20, 4, WTextBoxInputType.Password, imageX.cursor.SYS_TEXT, imageX.font.SYS_4x8)
+    let number_textbox: WTextBox = new WTextBox(system.palette, 0, 0, 4, WTextBoxInputType.Number, imageX.cursor.SYS_TEXT, imageX.font.SYS_4x8)
+    let text_textbox: WTextBox = new WTextBox(system.palette, 21, 0, 4, WTextBoxInputType.Text, imageX.cursor.SYS_TEXT, imageX.font.SYS_4x8)
+    let password_textbox: WTextBox = new WTextBox(system.palette, 42, 0, 4, WTextBoxInputType.Password, imageX.cursor.SYS_TEXT, imageX.font.SYS_4x8)
 
-    let progressbar: WProgressBar = new WProgressBar(system.palette, 0, 35, 54, 10, 10, 100)
+    let textbox_groupbox: WGroupBox = new WGroupBox(system.palette, 1, 20, 80, 20, "Example groupbox", imageX.font.SYS_4x8)
+    textbox_groupbox.add_widget(number_textbox)
+    textbox_groupbox.add_widget(text_textbox)
+    textbox_groupbox.add_widget(password_textbox)
+
+    let progressbar: WProgressBar = new WProgressBar(system.palette, 0, 45, 54, 10, 10, 100)
     
-    let checkbox: WCheckBox = new WCheckBox(system.palette, 0, 50, "Example checkbox", imageX.cursor.SYS_HAND, imageX.font.SYS_4x8)
+    let checkbox: WCheckBox = new WCheckBox(system.palette, 0, 60, "Example checkbox", imageX.cursor.SYS_HAND, imageX.font.SYS_4x8)
 
     let button_eventListener = new EventListener()
     let button_eventHandler = new EventHandler(() => { progressbar.progress+=2 })
@@ -26,9 +31,7 @@ system.onLoad = () => {
     let window: Window = new Window(system.palette, 0, 0, 0, 0, "Example window", imageX.font.SYS_4x8)
     window.add_widget(label)
     window.add_widget(button)
-    window.add_widget(number_textbox)
-    window.add_widget(text_textbox)
-    window.add_widget(password_textbox)
+    window.add_widget(textbox_groupbox)
     window.add_widget(checkbox)
     window.add_widget(progressbar)
     system.screen.add_window(window)
