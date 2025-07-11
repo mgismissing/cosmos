@@ -237,6 +237,19 @@ namespace imageX {
             . . 3 . .
             3 3 . 3 3
         `, [2, 4])
+        export const SYS_MOVE: CursorImage = new CursorImage(img`
+            . . . . . 3 . . . . .
+            . . . . 3 1 3 . . . .
+            . . . 3 1 1 1 3 . . .
+            . . 3 3 3 1 3 3 3 . .
+            . 3 1 3 3 1 3 3 1 3 .
+            3 1 1 1 1 1 1 1 1 1 3
+            . 3 1 3 3 1 3 3 1 3 .
+            . . 3 3 3 1 3 3 3 . .
+            . . . 3 1 1 1 3 . . .
+            . . . . 3 1 3 . . . .
+            . . . . . 3 . . . . .
+        `, [0, 0])
     }
 
     export namespace font {
