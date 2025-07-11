@@ -836,9 +836,16 @@ class Window {
     w: number
     h: number
     toDestroy: boolean = false
-    constructor(palette: Palette, x: number, y: number, w: number, h: number, title: string, font: image.Font) {
+    movable: boolean
+    moving: boolean = false
+    movingx: number
+    movingy: number
+    titleCursorImg: CursorImage
+    constructor(palette: Palette, x: number, y: number, w: number, h: number, title: string, movable: boolean, titleCursorImg: CursorImage, font: image.Font) {
         this.palette = palette
         this.title = title
+        this.movable = movable
+        this.titleCursorImg = titleCursorImg
         this.font = font
         this.x = x
         this.y = y
@@ -879,6 +886,23 @@ class Window {
 
     public update(cursor: Cursor) {
         let titlesize: number = this.font.charHeight
+        // Move window
+        if ((cursor.x >= this.x) && (cursor.x < this.x + this.w) && (cursor.y >= this.y) && (cursor.y < this.y + titlesize)) {
+            cursor.img = this.titleCursorImg
+            if (this.movable && cursor.clicking && (!this.moving)) {
+                this.moving = true
+                this.movingx = cursor.x - this.x
+                this.movingy = cursor.y - this.y
+            }
+        }
+        if (this.moving) {
+            if (cursor.clicking) {
+                this.x = cursor.x - this.movingx
+                this.y = cursor.y - this.movingy
+            } else {
+                this.moving = false
+            }
+        }
         // Update widgets
         for (let widget_id = 0; widget_id < this.widgets.length; widget_id++) {
             let widget = this.widgets[widget_id]
@@ -917,7 +941,7 @@ class MessageBox extends Window {
     button1: Widget
     button2: Widget
     constructor(palette: Palette, title: string, message: string, type_: MessageBoxType, font: image.Font, button1Handler?: EventHandler, button2Handler?: EventHandler, cursorButton?: CursorImage) {
-        super(palette, 20, 40, WIDTH - 40, HEIGHT - 80, title, font)
+        super(palette, 20, 40, WIDTH - 40, HEIGHT - 80, title, false, imageX.cursor.SYS_ARROW, font)
         if (!cursorButton) cursorButton = imageX.cursor.SYS_HAND
         // Create message label
         this.label = this.add_widget(new WLabel(this.palette, 0, 0, message, this.font))
