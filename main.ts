@@ -249,7 +249,7 @@ namespace imageX {
             . . . 3 1 1 1 3 . . .
             . . . . 3 1 3 . . . .
             . . . . . 3 . . . . .
-        `, [0, 0])
+        `, [5, 5])
     }
 
     export namespace font {
